@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
   "name": "dexcms-core",
   "description": "Core library for Dex CMS",
   "keywords": [ ".net", "cms", "framework" ],
