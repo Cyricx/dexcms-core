@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DexCMS.Core")]
+[assembly: AssemblyTitle("DexCMS.Core.Mvc")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DexCMS.Core")]
+[assembly: AssemblyProduct("DexCMS.Core.Mvc")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f58c21c6-f84e-49b9-95d0-9f4f17a0fcd6")]
+[assembly: Guid("f061d161-14c1-4e93-8265-e5c0c096b96c")]
 
 // Version information for an assembly consists of the following four values:
 //

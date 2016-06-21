@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "name": "dexcms-core",
+  "description": "Core library for Dex CMS",
+  "keywords": [ ".net", "cms", "framework" ],
+  "author": "Chris Byram",
+  "bugs": "https://github.com/Cyricx/dexcms-core/issues",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "1.0.1",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-clean": "1.0.0"
+  }
+}
