@@ -1,16 +1,12 @@
 ﻿using DexCMS.Core.Infrastructure.Models;
 using DexCMS.Core.Mvc.Enums;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace DexCMS.Core.Mvc
 {
-    public static class BaseMvcRoutes
+    public static class CoreMvcRoutes
     {
         public static void Configure(RouteCollection routes, DexCMSConfiguration config)
         {
