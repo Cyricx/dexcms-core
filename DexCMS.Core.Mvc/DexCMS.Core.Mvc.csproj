@@ -136,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationOwinContext.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="CoreMvcRoutes.cs" />
+    <Compile Include="Enums\CoreRouteOptions.cs" />
     <Compile Include="Globals\FiltersConfig.cs" />
     <Compile Include="Globals\DexCMSBeginRequest.cs" />
     <Compile Include="Globals\DexCMSViewEngine.cs" />
@@ -145,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DefaultViews\RootViews\Shared\_AnalyticsTracking.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +156,9 @@
       <Project>{34160093-af5a-4f82-b860-10fb2319a164}</Project>
       <Name>DexCMS.Core.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DefaultViews\RootViews\Error\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
