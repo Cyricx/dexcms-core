@@ -138,6 +138,7 @@
     <Compile Include="ApplicationOwinContext.cs" />
     <Compile Include="Globals\FiltersConfig.cs" />
     <Compile Include="Globals\DexCMSBeginRequest.cs" />
+    <Compile Include="Globals\DexCMSViewEngine.cs" />
     <Compile Include="Models\AuthenticationConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup\Authentication.cs" />
