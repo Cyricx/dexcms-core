@@ -53,11 +53,6 @@ namespace DexCMS.Core.WebApi
             }
 
             httpConfig.Routes.MapHttpRoute(
-                name: "RetrieveContent",
-                routeTemplate: baseApi + "/retrievecontents/{contentName}",
-                defaults: new { controller = "retrievecontents" });
-
-            httpConfig.Routes.MapHttpRoute(
                 name: "FileUpload",
                 routeTemplate: baseApi + "/fileupload/upload",
                 defaults: new { controller = "fileupload", action = "upload" }
