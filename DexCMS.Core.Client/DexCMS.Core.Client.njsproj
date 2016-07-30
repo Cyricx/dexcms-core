@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>DexCMS.Core.Client</Name>
+    <RootNamespace>DexCMS.Core.Client</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f8747e68-8724-417a-8e60-2c1bc5a36cdd</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\controlpanel.bootstrap.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\controlpanel.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\controlpanel.require.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\controlpanel.settings.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Dashboard\dashboard.controller.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Dashboard\index.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Controllers\index.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Controllers\layout.controller.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\index.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsAttention.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsCalculateGrid.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsFixedTop.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsHorizontalNav.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsHtmlEditor.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Filters\htmlTrusted.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Filters\index.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\index.js" />
+    <Compile Include="Scripts\Applications\Secure\Globals\index.js" />
+    <Compile Include="Scripts\Applications\Secure\secure.bootstrap.js" />
+    <Compile Include="Scripts\Applications\Secure\secure.js" />
+    <Compile Include="Scripts\Applications\Secure\secure.require.js" />
+    <Compile Include="Scripts\Applications\Secure\secure.settings.js" />
+    <Compile Include="Scripts\Globals\Shared\Filters\index.js" />
+    <Compile Include="Scripts\Globals\Shared\Filters\pageSplice.js" />
+    <Compile Include="Scripts\Globals\Shared\index.js" />
+    <Compile Include="Scripts\Globals\Shared\Infrastructure\routesBuilder.js" />
+    <Compile Include="Scripts\Globals\Shared\Services\dateCleaner.js" />
+    <Compile Include="Scripts\Globals\Shared\Services\index.js" />
+    <Compile Include="Scripts\Globals\Shared\shared.js" />
+    <Compile Include="Scripts\Globals\Shared\shared.settings.js" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="Scripts\Applications\ControlPanel\Dashboard\dashboard.view.html" />
+    <Content Include="Scripts\Applications\ControlPanel\Globals\Directives\_ttcmsHorizontalNav.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Scripts\Applications\" />
+    <Folder Include="Scripts\Applications\ControlPanel\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Dashboard\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Globals\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Globals\Controllers\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Globals\Directives\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Globals\Filters\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Modules\" />
+    <Folder Include="Scripts\Applications\Secure\" />
+    <Folder Include="Scripts\Applications\Secure\Globals\" />
+    <Folder Include="Scripts\Applications\Secure\Modules\" />
+    <Folder Include="Scripts\Globals\" />
+    <Folder Include="Scripts\Globals\Shared\" />
+    <Folder Include="Scripts\Globals\Shared\Filters\" />
+    <Folder Include="Scripts\Globals\Shared\Infrastructure\" />
+    <Folder Include="Scripts\Globals\Shared\Services\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+</Project>

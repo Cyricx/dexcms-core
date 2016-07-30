@@ -1,0 +1,21 @@
+﻿<ul class="nav nav-pills">
+    <li ng-repeat="nav in navigation" ng-class="nav.cssClass">
+        <a ng-if="!nav.items" ui-sref="{{nav.name + nav.data}}">
+        <i class="fa" ng-class="nav.icon"></i>
+        {{nav.text}}</a>
+        <div ng-if="nav.items" class="text-primary" uib-dropdown>
+            <span uib-dropdown-toggle>
+                <i class="fa" ng-class="nav.icon"></i>
+                {{nav.text}}
+            </span>
+            <ul class="uib-dropdown-menu">
+                <li ng-repeat="item in nav.items">
+                    <a ui-sref="{{item.name + item.data}}" ng-class="item.cssClass">
+                        <i class="fa" ng-class="item.icon"></i>
+                        {{item.text}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>
