@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f8747e68-8724-417a-8e60-2c1bc5a36cdd</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>utilities.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -30,7 +30,16 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.js" />
+    <Compile Include="Grunt\copy\builder.modules.js" />
+    <Compile Include="Grunt\copy\builder.vendorFiles.js" />
+    <Compile Include="Grunt\copy\builder.views.js" />
+    <Compile Include="Grunt\copy\copy.js" />
+    <Compile Include="Grunt\index.js" />
+    <Compile Include="utilities.js" />
+    <Compile Include="Configurations\globals.core.settings.js" />
+    <Compile Include="Configurations\secure.core.settings.js" />
+    <Compile Include="Configurations\controlpanel.core.settings.js" />
+    <Compile Include="Configurations\index.js" />
     <Compile Include="Scripts\Applications\ControlPanel\controlpanel.bootstrap.js" />
     <Compile Include="Scripts\Applications\ControlPanel\controlpanel.js" />
     <Compile Include="Scripts\Applications\ControlPanel\controlpanel.require.js" />
@@ -68,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configurations\" />
+    <Folder Include="Grunt\" />
+    <Folder Include="Grunt\copy\" />
     <Folder Include="Scripts\" />
     <Folder Include="Scripts\Applications\" />
     <Folder Include="Scripts\Applications\ControlPanel\" />

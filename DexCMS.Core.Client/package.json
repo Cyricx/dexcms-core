@@ -2,7 +2,7 @@
   "name": "dexcms-core-client",
   "version": "0.0.0",
   "description": "DexCMS.Core.Client",
-  "main": "app.js",
+  "main": "utilities.js",
   "author": {
     "name": "Cyricx",
     "email": "contact@chrisbyram.com"
