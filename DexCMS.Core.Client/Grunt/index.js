@@ -1,13 +1,43 @@
-﻿var copyGrunt = require('./copy/copy');
-
-var gruntBuilder = function (grunt, options) {
-    var defaultGrunt = {
-        copy: copyGrunt(grunt, options)
+﻿var website = {
+        copyGrunt: require('./website/copy'),
+        jsonGrunt: require('./website/jsonGenerator'),
+        cleanGrunt: require('./website/clean'),
+        replaceGrunt: require('./website/replace'),
+        sassGrunt: require('./website/sass'),
+        watchGrunt: require('./website/watch'),
+        loadTasks: require('./website/loadTasks'),
+        registerTasks: require('./website/registerTasks')
     };
 
+var gruntWebSiteBuilder = function (grunt, options) {
+    var gruntOptions = {
+        copy: website.copyGrunt(grunt, options),
+        json_generator: website.jsonGrunt(grunt, options),
+        pkg: grunt.file.readJSON('package.json'),
+        clean: website.cleanGrunt(grunt, options),
+        replace: website.replaceGrunt(grunt, options),
+        sass: website.sassGrunt(grunt, options),
+        watch: website.watchGrunt(grunt, options)
+    };
 
+    return gruntOptions;
+};
+
+var gruntAppBuilder = function (grunt, options) {
+    var defaultGrunt = {
+        copy: copyGrunt(grunt, options),
+        json_generator: jsonGrunt(grunt, options),
+
+    };
 
     return defaultGrunt;
 };
 
-module.exports = gruntBuilder;
+module.exports = {
+    website: {
+        options: gruntWebSiteBuilder,
+        loadTasks: website.loadTasks,
+        registerTasks: website.registerTasks
+    },
+    application: gruntAppBuilder
+};
