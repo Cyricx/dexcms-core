@@ -1,0 +1,129 @@
+﻿#wrapper {
+    @include custom-transition(all, 0.5s, ease);
+}
+
+#page-content-wrapper {
+    @media (min-width: 768px) {
+        left: 230px;
+        top: 61px;
+        right: 20px;
+    }
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    top: 61px;
+    height: 100%;
+    overflow: visible;
+    background: $navbar-default-bg;
+    @include custom-transition(all, 0.5s, ease);
+    border-right: 1px solid $brand-info;
+    width: 150px;
+    left: -150px;
+    max-height: 80%;
+    overflow-y: auto;
+
+    @media (min-width: 768px) {
+        left: 20px;
+        width: 190px;
+        top: 81px;
+        border: 1px solid $brand-info;
+        padding: 10px;
+        border-radius: .5em;
+        box-shadow: 0 0 5px $gray;
+    }
+
+    .panel-group {
+        .panel-title > a {
+            text-decoration: none;
+
+            &:hover, &:active {
+                text-decoration: none;
+            }
+        }
+
+        .panel-body a {
+            line-height: 2;
+        }
+
+        a {
+            color: $brand-info;
+        }
+    }
+
+    > ul > li {
+        margin: 1.5em 1em;
+
+        > a, > form > a {
+            font-size: 1.5em;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        li {
+            margin: 1em 0;
+            white-space: nowrap;
+        }
+    }
+
+    .divider {
+        @include nav-divider(lighten($brand-info, 25%));
+    }
+}
+
+#wrapper.non-default-menu {
+    #sidebar-wrapper {
+        left: 0;
+
+        @media (min-width: 768px) {
+            left: 20px;
+            width: 5em;
+
+            > ul > li:first-child {
+                margin-top: 0;
+            }
+
+            > ul > li {
+                text-align: center;
+            }
+
+            > ul > li > a, > ul > li > form > a {
+                font-size: 2.5em;
+            }
+
+            .sidebar-title {
+                display: none;
+            }
+        }
+    }
+
+    #page-content-wrapper {
+        @media (min-width: 768px) {
+            left: 130px;
+        }
+    }
+}
+
+#wrapper.force-open #sidebar-wrapper, #wrapper.non-default-menu.force-open #sidebar-wrapper {
+    width: auto;
+}
+
+.sidebar-nav li {
+    position: relative;
+
+    &:hover .popover {
+        display: block;
+    }
+
+    .popover {
+        left: 80%;
+        top: -20px;
+
+        .arrow {
+            top: 37px;
+        }
+    }
+}

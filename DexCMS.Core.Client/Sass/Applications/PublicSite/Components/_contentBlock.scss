@@ -1,0 +1,11 @@
+﻿///<reference path="../_publicVariables.scss">
+.content-block {
+    &.center {
+        text-align: center;
+    }
+    &.full-image {
+        img {
+            width: 100%;
+        }
+    }
+}

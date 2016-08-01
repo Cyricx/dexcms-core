@@ -1,0 +1,19 @@
+﻿@import "../../_variables.scss";
+
+$pbFirst: 1250px !default;
+$pbSecond: 870px !default;
+$pbThird: 600px !default;
+$pbFourth: 450px !default;
+
+$cFormBackground: $cTwo !default;
+$cFormColor: $cOne !default;
+$FormGroupBorderWidth: 1px !default;
+$FormGroupStyle: solid !default;
+$cFormGroupColor: $cOne !default;
+$cFormHighlightColor: $cThree !default;
+$cFormErrorBackground: #fff !default;
+$cFormErrorBorderColor: #f00 !default;
+$cFormErrorColor: #000 !default;
+$cFormDescriptionColor: $cFormColor !default;
+
+$cPanelBackground:  $cTwo !default;

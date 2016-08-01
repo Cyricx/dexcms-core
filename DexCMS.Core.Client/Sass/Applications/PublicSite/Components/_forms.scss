@@ -1,0 +1,294 @@
+﻿///<reference path="../_publicVariables.scss">
+.form-box {
+    padding: 1em 1em 1em;
+    position: relative;
+    background-color: $cFormBackground;
+    color: $cFormColor;
+
+    .form-header-image {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        + div, + fieldset {
+            margin-top: 10%;
+        }
+    }
+
+    .form-group {
+        padding: .5em;
+        border: $FormGroupBorderWidth $FormGroupStyle $cFormGroupColor;
+        margin: 1em 0;
+
+        legend {
+            font-weight: bold;
+            font-size: .8em;
+        }
+    }
+
+    .form-item-group {
+        position: relative;
+        margin: .5em 0;
+
+        @media screen and (min-width: $pbSecond) {
+            margin: 0;
+        }
+
+        input, textarea {
+            padding: .25em .25em .25em 2em;
+            width: 85%;
+
+            @media screen and (min-width: $pbSecond) {
+                padding-left: .25em;
+            }
+
+            &:focus {
+                outline-color: $cFormHighlightColor;
+            }
+        }
+
+        select {
+            padding: .25em .25em .25em 2em;
+            width: 94%;
+            @media screen and (min-width: $pbSecond) {
+                padding-left: .25em;
+            }
+            &:focus {
+                outline-color: $cFormHighlightColor;
+            }
+        }
+
+        .form-item-icon {
+            position: absolute;
+            top: .35em;
+            left: .25em;
+            color: $cFormHighlightColor;
+
+            @media screen and (min-width: $pbSecond) {
+                display: none;
+            }
+        }
+    }
+
+    .form-label {
+        @media screen and (min-width: $pbSecond) {
+            display: inline-block;
+            font-weight: bold;
+            font-size: .8em;
+            margin-left: 1em;
+            color: $cFormHighlightColor;
+            width: 8em;
+            text-align: right;
+            vertical-align: top;
+            padding-top: .5em;
+        }
+
+        + div {
+            @media screen and (min-width: $pbSecond) {
+                display: inline-block;
+                width: 70%;
+                position: relative;
+            }
+        }
+    }
+
+    .form-item {
+        position: relative;
+
+        @media screen and (min-width: $pbSecond) {
+            margin: .5em 0;
+        }
+    }
+
+    .field-validation-error {
+        position: absolute;
+        z-index: 1;
+        font-size: .8em;
+        background-color: $cFormErrorBackground;
+        color: $cFormErrorColor;
+        border: 1px solid $cFormErrorBorderColor;
+        border-radius: .5em;
+        padding: .25em;
+        bottom: -1.75em;
+        left: 2em;
+
+        &:before {
+            content: '';
+            border-left: 5px solid transparent;
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: -5px;
+            left: 45%;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid $cFormErrorBorderColor;
+        }
+
+        &.static-error {
+            position: relative;
+            bottom: 0;
+            margin-bottom: 1em;
+            display: inline-block;
+        }
+    }
+
+    .form-input-list {
+        li {
+            margin: .5em 0 1em 1em;
+            font-size: .8em;
+
+            @media screen and (min-width:$pbFourth) {
+                width: 45%;
+                float: left;
+            }
+
+            @media screen and (min-width:$pbSecond) {
+                width: 30%;
+                float: left;
+            }
+        }
+
+        label {
+            font-weight: bold;
+
+            @media screen and (min-width: $pbThird) {
+                font-size: .9em;
+            }
+        }
+
+        em {
+            display: block;
+            color: $cFormDescriptionColor;
+            font-size: .9em;
+            font-style: normal;
+            margin-left: 2em;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+            content: "\f096";
+            letter-spacing: 10px;
+        }
+
+        input[type=checkbox]:checked + label:before {
+            content: "\f046";
+            letter-spacing: 8px;
+        }
+    }
+
+    .form-buttons {
+        text-align: center;
+        margin-top: 1em;
+    }
+    .form-address-item, .form-address-inputs {
+        position: relative;
+    }
+    .form-city + span.field-validation-error {
+        top: 2em;
+        bottom: auto;
+    }
+    .form-state + span.field-validation-error {
+        top: 4.5em;
+        bottom: auto;
+        @media screen and (min-width: $pbFourth) {
+            top: 2em;
+        }
+    }
+        .form-zip + span.field-validation-error {
+        top: 7em;
+        bottom: auto;
+        @media screen and (min-width: $pbFourth) {
+            top: 2em;
+        }
+
+    }
+    @media screen and (min-width: $pbFourth) {
+    .form-address-inputs {
+        @media screen and (min-width: $pbSecond) {
+            margin-left: 7.5em;
+            margin-top: .5em;
+        }
+        >div {
+            display: inline-block;
+            margin-right: 1em;
+        }
+        .form-city, .form-state {
+            @media screen and (min-width: $pbFourth) {
+            width: 35%;
+            }
+        }
+        .form-city {
+            @media screen and (min-width: $pbSecond) {
+                margin-right: 0;
+            }
+            + span.field-validation-error {
+                left: 20%;
+            }
+        }
+        .form-state {
+            @media screen and (min-width: $pbSecond) {
+                margin-left: -.5em;
+            }
+            + span.field-validation-error {
+                left: 40%;
+            }
+        }
+        .form-zip {
+            width: 15%;
+            margin-left: -1.5em;
+            + span.field-validation-error {
+                left: 70%;
+            }
+        }
+        
+    }
+    
+    }
+    textarea {
+        width: 95%;
+        height: 5em;
+        resize: none;
+    }
+}
+
+
+/*
+@media (min-width:$pbSecond) {
+    ::-webkit-input-placeholder { // WebKit browsers 
+        color: transparent;
+    }
+
+    :-moz-placeholder { // Mozilla Firefox 4 to 18
+        color: transparent;
+    }
+
+    ::-moz-placeholder { // Mozilla Firefox 19+
+        color: transparent;
+    }
+
+    :-ms-input-placeholder { // Internet Explorer 10+
+        color: transparent;
+    }
+
+    textarea::-webkit-input-placeholder { // WebKit browsers
+        color: transparent;
+    }
+
+    textarea:-moz-placeholder { // Mozilla Firefox 4 to 18
+        color: transparent;
+    }
+
+    textarea::-moz-placeholder { // Mozilla Firefox 19+
+        color: transparent;
+    }
+
+    textarea:-ms-input-placeholder { // Internet Explorer 10+
+        color: transparent;
+    }
+}*/

@@ -30,11 +30,15 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Grunt\copy\builder.modules.js" />
-    <Compile Include="Grunt\copy\builder.vendorFiles.js" />
-    <Compile Include="Grunt\copy\builder.views.js" />
-    <Compile Include="Grunt\copy\copy.js" />
     <Compile Include="Grunt\index.js" />
+    <Compile Include="Grunt\website\clean.js" />
+    <Compile Include="Grunt\website\copy.js" />
+    <Compile Include="Grunt\website\jsonGenerator.js" />
+    <Compile Include="Grunt\website\loadTasks.js" />
+    <Compile Include="Grunt\website\registerTasks.js" />
+    <Compile Include="Grunt\website\replace.js" />
+    <Compile Include="Grunt\website\sass.js" />
+    <Compile Include="Grunt\website\watch.js" />
     <Compile Include="utilities.js" />
     <Compile Include="Configurations\globals.core.settings.js" />
     <Compile Include="Configurations\secure.core.settings.js" />
@@ -72,13 +76,39 @@
     <Compile Include="Scripts\Globals\Shared\shared.settings.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="Sass\Applications\ControlPanel\_cpVariables.scss" />
+    <Content Include="Sass\Applications\ControlPanel\_layout.scss" />
+    <Content Include="Sass\Applications\ControlPanel\_nav.scss" />
+    <Content Include="Sass\Applications\ControlPanel\_sidebar.scss" />
+    <Content Include="Sass\Editor\_editor.scss" />
+    <Content Include="Sass\Editor\_editorVariables.scss" />
+    <Content Include="Sass\Keyframes\_keyframes.scss" />
+    <Content Include="Sass\Mixins\_mixins.scss" />
+    <Content Include="Sass\Applications\PublicSite\Components\_contentBlock.scss" />
+    <Content Include="Sass\Applications\PublicSite\Components\_forms.scss" />
+    <Content Include="Sass\Applications\PublicSite\Components\_grid.scss" />
+    <Content Include="Sass\Applications\PublicSite\Components\_lists.scss" />
+    <Content Include="Sass\Applications\PublicSite\Components\_panels.scss" />
+    <Content Include="Sass\Applications\PublicSite\Components\_slider.scss" />
+    <Content Include="Sass\Applications\PublicSite\_components.scss" />
+    <Content Include="Sass\Applications\PublicSite\_helpers.scss" />
+    <Content Include="Sass\Applications\PublicSite\_publicVariables.scss" />
+    <Content Include="Sass\_variables.scss" />
     <Content Include="Scripts\Applications\ControlPanel\Dashboard\dashboard.view.html" />
     <Content Include="Scripts\Applications\ControlPanel\Globals\Directives\_ttcmsHorizontalNav.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configurations\" />
     <Folder Include="Grunt\" />
-    <Folder Include="Grunt\copy\" />
+    <Folder Include="Grunt\website\" />
+    <Folder Include="Sass\" />
+    <Folder Include="Sass\Applications\ControlPanel\" />
+    <Folder Include="Sass\Editor\" />
+    <Folder Include="Sass\Keyframes\" />
+    <Folder Include="Sass\Mixins\" />
+    <Folder Include="Sass\Applications\" />
+    <Folder Include="Sass\Applications\PublicSite\" />
+    <Folder Include="Sass\Applications\PublicSite\Components\" />
     <Folder Include="Scripts\" />
     <Folder Include="Scripts\Applications\" />
     <Folder Include="Scripts\Applications\ControlPanel\" />

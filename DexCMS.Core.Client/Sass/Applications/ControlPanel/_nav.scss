@@ -1,0 +1,10 @@
+﻿.nav.nav-pills {
+    background: $navbar-default-bg;
+    border: 1px solid $brand-info;
+    padding: 1em;
+    border-radius: .5em;
+    box-shadow: 0 0 5px $gray;
+    > li {
+        margin: 0 1em;
+    }
+}

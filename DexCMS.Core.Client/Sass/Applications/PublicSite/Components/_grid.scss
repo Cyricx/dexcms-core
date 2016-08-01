@@ -1,0 +1,31 @@
+﻿///<reference path="../_publicVariables.scss">
+.grid {
+    .grid-item {
+        display: inline-block;
+        box-sizing: border-box;
+    }
+}
+
+@mixin createColumns($prefix) {
+    @for $i from 1 through 12 {
+    .#{$prefix}-#{$i} {
+        width: (98% / 12) * $i;
+              }
+}
+    }
+
+@include createColumns('xs');
+
+@media screen and (min-width: $pbFourth) {
+    @include createColumns('xsm');
+}
+
+@media screen and (min-width: $pbThird) {
+    @include createColumns('sm');
+}
+@media screen and (min-width: $pbSecond) {
+    @include createColumns('md');
+}
+@media screen and (min-width: $pbFirst) {
+    @include createColumns('lg');
+}

@@ -1,0 +1,89 @@
+﻿///<reference path="_publicVariables.scss">
+.item-divider:before {
+    content: '|';
+}
+
+
+
+.clear {
+    clear: both;
+}
+
+.hide-xs, .hide-sm, .hide-md, .hide-lg {
+    display: none;
+}
+
+.show-xs {
+    display: block;
+}
+
+.hide-sm {
+    @media screen and (min-width: $pbThird) {
+        display: none;
+    }
+}
+
+.show-sm {
+    @media screen and (min-width: $pbThird) {
+        display: block;
+    }
+}
+
+.hide-md {
+    @media screen and (min-width: $pbSecond) {
+        display: none;
+    }
+}
+
+.show-md {
+    @media screen and (min-width: $pbSecond) {
+        display: block;
+    }
+}
+
+.hide-lg {
+    @media screen and (min-width: $pbFirst) {
+        display: none;
+    }
+}
+
+.show-lg {
+    @media screen and (min-width: $pbFirst) {
+        display: block;
+    }
+}
+
+.disappear-text {
+    font-size: 0;
+    line-height: 0;
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+.center-text {
+    text-align: center;
+}
+@media screen and (min-width: $pbThird) {
+.sm-clear-text-align {
+    text-align: initial;
+}
+}
+@media screen and (min-width: $pbSecond) {
+.md-clear-text-align  {
+    text-align: initial;
+}
+}
+@media screen and (min-width: $pbFirst) {
+    .lg-clear-text-align  {
+        text-align: initial;
+    }
+}
+.right-text {
+    text-align: right;
+}
+.left-text {
+    text-align: left;
+}

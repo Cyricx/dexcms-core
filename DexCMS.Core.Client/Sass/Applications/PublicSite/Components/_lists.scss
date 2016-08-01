@@ -1,0 +1,41 @@
+﻿///<reference path="../_publicVariables.scss">
+.list-tile {
+    @media screen and (min-width: $pbSecond) {
+        margin: 0 auto;
+    }
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    li {
+        float: left;
+        width: 49%;
+        box-sizing: border-box;
+        text-align: center;
+        margin: .25em 0;
+        @media screen and (min-width: $pbFourth) {
+            width: 33%;
+        }
+        @media screen and (min-width: $pbThird){
+            width: 24.5%;
+        }
+        @media screen and (min-width: $pbSecond) {
+            display: inline-block;
+            float: none;
+            width: auto;
+        }
+        a {
+            img {
+                width: 100%;
+                @media screen and (min-width: $pbSecond) {
+                    width: auto;
+                }
+            }
+            background: none;
+            &:hover {
+                background:none;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+//Please set the following variables in your _customerVariables.scss file with your desired values:
+@import "../../_variables.scss";
+
+$bootstrap-sass-asset-helper: false !default;
+
+//Bootstrap overrides
+$gray-base: $cTwo;
+$gray-light: lighten($gray-base, 46.7%);
+
+$input-color: $cThree;
+
+$brand-primary: darken($cOne, 6.5%);
+$brand-info: $cOne;
+$link-color: $brand-primary;
+$link-hover-color: darken($link-color, 35%);
+
+$navbar-inverse-bg: $cOne;
+$navbar-inverse-link-color: lighten($gray-light, 20%);
+$navbar-inverse-link-hover-color: $cThree;
+$navbar-inverse-toggle-hover-bg: lighten($cOne, 25%);
+$navbar-inverse-toggle-icon-bar-bg: $navbar-inverse-link-color;
+$navbar-inverse-toggle-border-color: lighten($cOne, 25%);
+
+$state-info-bg: #ddd;
+$list-group-border: $brand-primary;
+$state-info-text: $brand-primary;
+$list-group-link-hover: $cThree;
