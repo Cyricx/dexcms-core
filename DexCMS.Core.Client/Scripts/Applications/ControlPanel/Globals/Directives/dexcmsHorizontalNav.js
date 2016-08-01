@@ -2,15 +2,15 @@
     'angular',
 ], function (angular) {
     return function (module) {
-        module.directive('ttcmsHorizontalNav', [
+        module.directive('dexcmsHorizontalNav', [
             'dexCMSControlPanelSettings',
-            function (ttcmsSettings) {
+            function (dexcmsSettings) {
                 return {
                     restrict: "E",
                     scope: {
                         "navigation": "="
                     },
-                    templateUrl: ttcmsSettings.startingRoute + '/globals/directives/_ttcmsHorizontalNav.html',
+                    templateUrl: dexcmsSettings.startingRoute + '/globals/directives/_dexcmsHorizontalNav.html',
                     link: function (scope, elem, attr) {
 
                     }

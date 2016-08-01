@@ -2,7 +2,7 @@
     'angular',
 ], function (angular) {
     return function (module) {
-        module.directive('ttcmsFixedTop', function () {
+        module.directive('dexcmsFixedTop', function () {
 
             return {
                 restrict: "EA",

@@ -2,7 +2,7 @@
     'angular',
 ], function (angular) {
     return function (module) {
-        module.directive('ttcmsCalculateGrid', function () {
+        module.directive('dexcmsCalculateGrid', function () {
 
             return {
                 restrict: "A",

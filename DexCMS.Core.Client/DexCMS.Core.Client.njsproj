@@ -53,11 +53,11 @@
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Controllers\index.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Controllers\layout.controller.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\index.js" />
-    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsAttention.js" />
-    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsCalculateGrid.js" />
-    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsFixedTop.js" />
-    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsHorizontalNav.js" />
-    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\ttcmsHtmlEditor.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\dexcmsAttention.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\dexcmsCalculateGrid.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\dexcmsFixedTop.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\dexcmsHorizontalNav.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Globals\Directives\dexcmsHtmlEditor.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Filters\htmlTrusted.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Filters\index.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\index.js" />
@@ -95,7 +95,7 @@
     <Content Include="Sass\Applications\PublicSite\_publicVariables.scss" />
     <Content Include="Sass\_variables.scss" />
     <Content Include="Scripts\Applications\ControlPanel\Dashboard\dashboard.view.html" />
-    <Content Include="Scripts\Applications\ControlPanel\Globals\Directives\_ttcmsHorizontalNav.html" />
+    <Content Include="Scripts\Applications\ControlPanel\Globals\Directives\_dexcmsHorizontalNav.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configurations\" />

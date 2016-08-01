@@ -1,15 +1,15 @@
 ﻿define([
-    './ttcmsAttention',
-    './ttcmsCalculateGrid',
-    './ttcmsFixedTop',
-    './ttcmsHorizontalNav',
-    './ttcmsHtmlEditor'
-], function (ttcmsAttention, ttcmsCalculateGrid, ttcmsFixedTop, ttcmsHorizontalNav, ttcmsHtmlEditor) {
+    './dexcmsAttention',
+    './dexcmsCalculateGrid',
+    './dexcmsFixedTop',
+    './dexcmsHorizontalNav',
+    './dexcmsHtmlEditor'
+], function (dexcmsAttention, dexcmsCalculateGrid, dexcmsFixedTop, dexcmsHorizontalNav, dexcmsHtmlEditor) {
     return function (app) {
-        ttcmsAttention(app);
-        ttcmsCalculateGrid(app);
-        ttcmsFixedTop(app);
-        ttcmsHorizontalNav(app);
-        ttcmsHtmlEditor(app);
+        dexcmsAttention(app);
+        dexcmsCalculateGrid(app);
+        dexcmsFixedTop(app);
+        dexcmsHorizontalNav(app);
+        dexcmsHtmlEditor(app);
     };
 });

@@ -2,12 +2,12 @@
     'angular',
 ], function (angular) {
     return function (module) {
-        module.directive('ttcmsAttention', ['$parse',
+        module.directive('dexcmsAttention', ['$parse',
             function ($parse) {
                 return {
                     restrict: "A",
                     link: function (scope, elem, attr) {
-                        var status = $parse(attr.ttcmsAttention)(scope);
+                        var status = $parse(attr.dexcmsAttention)(scope);
 
                         if (status) {
                             elem.addClass('attention-box');
