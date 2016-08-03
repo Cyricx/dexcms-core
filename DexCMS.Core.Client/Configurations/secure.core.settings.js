@@ -3,7 +3,7 @@
         name: 'ApplicationsSecureSettings',
         dest: appPath + '/applications/secure/config/dexcms.secure.settings.json',
         options: {
-            startingRoute: '../scripts/' + appPath + '/applications/secure/'
+            startingRoute: '../' + appPath + '/applications/secure/'
         }
     };
 };

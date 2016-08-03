@@ -73,7 +73,7 @@
             $stateProvider
                 .state('dashboard', {
                     url: '/',
-                    templateUrl: startingRoute + 'dashboard/dashboard.view.html',
+                    templateUrl: '../' + startingRoute + 'dashboard/dashboard.view.html',
                     controller: 'dashboardCtrl',
                     resolve: builder.buildResolver('dashboard')
                 });
