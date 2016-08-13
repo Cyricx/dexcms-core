@@ -1,6 +1,6 @@
 var libs = '../../../../libs/';
 require.config({
-    urlArgs: "v=1.6.2",
+    urlArgs: "v=0.0.0",
     waitSeconds: 120,
     paths: {
         'secure-app': './secure',

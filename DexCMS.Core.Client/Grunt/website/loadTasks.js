@@ -4,7 +4,7 @@
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-json-generator');
-    grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-contrib-symlink');
 };
 
