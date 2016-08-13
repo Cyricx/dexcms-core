@@ -1,3 +1,4 @@
 ﻿define([
-    './displayTable'
+    './filteredCollection',
+    './dataTable'
 ]);

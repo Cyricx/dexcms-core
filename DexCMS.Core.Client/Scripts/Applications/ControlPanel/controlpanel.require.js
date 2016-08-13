@@ -12,6 +12,7 @@ require.config({
         'angular-datatables-bootstrap': libs + 'angular-datatables/angular-datatables.bootstrap.min',
         'angular-drag-and-drop-lists': libs + 'angular-drag-and-drop-lists/angular-drag-and-drop-lists.min',
         'angular-sanitize': libs + 'angular-sanitize/angular-sanitize.min',
+        'angular-smart-table': libs + 'angular-smart-table/smart-table.min',
         'angular-ui-router': libs + 'angular-ui-router/angular-ui-router.min',
         'angular-resource': libs + 'angular-resource/angular-resource.min',
         'datatables': libs + 'datatables/jquery.dataTables.min',
@@ -23,6 +24,7 @@ require.config({
         'ng-file-upload': libs + 'ng-file-upload/ng-file-upload.min',
         'ng-file-upload-shim': libs + 'ng-file-upload/ng-file-upload-shim.min',
         'ngtoast': libs + 'ngtoast/ngtoast.min',
+        "ng-csv": libs + 'ng-csv/ng-csv.min',
         'oclazyload': libs + 'oclazyload/ocLazyLoad.require.min',
         'tg-angular-validator': libs + 'tg-angular-validator/angular-validator.min',
         'text': libs + 'text/text',
@@ -56,6 +58,9 @@ require.config({
         'angular-sanitize': {
             deps: ['angular']
         },
+        'angular-smart-table': {
+            deps: ['angular']
+        },
         'angular-ui-router': {
             deps: ['angular']
         },
@@ -79,6 +84,9 @@ require.config({
         },
         'ngtoast': {
             deps: ['angular']
+        },
+        'ng-csv': {
+            deps: ['angular', 'angular-sanitize']
         },
         'oclazyload': {
             deps: ['angular']

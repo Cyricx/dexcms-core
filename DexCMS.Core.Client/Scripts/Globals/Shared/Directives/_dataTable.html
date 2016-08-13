@@ -1,0 +1,47 @@
+﻿<div>
+    <div st-table="displayedCollection" st-safe-src="table.promiseData" st-filtered-collection="filteredCollection">
+        <div class="row form-inline table-controls">
+            <div class="col-xs-3">
+                <label>Show:</label>
+                <select ng-model="itemsByPage" name="itemsByPage" class="form-control input-sm" ng-options="value for value in [10, 25, 50, 100]"></select>
+            </div>
+            <div class="col-xs-3 col-xs-offset-3">
+                <button type="button" class="btn btn-danger" ng-if="searchInput" ng-csv="processData(filteredCollection)" title="Filtered Data"
+                        csv-header="getHeaders(table.promiseData)" filename="{{getFileName(true)}}">
+                    <i class="fa-lg fa fa-file-excel-o"></i>
+                </button>
+                <button type="button" class="btn btn-success" ng-csv="processData(table.promiseData)" title="All Data"
+                        csv-header="getHeaders(table.promiseData)"
+                        filename="{{getFileName()}}">
+                    <i class="fa fa-lg fa-file-excel-o"></i>
+                </button>
+            </div>
+            <div class="col-xs-3">
+                <label>Search:</label>
+                <input st-search ng-model="searchInput" class="input-sm form-control" type="search" />
+
+            </div>
+        </div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th ng-repeat="col in table.columns" ng-class="!col.disableSorting ? 'sortable':''"
+                        st-sort-default="isDefaultSortColumn(col, table)" st-descending-first="{{isDescending(col, table)}}" ng-bind="col.title"
+                        st-sort="{{col.property}}"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in displayedCollection">
+                    <td ng-repeat="col in table.columns" ng-class="col.cssClass">
+                        <div ng-include="col.dataTemplate" ng-if="col.dataTemplate"></div>
+                        <div ng-if="col.dataFunction" ng-bind="col.dataFunction(getValue(col.property, item), item)"></div>
+                        <div ng-if="!col.dataTemplate && !col.dataFunction" ng-bind="getValue(col.property, item)"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="pull-right col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-6 col-md-6 col-lg-offset-7 col-lg-5" st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="5"></div>
+        </div>
+    </div>
+</div>
