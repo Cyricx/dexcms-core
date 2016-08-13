@@ -7,18 +7,11 @@
   "bugs": "https://github.com/Cyricx/dexcms-core/issues",
   "license": "MIT",
   "dependencies": {
-    "bootstrap-sass": "3.3.4",
-    "compass-mixins": "^0.12.7",
+  },
+  "devDependencies": {
     "grunt": "1.0.1",
     "grunt-cli": "1.2.0",
     "grunt-contrib-copy": "1.0.0",
-    "grunt-contrib-clean": "1.0.0",
-    "grunt-contrib-symlink": "1.0.0",
-    "grunt-contrib-uglify": "0.10.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-json-generator": "0.1.0",
-    "grunt-text-replace": "0.4.0",
-    "grunt-sass": "^1.0.0",
-    "node-sass": "3.4.2"
+    "grunt-contrib-clean": "1.0.0"
   }
 }
