@@ -152,10 +152,6 @@ footer {
     }
 }
 
-.dataTable tbody tr td:last-child {
-    white-space: nowrap;
-}
-
 form textarea {
     min-height: 200px;
 }
@@ -420,10 +416,6 @@ ul[dnd-list], ul[dnd-list] > li {
             }
         }
     }
-}
-
-.dataTable img {
-    max-width: 150px;
 }
 
 .pagination > .disabled > span, 

@@ -1,3 +1,4 @@
 ﻿define([
-    './dateCleaner'
+    './dateCleaner',
+    './cacheBuster'
 ]);

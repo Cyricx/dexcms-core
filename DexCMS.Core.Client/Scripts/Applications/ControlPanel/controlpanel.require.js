@@ -8,15 +8,11 @@ require.config({
         'dexcms-globals-shared': '../../globals/shared/index',
         'dexcms-routes-builder': '../../globals/shared/infrastructure/routesBuilder',
         'angular': libs + 'angular/angular.min',
-        'angular-datatables': libs + 'angular-datatables/angular-datatables.min',
-        'angular-datatables-bootstrap': libs + 'angular-datatables/angular-datatables.bootstrap.min',
         'angular-drag-and-drop-lists': libs + 'angular-drag-and-drop-lists/angular-drag-and-drop-lists.min',
         'angular-sanitize': libs + 'angular-sanitize/angular-sanitize.min',
         'angular-smart-table': libs + 'angular-smart-table/smart-table.min',
         'angular-ui-router': libs + 'angular-ui-router/angular-ui-router.min',
         'angular-resource': libs + 'angular-resource/angular-resource.min',
-        'datatables': libs + 'datatables/jquery.dataTables.min',
-        'datatables-responsive': libs + 'datatables-responsive/dataTables.responsive',
         'jquery': libs + 'jquery/jquery.min',
         'json': libs + 'requirejs-plugins/json',
         'bootstrap': libs + 'bootstrap/bootstrap.min',
@@ -40,12 +36,6 @@ require.config({
             exports: 'angular',
             deps: ['jquery']
         },
-        'angular-datatables': {
-            deps: ['angular', 'datatables', 'jquery']
-        },
-        'angular-datatables-bootstrap': {
-            deps: ['angular','angular-datatables', 'datatables-responsive','datatables', 'bootstrap', 'jquery']
-        },
         'angular-drag-and-drop-lists': {
             deps: ['angular']
         },
@@ -66,12 +56,6 @@ require.config({
         },
         'bootstrap': {
             deps: ['jquery']
-        },
-        'datatables': {
-            deps: ['jquery']
-        },
-        'datatables-responsive': {
-            deps: ['datatables', 'jquery']
         },
         'jquery': {
             exports: '$'
@@ -95,7 +79,7 @@ require.config({
             deps: ['angular']
         },
         'ui-bootstrap': {
-            deps: ['jquery','bootstrap', 'angular']
+            deps: ['jquery', 'bootstrap', 'angular']
         },
         'ui-bootstrap-tpls': {
             deps: ['angular', 'ui-bootstrap']

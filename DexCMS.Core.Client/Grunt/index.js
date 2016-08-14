@@ -33,11 +33,18 @@ var gruntAppBuilder = function (grunt, options) {
     return defaultGrunt;
 };
 
-module.exports = {
-    website: {
-        options: gruntWebSiteBuilder,
-        loadTasks: website.loadTasks,
-        registerTasks: website.registerTasks
-    },
-    application: gruntAppBuilder
+module.exports = function (options) {
+    var gruntBuilder = this;
+    gruntBuilder.options = options;
+    
+    return {
+        website: {
+            builder: function (grunt) {
+                return gruntWebSiteBuilder(grunt, options)
+            },
+            loadTasks: website.loadTasks,
+            registerTasks: website.registerTasks
+        },
+        application: gruntAppBuilder
+    };
 };

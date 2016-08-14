@@ -14,8 +14,7 @@
     }
 
     var jsonGenerator = {};
-
-
+    
     for (var i = 0; i < jsonItems.length; i++) {
         var existingItem = jsonGenerator[jsonItems[i].name];
         if (!existingItem) {
