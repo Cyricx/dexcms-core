@@ -83,6 +83,7 @@
     <Compile Include="Scripts\Globals\Shared\Filters\pageSplice.js" />
     <Compile Include="Scripts\Globals\Shared\index.js" />
     <Compile Include="Scripts\Globals\Shared\Infrastructure\routesBuilder.js" />
+    <Compile Include="Scripts\Globals\Shared\Services\cacheBuster.js" />
     <Compile Include="Scripts\Globals\Shared\Services\dateCleaner.js" />
     <Compile Include="Scripts\Globals\Shared\Services\index.js" />
     <Compile Include="Scripts\Globals\Shared\shared.js" />
