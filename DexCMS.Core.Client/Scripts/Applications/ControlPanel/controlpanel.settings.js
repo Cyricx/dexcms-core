@@ -13,7 +13,7 @@
         settings.baseUrl = settings.localUrl;
     }
 
-    settings.startingRoute = settings.startingRoute || '../scripts/dexcmsapps/applications/controlpanel/';0
+    settings.startingRoute = settings.startingRoute || '../scripts/dexcmsapps/applications/controlpanel/';
 
     return settings;
 });

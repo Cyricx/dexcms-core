@@ -1,13 +1,13 @@
 ﻿var website = {
-        copyGrunt: require('./website/copy'),
-        jsonGrunt: require('./website/jsonGenerator'),
-        cleanGrunt: require('./website/clean'),
-        replaceGrunt: require('./website/replace'),
-        sassGrunt: require('./website/sass'),
-        watchGrunt: require('./website/watch'),
-        loadTasks: require('./website/loadTasks'),
-        registerTasks: require('./website/registerTasks')
-    };
+    copyGrunt: require('./website/copy'),
+    jsonGrunt: require('./website/jsonGenerator'),
+    cleanGrunt: require('./website/clean'),
+    replaceGrunt: require('./website/replace'),
+    sassGrunt: require('./website/sass'),
+    watchGrunt: require('./website/watch'),
+    loadTasks: require('./website/loadTasks'),
+    registerTasks: require('./website/registerTasks')
+};
 
 var gruntWebSiteBuilder = function (grunt, options) {
     var gruntOptions = {
@@ -19,7 +19,7 @@ var gruntWebSiteBuilder = function (grunt, options) {
         sass: website.sassGrunt(grunt, options),
         watch: website.watchGrunt(grunt, options)
     };
-
+    
     return gruntOptions;
 };
 
@@ -29,22 +29,25 @@ var gruntAppBuilder = function (grunt, options) {
         json_generator: jsonGrunt(grunt, options),
 
     };
-
+    
     return defaultGrunt;
 };
 
-module.exports = function (options) {
-    var gruntBuilder = this;
-    gruntBuilder.options = options;
-    
+module.exports = (function () {
     return {
-        website: {
-            builder: function (grunt) {
-                return gruntWebSiteBuilder(grunt, options)
-            },
-            loadTasks: website.loadTasks,
-            registerTasks: website.registerTasks
+        website: function (grunt, options) {
+            return {
+                builder: function () {
+                    return gruntWebSiteBuilder(grunt, options)
+                },
+                loadTasks: function () {
+                    return website.loadTasks(grunt, options)
+                },
+                registerTasks: function () {
+                    return website.registerTasks(grunt, options)
+                }
+            }
         },
         application: gruntAppBuilder
     };
-};
+})();
