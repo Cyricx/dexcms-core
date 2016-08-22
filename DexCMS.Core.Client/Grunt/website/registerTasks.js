@@ -11,7 +11,7 @@
         grunt.task.run('json_generator');
     });
     grunt.registerTask('defaultViews', ['clean:defaultViews', 'copy:defaultViews']);
-    grunt.registerTask('build', ['vendorFiles', 'dexCMSApplications', 'defaultViews']);
+    grunt.registerTask('build', ['vendorFiles', 'dexCMSApplications', 'defaultViews', 'sass']);
     grunt.registerTask('default', ['build']);
 };
 
