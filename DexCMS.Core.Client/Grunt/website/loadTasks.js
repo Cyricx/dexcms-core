@@ -6,6 +6,7 @@
     grunt.loadNpmTasks('grunt-json-generator');
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-contrib-symlink');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 };
 
 module.exports = loadTasks;
