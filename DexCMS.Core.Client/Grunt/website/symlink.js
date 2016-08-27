@@ -8,9 +8,9 @@
     if (options.symlinks) {
         for (var i = 0; i < options.symlinks.length; i++) {
             var link = options.symlinks[i];
-            symlink[link.module] = {
-                src: link.src,
-                dest: options.nodelibs + '/dexcms-' + link.module + '/'
+            symlink[link.module + 'Scripts'] = {
+                src: link.src + 'dexcms.' + link.module + '.client/scripts/',
+                dest: options.nodelibs + '/dexcms-' + link.module + '/dexcms.' + link.module + '.client/scripts/'
             };
         }
     }
