@@ -1,7 +1,8 @@
 ﻿var symlinkGrunt = function (grunt, options) {
     var symlink = {
         options: {
-            overwrite: true
+            overwrite: true,
+            force: true
         }
     };
     
