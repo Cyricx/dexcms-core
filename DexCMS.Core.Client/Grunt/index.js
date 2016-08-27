@@ -7,6 +7,7 @@
     watchGrunt: require('./website/watch'),
     loadTasks: require('./website/loadTasks'),
     registerTasks: require('./website/registerTasks'),
+    symlinkGrunt: require('./website/symlink'),
     uglifyGrunt: require('./website/uglify')
 };
 
@@ -18,6 +19,7 @@ var gruntWebSiteBuilder = function (grunt, options) {
         clean: website.cleanGrunt(grunt, options),
         replace: website.replaceGrunt(grunt, options),
         sass: website.sassGrunt(grunt, options),
+        symlink: website.symlinkGrunt(grunt,options),
         uglify: website.uglifyGrunt(grunt, options),
         watch: website.watchGrunt(grunt, options)
     };
