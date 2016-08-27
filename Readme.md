@@ -20,6 +20,7 @@ aggregation of shared code across several small websites. Soon it will be awesom
 * Client
 	* Added sass to the build task
 	* Added cachebusting for any files specified options.cacheBustFiles which uses the options.versionSuffix
+	* Added implementation for grunt uglify to process the dex cms applications files
 
 ## 0.2.0-alpha
 * Many improvements and bug fixes (yay alpha versions!)
