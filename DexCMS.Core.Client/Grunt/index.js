@@ -11,6 +11,8 @@
     uglifyGrunt: require('./website/uglify')
 };
 
+
+
 var gruntWebSiteBuilder = function (grunt, options) {
     var gruntOptions = {
         copy: website.copyGrunt(grunt, options),
@@ -37,9 +39,29 @@ var gruntAppBuilder = function (grunt, options) {
     return defaultGrunt;
 };
 
+var _addDefault = function (object, property, value) {
+    object[property] = object[property] || value;
+    return object;
+};
+
+var loadDefaultWebOptions = function (options) {
+    options = options || {};
+
+    options = _addDefault(options, 'applicationsPath', 'Scripts/DexCMSApps');
+    options = _addDefault(options, 'bower', 'bower_components');
+    options = _addDefault(options, 'customJsonPath', 'customconfig/index');
+    options = _addDefault(options, 'customModulesPath', 'customclient/');
+    options = _addDefault(options, 'fonts', 'fonts');
+    options = _addDefault(options, 'libs', 'libs');
+    options = _addDefault(options, 'nodelibs', 'node_modules');
+
+    return options;
+};
+
 module.exports = (function () {
     return {
         website: function (grunt, options) {
+            options = loadDefaultWebOptions(options);
             return {
                 builder: function () {
                     return gruntWebSiteBuilder(grunt, options)
