@@ -17,7 +17,9 @@ aggregation of shared code across several small websites. Soon it will be awesom
     * This includes the compiled dll into a /dist/ folder that consuming applications can use if I cut a new version off of your pull request.
 
 ##
-* Added sass to the build task
+* Client
+	* Added sass to the build task
+	* Added cachebusting for any files specified options.cacheBustFiles which uses the options.versionSuffix
 
 ## 0.2.0-alpha
 * Many improvements and bug fixes (yay alpha versions!)
