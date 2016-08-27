@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Grunt\index.js" />
+    <Compile Include="Grunt\website\uglify.js" />
     <Compile Include="Grunt\website\clean.js" />
     <Compile Include="Grunt\website\copy.js" />
     <Compile Include="Grunt\website\jsonGenerator.js" />
