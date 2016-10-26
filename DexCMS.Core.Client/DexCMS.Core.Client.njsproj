@@ -150,6 +150,8 @@
     <Folder Include="Scripts\Applications\ControlPanel\Globals\Directives\" />
     <Folder Include="Scripts\Applications\ControlPanel\Globals\Filters\" />
     <Folder Include="Scripts\Applications\ControlPanel\Modules\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Modules\Core\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\" />
     <Folder Include="Scripts\Applications\Secure\" />
     <Folder Include="Scripts\Applications\Secure\Globals\" />
     <Folder Include="Scripts\Applications\Secure\Modules\" />

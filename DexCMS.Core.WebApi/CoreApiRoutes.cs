@@ -59,6 +59,18 @@ namespace DexCMS.Core.WebApi
             );
 
             httpConfig.Routes.MapHttpRoute(
+                name: "RoleApi",
+                routeTemplate: baseApi + "/roles/{id}",
+                defaults: new { controller = "roles", id = RouteParameter.Optional }
+            );
+
+            httpConfig.Routes.MapHttpRoute(
+                name: "UserApi",
+                routeTemplate: baseApi + "/users/{id}",
+                defaults: new { controller = "users", id = RouteParameter.Optional }
+            );
+
+            httpConfig.Routes.MapHttpRoute(
                 name: "DefaultApiGetAll",
                 routeTemplate: baseApi + "/{controller}"
             );

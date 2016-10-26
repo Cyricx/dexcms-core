@@ -113,6 +113,8 @@
     <Compile Include="Globals\Initializers\StateInitializer.cs" />
     <Compile Include="Interfaces\ICountryRepository.cs" />
     <Compile Include="Interfaces\IImageRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\IRoleRepository.cs" />
     <Compile Include="Interfaces\ISettingDataTypeRepository.cs" />
     <Compile Include="Interfaces\ISettingGroupRepository.cs" />
     <Compile Include="Interfaces\ISettingRepository.cs" />
@@ -142,6 +144,8 @@
     <Compile Include="Repositories\SettingGroupRepository.cs" />
     <Compile Include="Repositories\SettingRepository.cs" />
     <Compile Include="Repositories\StateRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="SiteSettings.cs" />
   </ItemGroup>
   <ItemGroup>
