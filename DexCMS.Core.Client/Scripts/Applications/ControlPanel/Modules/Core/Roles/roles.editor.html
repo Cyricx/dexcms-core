@@ -1,0 +1,15 @@
+﻿<div class="col-xs-12">
+    <h2>{{title}}</h2>
+    <form name="manageRoles" novalidate angular-validator angular-validator-submit="save(currentItem)">
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" name="name" id="name" required
+                       validate-on="dirty"
+                       ng-model="currentItem.name" />
+            </div>
+            <button class="btn btn-primary" ng-disabled="manageRoles.$invalid" type="submit">Save</button>
+            <a class="btn btn-primary" ui-sref="roles">Cancel</a>
+        </div>
+    </form>
+</div>

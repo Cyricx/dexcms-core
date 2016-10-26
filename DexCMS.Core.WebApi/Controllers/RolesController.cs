@@ -87,7 +87,7 @@ namespace DexCMS.Core.WebApi.Controllers
             var result = await repository.AddAsync(role);
             if (result.Succeeded)
             {
-                return CreatedAtRoute("DefaultApi", new { id = role.Id }, role);
+                return Ok(role);
             } else {
                 return BadRequest(ModelState);
             }

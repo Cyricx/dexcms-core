@@ -30,6 +30,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Configurations\controlpanel.core.routes.js" />
+    <Compile Include="Configurations\controlpanel.core.navigation.js" />
     <Compile Include="Grunt\index.js" />
     <Compile Include="Grunt\website\symlink.js" />
     <Compile Include="Grunt\website\uglify.js" />
@@ -56,6 +58,10 @@
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Filters\htmlTrusted.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Filters\index.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\index.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.editor.controller.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.list.controller.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.service.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\index.js" />
     <Compile Include="Scripts\Applications\Secure\Globals\index.js" />
     <Compile Include="Scripts\Applications\Secure\Modules\Tickets\CheckIns\checkins.list.controller.js" />
     <Compile Include="Scripts\Applications\Secure\Modules\Tickets\CheckIns\checkins.service.js" />
@@ -119,6 +125,9 @@
     <Content Include="Sass\_variables.scss" />
     <Content Include="Scripts\Applications\ControlPanel\Dashboard\dashboard.view.html" />
     <Content Include="Scripts\Applications\ControlPanel\Globals\Directives\_dexcmsHorizontalNav.html" />
+    <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.editor.html" />
+    <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.list.html" />
+    <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\_roles.list.buttons.html" />
     <Content Include="Scripts\Applications\Secure\Modules\Tickets\CheckIns\checkins.list.html" />
     <Content Include="Scripts\Applications\Secure\Modules\Tickets\CheckIns\checkins.modal.html" />
     <Content Include="Scripts\Applications\Secure\Modules\Tickets\Checkout\checkout.list.html" />
