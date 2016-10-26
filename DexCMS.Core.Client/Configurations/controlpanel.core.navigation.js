@@ -10,6 +10,10 @@
                     {
                         title: "Roles",
                         href: overrides.roles || "roles"
+                    },
+                    {
+                        title: "Users",
+                        href: overrides.users ||"users"
                     }
                 ]
             }

@@ -58,6 +58,10 @@
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Filters\htmlTrusted.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\Filters\index.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Globals\index.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Users\index.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Users\users.editor.controller.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Users\users.list.controller.js" />
+    <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Users\users.service.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.editor.controller.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.list.controller.js" />
     <Compile Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.service.js" />
@@ -125,6 +129,9 @@
     <Content Include="Sass\_variables.scss" />
     <Content Include="Scripts\Applications\ControlPanel\Dashboard\dashboard.view.html" />
     <Content Include="Scripts\Applications\ControlPanel\Globals\Directives\_dexcmsHorizontalNav.html" />
+    <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Users\users.editor.html" />
+    <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Users\users.list.html" />
+    <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Users\_users.list.buttons.html" />
     <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.editor.html" />
     <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\roles.list.html" />
     <Content Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\_roles.list.buttons.html" />
@@ -160,6 +167,7 @@
     <Folder Include="Scripts\Applications\ControlPanel\Globals\Filters\" />
     <Folder Include="Scripts\Applications\ControlPanel\Modules\" />
     <Folder Include="Scripts\Applications\ControlPanel\Modules\Core\" />
+    <Folder Include="Scripts\Applications\ControlPanel\Modules\Core\Users\" />
     <Folder Include="Scripts\Applications\ControlPanel\Modules\Core\Roles\" />
     <Folder Include="Scripts\Applications\Secure\" />
     <Folder Include="Scripts\Applications\Secure\Globals\" />

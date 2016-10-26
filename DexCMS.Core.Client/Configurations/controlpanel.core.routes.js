@@ -7,6 +7,10 @@
                 "name": "roles",
                 "module": "core"
             },
+            {
+                name: "users",
+                module: "core"
+            }
         ]
     };
 };
