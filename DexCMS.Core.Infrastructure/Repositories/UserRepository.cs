@@ -79,7 +79,7 @@ namespace DexCMS.Core.Infrastructure.Repositories
         
         public async Task<IdentityResult> UpdateRolesAsync(ApplicationUser user, string[] newRoleIds)
         {
-            var userRoles = user.Roles.Select(x => x.RoleId).ToArray();
+            var userRoles = await UserManager.GetRolesAsync(user.Id);
             string[] rolesToAdd = newRoleIds.Except(userRoles).ToArray<string>();
             string[] rolesToRemove = userRoles.Except(newRoleIds).ToArray<string>();
 
