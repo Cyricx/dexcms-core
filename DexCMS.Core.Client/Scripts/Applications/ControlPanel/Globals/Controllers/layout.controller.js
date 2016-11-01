@@ -1,6 +1,10 @@
 ﻿define([
-    'json!../../config/dexcms.controlpanel.navigation.json'
-], function (navigationItems) {
+    'json!../../config/dexcms.controlpanel.navigation.json',
+    'underscore'
+], function (navigationItems, _) {
+    
+    navigationItems = _.sortBy(navigationItems, 'title');
+
     return function (app) {
         app.controller('layoutCtrl', [
             '$scope',
