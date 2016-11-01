@@ -23,6 +23,9 @@ aggregation of shared code across several small websites. Soon it will be awesom
 	* Added implementation for grunt uglify to process the dex cms applications files
 	* Added symlink options
 
+## 0.3.0-alpha
+* Added user management components
+
 ## 0.2.0-alpha
 * Many improvements and bug fixes (yay alpha versions!)
 
