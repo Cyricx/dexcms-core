@@ -1,5 +1,5 @@
 ﻿define([
-    'controlpanel-app'
+    'controlpanel-app',
 ], function (app) {
     app.controller('usersListCtrl', [
         '$scope',

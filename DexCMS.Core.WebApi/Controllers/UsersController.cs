@@ -92,7 +92,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return Ok(model);
         }
 
-        public async Task<IHttpActionResult> PutUser(string id, ApplicationUser user)
+        public async Task<IHttpActionResult> PutUser(string id, UserApiModel user)
         {
             if (!ModelState.IsValid)
             {
@@ -104,17 +104,59 @@ namespace DexCMS.Core.WebApi.Controllers
                 return BadRequest();
             }
 
-            var result = await repository.UpdateAsync(user, user.Id);
-            if (result.Succeeded)
-            {
-                var roleResult = await repository.UpdateRolesAsync(user.Id, user.Roles.Select(x => x.RoleId).ToArray());
+            //var userData = await repository.RetrieveAsync(user.Id);
+            var userData = await repository.UserManager.FindByIdAsync(user.Id);
 
-                return StatusCode(HttpStatusCode.NoContent);
-            }
-            else
+            if (userData == null)
             {
                 return BadRequest();
             }
+
+            userData.FirstName = user.FirstName;
+            userData.LastName = user.LastName;
+            userData.PreferredName = user.PreferredName;
+            userData.Email = user.Email;
+            userData.EmailConfirmed = user.EmailConfirmed;
+            userData.PhoneNumber = user.PhoneNumber;
+
+            //var result = await repository.UpdateAsync(userData, userData.Id);
+
+            //if (result.Succeeded)
+            //{
+            //    //var roleResult = await repository.UpdateRolesAsync(userData.Id, user.Roles.Select(x => x.Id).ToArray());
+            //    var roleResult = await repository.UpdateRolesAsync(userData, user.Roles.Select(x => x.Id).ToArray());
+            //    if (roleResult.Succeeded)
+            //    {
+            //        return StatusCode(HttpStatusCode.NoContent);
+            //    }
+            //    else
+            //    {
+            //        return BadRequest();
+            //    }
+            //}
+            //else
+            //{
+            //    return BadRequest();
+            //}
+            string[] selectedRoles = user.Roles.Select(x => x.Id).ToArray<string>();
+
+            var userRoles = await repository.UserManager.GetRolesAsync(userData.Id);
+
+            var result = await repository.UserManager.AddToRolesAsync(userData.Id, selectedRoles.Except(userRoles).ToArray<string>());
+
+            if (!result.Succeeded)
+            {
+
+                return BadRequest();
+            }
+            result = await repository.UserManager.RemoveFromRolesAsync(user.Id, userRoles.Except(selectedRoles).ToArray<string>());
+
+            if (!result.Succeeded)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
         }
 
         //[ResponseType(typeof(IdentityRole))]

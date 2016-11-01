@@ -76,5 +76,22 @@ namespace DexCMS.Core.Infrastructure.Repositories
 
             return result;
         }
+        
+        public async Task<IdentityResult> UpdateRolesAsync(ApplicationUser user, string[] newRoleIds)
+        {
+            var userRoles = user.Roles.Select(x => x.RoleId).ToArray();
+            string[] rolesToAdd = newRoleIds.Except(userRoles).ToArray<string>();
+            string[] rolesToRemove = userRoles.Except(newRoleIds).ToArray<string>();
+
+            var result = await UserManager.AddToRolesAsync(user.Id, rolesToAdd);
+
+            if (result.Succeeded)
+            {
+                result = await UserManager.RemoveFromRolesAsync(user.Id, rolesToRemove);
+            }
+
+            return result;
+
+        }
     }
 }

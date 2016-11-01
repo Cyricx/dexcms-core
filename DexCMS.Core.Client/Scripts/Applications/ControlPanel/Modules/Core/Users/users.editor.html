@@ -23,7 +23,7 @@
 
             <div class="form-group">
                 <label for="name">Preferred Name:</label>
-                <input class="form-control" name="preferredName" id="preferredName" 
+                <input class="form-control" name="preferredName" id="preferredName"
                        ng-model="currentItem.preferredName" />
             </div>
             <div class="form-group">
@@ -43,9 +43,16 @@
             <div class="form-group">
                 <label for="name">Phone Number:</label>
                 <input class="form-control" name="phoneNumber" id="phoneNumber"
-                       validate-on="dirty" 
+                       validate-on="dirty"
                        ng-model="currentItem.phoneNumber" />
             </div>
+            <div class="form-group">
+                <label>Roles:</label>
+                <div class="checkbox" ng-repeat="role in roles">
+                    <input type="checkbox" ng-checked="role.isSelected" ng-click="changeRole(currentItem, role)" /> {{role.name}}
+                </div>
+            </div>
+
             <button class="btn btn-primary" ng-disabled="manageUsers.$invalid" type="submit">Save</button>
             <a class="btn btn-primary" ui-sref="roles">Cancel</a>
         </div>
