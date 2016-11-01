@@ -104,8 +104,7 @@ namespace DexCMS.Core.WebApi.Controllers
                 return BadRequest();
             }
 
-            //var userData = await repository.RetrieveAsync(user.Id);
-            var userData = await repository.UserManager.FindByIdAsync(user.Id);
+            var userData = await repository.RetrieveAsync(user.Id);
 
             if (userData == null)
             {
@@ -119,44 +118,24 @@ namespace DexCMS.Core.WebApi.Controllers
             userData.EmailConfirmed = user.EmailConfirmed;
             userData.PhoneNumber = user.PhoneNumber;
 
-            //var result = await repository.UpdateAsync(userData, userData.Id);
+            var result = await repository.UpdateAsync(userData, userData.Id);
 
-            //if (result.Succeeded)
-            //{
-            //    //var roleResult = await repository.UpdateRolesAsync(userData.Id, user.Roles.Select(x => x.Id).ToArray());
-            //    var roleResult = await repository.UpdateRolesAsync(userData, user.Roles.Select(x => x.Id).ToArray());
-            //    if (roleResult.Succeeded)
-            //    {
-            //        return StatusCode(HttpStatusCode.NoContent);
-            //    }
-            //    else
-            //    {
-            //        return BadRequest();
-            //    }
-            //}
-            //else
-            //{
-            //    return BadRequest();
-            //}
-            string[] selectedRoles = user.Roles.Select(x => x.Name).ToArray<string>();
-
-            var userRoles = await repository.UserManager.GetRolesAsync(userData.Id);
-
-            var result = await repository.UserManager.AddToRolesAsync(userData.Id, selectedRoles.Except(userRoles).ToArray<string>());
-
-            if (!result.Succeeded)
+            if (result.Succeeded)
             {
-
-                return BadRequest();
+                var roleResult = await repository.UpdateRolesAsync(userData, user.Roles.Select(x => x.Name).ToArray());
+                if (roleResult.Succeeded)
+                {
+                    return StatusCode(HttpStatusCode.NoContent);
+                }
+                else
+                {
+                    return BadRequest();
+                }
             }
-            result = await repository.UserManager.RemoveFromRolesAsync(user.Id, userRoles.Except(selectedRoles).ToArray<string>());
-
-            if (!result.Succeeded)
+            else
             {
                 return BadRequest();
             }
-
-            return Ok();
         }
 
     }
