@@ -159,42 +159,5 @@ namespace DexCMS.Core.WebApi.Controllers
             return Ok();
         }
 
-        //[ResponseType(typeof(IdentityRole))]
-        //public async Task<IHttpActionResult> PostRole(IdentityRole role)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var result = await roleRepository.AddAsync(role);
-        //    if (result.Succeeded)
-        //    {
-        //        return CreatedAtRoute("DefaultApi", new { id = role.Id }, role);
-        //    } else {
-        //        return BadRequest(ModelState);
-        //    }
-        //}
-
-        //[ResponseType(typeof(IdentityRole))]
-        //public async Task<IHttpActionResult> DeleteRole(string id)
-        //{
-        //    IdentityRole role = await roleRepository.RetrieveAsync(id);
-        //    if (role == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var result = await roleRepository.DeleteAsync(role);
-
-        //    if (result.Succeeded)
-        //    {
-        //        return Ok(role);
-        //    }
-        //    else
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //}
     }
 }
