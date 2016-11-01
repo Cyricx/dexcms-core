@@ -138,7 +138,7 @@ namespace DexCMS.Core.WebApi.Controllers
             //{
             //    return BadRequest();
             //}
-            string[] selectedRoles = user.Roles.Select(x => x.Id).ToArray<string>();
+            string[] selectedRoles = user.Roles.Select(x => x.Name).ToArray<string>();
 
             var userRoles = await repository.UserManager.GetRolesAsync(userData.Id);
 
