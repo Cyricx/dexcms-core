@@ -106,6 +106,7 @@
     <Compile Include="Globals\CoreInitializer.cs" />
     <Compile Include="Globals\CoreRegister.cs" />
     <Compile Include="Globals\DexCMSIdentityConfig.cs" />
+    <Compile Include="Globals\DexCMSInitializer.cs" />
     <Compile Include="Globals\Initializers\CountryInitializer.cs" />
     <Compile Include="Globals\Initializers\SettingDataTypeInitializer.cs" />
     <Compile Include="Globals\Initializers\SettingGroupInitializer.cs" />

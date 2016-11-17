@@ -1,20 +1,22 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
 using DexCMS.Core.Infrastructure.Models;
-using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 
 namespace DexCMS.Core.Infrastructure.Globals.Initializers
 {
-    class SettingGroupInitializer
+    class SettingGroupInitializer : DexCMSInitializer<IDexCMSCoreContext>
     {
-        public static void Run(IDexCMSCoreContext context)
+        public SettingGroupInitializer(IDexCMSCoreContext context) : base(context)
         {
-            var settingGroups = new List<SettingGroup>
-            {
+        }
+
+        public override void Run()
+        {
+            Context.SettingGroups.AddOrUpdate(x => x.SettingGroupName,
                 new SettingGroup { SettingGroupName = "Main" },
                 new SettingGroup { SettingGroupName = "Images" }
-            };
-            settingGroups.ForEach(x => context.SettingGroups.Add(x));
-            context.SaveChanges();
+            );
+            Context.SaveChanges();
         }
     }
 }

@@ -1,19 +1,21 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
 using DexCMS.Core.Infrastructure.Models;
-using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 
 namespace DexCMS.Core.Infrastructure.Globals.Initializers
 {
-    class CountryInitializer
+    class CountryInitializer: DexCMSInitializer<IDexCMSCoreContext>
     {
-        public static void Run(IDexCMSCoreContext context)
+        public CountryInitializer(IDexCMSCoreContext context) : base(context)
         {
-            var countries = new List<Country>
-            {
-                new Country { Name = "United States"}
-            };
-            countries.ForEach(x => context.Countries.Add(x));
-            context.SaveChanges();
+        }
+
+        public override void Run()
+        {
+            Context.Countries.AddOrUpdate(x => x.Name,
+                new Country { Name = "United States" }
+            );
+            Context.SaveChanges();
         }
     }
 }

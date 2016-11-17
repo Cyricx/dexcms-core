@@ -1,18 +1,21 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
 using DexCMS.Core.Infrastructure.Models;
-using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace DexCMS.Core.Infrastructure.Globals.Initializers
 {
-    class StateInitializer
+    class StateInitializer : DexCMSInitializer<IDexCMSCoreContext>
     {
-        public static void Run(IDexCMSCoreContext context)
+        public StateInitializer(IDexCMSCoreContext context) : base(context)
         {
-            int usa = context.Countries.Where(x => x.Name == "United States").Select(x => x.CountryID).Single();
+        }
 
-            var states = new List<State>
-            {
+        public override void Run()
+        {
+            int usa = Context.Countries.Where(x => x.Name == "United States").Select(x => x.CountryID).Single();
+
+            Context.States.AddOrUpdate(x => x.Name,
                 new State { CountryID = usa, Abbreviation = "IA", Name = "Iowa"},
                 new State { CountryID = usa, Abbreviation = "OH", Name = "Ohio"},
                 new State { CountryID = usa, Abbreviation = "UT", Name = "Utah"},
@@ -63,10 +66,9 @@ namespace DexCMS.Core.Infrastructure.Globals.Initializers
                 new State { CountryID = usa, Abbreviation = "NH", Name = "New Hampshire"},
                 new State { CountryID = usa, Abbreviation = "NC", Name = "North Carolina"},
                 new State { CountryID = usa, Abbreviation = "SC", Name = "South Carolina"},
-                new State { CountryID = usa, Abbreviation = "DC", Name = "District of Columbia"},
-            };
-            states.ForEach(x => context.States.Add(x));
-            context.SaveChanges();
+                new State { CountryID = usa, Abbreviation = "DC", Name = "District of Columbia"}
+            );
+            Context.SaveChanges();
         }
     }
 }

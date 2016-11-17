@@ -1,29 +1,32 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
 using DexCMS.Core.Infrastructure.Models;
-using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace DexCMS.Core.Infrastructure.Globals.Initializers
 {
-    class SettingInitializer
+    class SettingInitializer : DexCMSInitializer<IDexCMSCoreContext>
     {
-        public static void Run(IDexCMSCoreContext context)
+        public SettingInitializer(IDexCMSCoreContext context) : base(context)
         {
-            int Text = context.SettingDataTypes.Where(x => x.Name == "Text").Select(x => x.SettingDataTypeID).Single();
-            int Date = context.SettingDataTypes.Where(x => x.Name == "Date").Select(x => x.SettingDataTypeID).Single();
-            int Bool = context.SettingDataTypes.Where(x => x.Name == "Bool").Select(x => x.SettingDataTypeID).Single();
-            int Html = context.SettingDataTypes.Where(x => x.Name == "Html").Select(x => x.SettingDataTypeID).Single();
-            int Int = context.SettingDataTypes.Where(x => x.Name == "Int").Select(x => x.SettingDataTypeID).Single();
-            int Multiline = context.SettingDataTypes.Where(x => x.Name == "Multiline").Select(x => x.SettingDataTypeID).Single();
-            int FourDigitWhole = context.SettingDataTypes.Where(x => x.Name == "FourDigitWhole").Select(x => x.SettingDataTypeID).Single();
-            int Email = context.SettingDataTypes.Where(x => x.Name == "Email").Select(x => x.SettingDataTypeID).Single();
-            int Password = context.SettingDataTypes.Where(x => x.Name == "Password").Select(x => x.SettingDataTypeID).Single();
+        }
 
-            int Main = context.SettingGroups.Where(x => x.SettingGroupName == "Main").Select(x => x.SettingGroupID).Single();
-            int Images = context.SettingGroups.Where(x => x.SettingGroupName == "Images").Select(x => x.SettingGroupID).Single();
+        public override void Run()
+        {
+            int Text = Context.SettingDataTypes.Where(x => x.Name == "Text").Select(x => x.SettingDataTypeID).Single();
+            int Date = Context.SettingDataTypes.Where(x => x.Name == "Date").Select(x => x.SettingDataTypeID).Single();
+            int Bool = Context.SettingDataTypes.Where(x => x.Name == "Bool").Select(x => x.SettingDataTypeID).Single();
+            int Html = Context.SettingDataTypes.Where(x => x.Name == "Html").Select(x => x.SettingDataTypeID).Single();
+            int Int = Context.SettingDataTypes.Where(x => x.Name == "Int").Select(x => x.SettingDataTypeID).Single();
+            int Multiline = Context.SettingDataTypes.Where(x => x.Name == "Multiline").Select(x => x.SettingDataTypeID).Single();
+            int FourDigitWhole = Context.SettingDataTypes.Where(x => x.Name == "FourDigitWhole").Select(x => x.SettingDataTypeID).Single();
+            int Email = Context.SettingDataTypes.Where(x => x.Name == "Email").Select(x => x.SettingDataTypeID).Single();
+            int Password = Context.SettingDataTypes.Where(x => x.Name == "Password").Select(x => x.SettingDataTypeID).Single();
 
-            var settings = new List<Setting>
-            {
+            int Main = Context.SettingGroups.Where(x => x.SettingGroupName == "Main").Select(x => x.SettingGroupID).Single();
+            int Images = Context.SettingGroups.Where(x => x.SettingGroupName == "Images").Select(x => x.SettingGroupID).Single();
+
+            Context.Settings.AddOrUpdate(x => x.Name,
                 new Setting { Name = "SiteTitle", Value = "Your Website", SettingDataTypeID = Text, SettingGroupID = Main },
                 new Setting { Name = "TagLine", Value = "tag", SettingDataTypeID = Multiline, SettingGroupID = Main },
                 new Setting { Name = "SmtpServer", Value = "yoursite.com", SettingDataTypeID = Text, SettingGroupID = Main },
@@ -39,10 +42,9 @@ namespace DexCMS.Core.Infrastructure.Globals.Initializers
                 new Setting { Name = "SliderWidth", Value = "1600", SettingDataTypeID = Text, SettingGroupID = Images },
                 new Setting { Name = "OriginalHeight", Value = "1300", SettingDataTypeID = Text, SettingGroupID = Images },
                 new Setting { Name = "OriginalWidth", Value = "1600", SettingDataTypeID = Text, SettingGroupID = Images },
-                new Setting { Name = "ContactFromUseCredentials", Value = "False", SettingDataTypeID = Bool, SettingGroupID = Main },
-            };
-            settings.ForEach(x => context.Settings.Add(x));
-            context.SaveChanges();
+                new Setting { Name = "ContactFromUseCredentials", Value = "False", SettingDataTypeID = Bool, SettingGroupID = Main }
+            );
+            Context.SaveChanges();
         }
     }
 }

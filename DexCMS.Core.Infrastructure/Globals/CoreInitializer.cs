@@ -3,27 +3,19 @@ using DexCMS.Core.Infrastructure.Globals.Initializers;
 
 namespace DexCMS.Core.Infrastructure.Globals
 {
-    public static class CoreInitializer
+    public class CoreInitializer: DexCMSInitializer<IDexCMSCoreContext>
     {
-        public static void Initialize(IDexCMSCoreContext context)
+        public CoreInitializer(IDexCMSCoreContext context) : base(context)
         {
-
-            //! Setting Data Types
-            SettingDataTypeInitializer.Run(context);
-
-            //! Setting Groups
-            SettingGroupInitializer.Run(context);
-
-            //! Settings
-            SettingInitializer.Run(context);
-
-            //! Countries
-            CountryInitializer.Run(context);
-
-            //! States
-            StateInitializer.Run(context);
-
         }
 
+        public override void Run()
+        {
+            (new SettingDataTypeInitializer(Context)).Run();
+            (new SettingGroupInitializer(Context)).Run();
+            (new SettingInitializer(Context)).Run();
+            (new CountryInitializer(Context)).Run();
+            (new StateInitializer(Context)).Run();
+        }
     }
 }

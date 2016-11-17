@@ -1,15 +1,18 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
 using DexCMS.Core.Infrastructure.Models;
-using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 
 namespace DexCMS.Core.Infrastructure.Globals.Initializers
 {
-    class SettingDataTypeInitializer
+    class SettingDataTypeInitializer : DexCMSInitializer<IDexCMSCoreContext>
     {
-        public static void Run(IDexCMSCoreContext context)
+        public SettingDataTypeInitializer(IDexCMSCoreContext context) : base(context)
         {
-            var settingDataTypes = new List<SettingDataType>
-            {
+        }
+
+        public override void Run()
+        {
+            Context.SettingDataTypes.AddOrUpdate(x => x.Name,
                 new SettingDataType { Name = "Text" },
                 new SettingDataType { Name = "Date" },
                 new SettingDataType { Name = "Bool" },
@@ -18,10 +21,9 @@ namespace DexCMS.Core.Infrastructure.Globals.Initializers
                 new SettingDataType { Name = "Multiline" },
                 new SettingDataType { Name = "FourDigitWhole" },
                 new SettingDataType { Name = "Email" },
-                new SettingDataType { Name = "Password" },
-            };
-            settingDataTypes.ForEach(x => context.SettingDataTypes.Add(x));
-            context.SaveChanges();
+                new SettingDataType { Name = "Password" }
+            );
+            Context.SaveChanges();
         }
     }
 }
