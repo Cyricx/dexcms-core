@@ -1,9 +1,10 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
+using DexCMS.Core.Infrastructure.Globals;
 using DexCMS.Core.Infrastructure.Models;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
-namespace DexCMS.Core.Infrastructure.Globals.Initializers
+namespace DexCMS.Core.Infrastructure.Initializers
 {
     class StateInitializer : DexCMSInitializer<IDexCMSCoreContext>
     {

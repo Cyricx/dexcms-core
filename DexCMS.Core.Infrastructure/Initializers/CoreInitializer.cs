@@ -1,7 +1,7 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
-using DexCMS.Core.Infrastructure.Globals.Initializers;
+using DexCMS.Core.Infrastructure.Globals;
 
-namespace DexCMS.Core.Infrastructure.Globals
+namespace DexCMS.Core.Infrastructure.Initializers
 {
     public class CoreInitializer: DexCMSInitializer<IDexCMSCoreContext>
     {
