@@ -2,6 +2,7 @@
 using DexCMS.Core.Infrastructure.Models;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using DexCMS.Core.Infrastructure.Extensions;
 
 namespace DexCMS.Core.Infrastructure.Globals.Initializers
 {
@@ -26,7 +27,7 @@ namespace DexCMS.Core.Infrastructure.Globals.Initializers
             int Main = Context.SettingGroups.Where(x => x.SettingGroupName == "Main").Select(x => x.SettingGroupID).Single();
             int Images = Context.SettingGroups.Where(x => x.SettingGroupName == "Images").Select(x => x.SettingGroupID).Single();
 
-            Context.Settings.AddOrUpdate(x => x.Name,
+            Context.Settings.AddIfNotExists(x => x.Name,
                 new Setting { Name = "SiteTitle", Value = "Your Website", SettingDataTypeID = Text, SettingGroupID = Main },
                 new Setting { Name = "TagLine", Value = "tag", SettingDataTypeID = Multiline, SettingGroupID = Main },
                 new Setting { Name = "SmtpServer", Value = "yoursite.com", SettingDataTypeID = Text, SettingGroupID = Main },

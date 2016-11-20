@@ -97,10 +97,12 @@
     <Compile Include="Attributes\IsDateBeforeDateAttribute.cs" />
     <Compile Include="Attributes\IsIntGreaterThanIntAttribute.cs" />
     <Compile Include="Attributes\RequiredIfNullAttribute.cs" />
+    <Compile Include="Contexts\DexCMSContext.cs" />
     <Compile Include="Contexts\IDexCMSCoreContext.cs" />
     <Compile Include="Contexts\IDexCMSContext.cs" />
     <Compile Include="EmailProcessor.cs" />
     <Compile Include="Enums\LogType.cs" />
+    <Compile Include="Extensions\IDbSetExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TimeZoneExtensions.cs" />
     <Compile Include="Globals\CoreInitializer.cs" />
