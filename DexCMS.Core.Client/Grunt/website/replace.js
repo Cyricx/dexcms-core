@@ -10,14 +10,14 @@
                 }]
         }
     };
-    if (options.cacheBustFiles) {
+    if (options.cacheBustConfigs) {
         gruntReplace.cacheBust = {
-            src: options.cacheBustFiles,
+            src: options.cacheBustConfigs,
             overwrite: true,
             replacements: [
                 {
-                    from: /\?v=([0-9.]*)"/g,
-                    to: '?v=' + options.versionSuffix + '"'
+                    from: /\add key="Version" value="([0-9.]*)"/g,
+                    to: 'add key="Version" value="' + options.versionSuffix + '"'
                 }
             ]
         };
