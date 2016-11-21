@@ -69,7 +69,7 @@ var _viewsBuilder = function (options) {
                 expand: true,
                 cwd: options.nodelibs + '/' + mod + '/defaultscripts/',
                 src: ['**'],
-                dest: 'scripts/'
+                dest: 'scripts/DexCMS/'
             }
         ];
     };
