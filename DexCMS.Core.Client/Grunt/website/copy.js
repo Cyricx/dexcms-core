@@ -64,6 +64,12 @@ var _viewsBuilder = function (options) {
                 cwd: options.nodelibs + '/' + mod + '/defaultviews/areaviews/',
                 src: ['**'],
                 dest: 'views/dexcms-areas/'
+            },
+            {
+                expand: true,
+                cwd: options.nodelibs + '/' + mod + '/defaultscripts/',
+                src: ['**'],
+                dest: 'scripts/'
             }
         ];
     };
