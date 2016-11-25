@@ -164,6 +164,7 @@
     <None Include="App.config" />
     <None Include="DefaultScripts\Core\HighlightNav.min.js.map" />
     <None Include="DefaultViews\RootViews\Shared\Core\_LoginTop.cshtml" />
+    <None Include="DefaultViews\RootViews\Shared\Core\_NavigationLinks.cshtml" />
     <None Include="DefaultViews\RootViews\Shared\Core\_SocialLinks.cshtml" />
     <None Include="DefaultViews\RootViews\Shared\Core\_AnalyticsTracking.cshtml" />
     <None Include="packages.config" />
