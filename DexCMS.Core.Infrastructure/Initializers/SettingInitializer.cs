@@ -23,10 +23,10 @@ namespace DexCMS.Core.Infrastructure.Initializers
             int FourDigitWhole = Context.SettingDataTypes.Where(x => x.Name == "FourDigitWhole").Select(x => x.SettingDataTypeID).Single();
             int Email = Context.SettingDataTypes.Where(x => x.Name == "Email").Select(x => x.SettingDataTypeID).Single();
             int Password = Context.SettingDataTypes.Where(x => x.Name == "Password").Select(x => x.SettingDataTypeID).Single();
+            int Url = Context.SettingDataTypes.Where(x => x.Name == "Url").Select(x => x.SettingDataTypeID).Single();
 
             int Main = Context.SettingGroups.Where(x => x.SettingGroupName == "Main").Select(x => x.SettingGroupID).Single();
             int Images = Context.SettingGroups.Where(x => x.SettingGroupName == "Images").Select(x => x.SettingGroupID).Single();
-            int Url = Context.SettingGroups.Where(x => x.SettingGroupName == "Url").Select(x => x.SettingGroupID).Single();
 
             Context.Settings.AddIfNotExists(x => x.Name,
                 new Setting { Name = "SiteTitle", Value = "Your Website", SettingDataTypeID = Text, SettingGroupID = Main },
