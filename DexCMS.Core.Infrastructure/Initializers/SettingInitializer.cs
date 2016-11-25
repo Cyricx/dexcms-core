@@ -26,6 +26,7 @@ namespace DexCMS.Core.Infrastructure.Initializers
 
             int Main = Context.SettingGroups.Where(x => x.SettingGroupName == "Main").Select(x => x.SettingGroupID).Single();
             int Images = Context.SettingGroups.Where(x => x.SettingGroupName == "Images").Select(x => x.SettingGroupID).Single();
+            int Url = Context.SettingGroups.Where(x => x.SettingGroupName == "Url").Select(x => x.SettingGroupID).Single();
 
             Context.Settings.AddIfNotExists(x => x.Name,
                 new Setting { Name = "SiteTitle", Value = "Your Website", SettingDataTypeID = Text, SettingGroupID = Main },
@@ -43,7 +44,9 @@ namespace DexCMS.Core.Infrastructure.Initializers
                 new Setting { Name = "SliderWidth", Value = "1600", SettingDataTypeID = Text, SettingGroupID = Images },
                 new Setting { Name = "OriginalHeight", Value = "1300", SettingDataTypeID = Text, SettingGroupID = Images },
                 new Setting { Name = "OriginalWidth", Value = "1600", SettingDataTypeID = Text, SettingGroupID = Images },
-                new Setting { Name = "ContactFromUseCredentials", Value = "False", SettingDataTypeID = Bool, SettingGroupID = Main }
+                new Setting { Name = "ContactFromUseCredentials", Value = "False", SettingDataTypeID = Bool, SettingGroupID = Main },
+                new Setting { Name = "FacebookUrl", Value = "#", SettingDataTypeID = Url },
+                new Setting { Name = "TwitterUrl", Value = "#", SettingDataTypeID = Url }
             );
             Context.SaveChanges();
         }

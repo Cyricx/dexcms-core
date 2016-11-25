@@ -22,7 +22,8 @@ namespace DexCMS.Core.Infrastructure.Initializers
                 new SettingDataType { Name = "Multiline" },
                 new SettingDataType { Name = "FourDigitWhole" },
                 new SettingDataType { Name = "Email" },
-                new SettingDataType { Name = "Password" }
+                new SettingDataType { Name = "Password" },
+                new SettingDataType { Name = "Url" }
             );
             Context.SaveChanges();
         }

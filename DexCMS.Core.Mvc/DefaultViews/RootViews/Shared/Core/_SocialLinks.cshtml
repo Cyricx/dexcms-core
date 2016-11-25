@@ -1,0 +1,18 @@
+﻿@using DexCMS.Core.Infrastructure;
+
+<div class="social">
+    <ul>
+        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("FacebookUrl")))
+        {
+            <li>
+                <a href="@SiteSettings.Resolve.GetSetting("FacebookUrl")" target="_blank"> <span class="fa fa-facebook-official"></span></a>
+            </li>
+        }
+        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("TwitterUrl")))
+        {
+            <li>
+                <a href="@SiteSettings.Resolve.GetSetting("TwitterUrl")" target="_blank"> <span class="fa fa-twitter"></span></a>
+            </li>
+        }
+    </ul>
+</div>
