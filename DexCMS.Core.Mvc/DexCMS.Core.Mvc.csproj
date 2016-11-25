@@ -162,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DefaultScripts\Core\HighlightNav.min.js.map" />
     <None Include="DefaultViews\RootViews\Shared\_AnalyticsTracking.cshtml" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -173,6 +174,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DefaultViews\RootViews\Error\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DefaultScripts\Core\HighlightNav.js" />
+    <Content Include="DefaultScripts\Core\HighlightNav.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
