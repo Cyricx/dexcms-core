@@ -45,8 +45,8 @@ namespace DexCMS.Core.Infrastructure.Initializers
                 new Setting { Name = "OriginalHeight", Value = "1300", SettingDataTypeID = Text, SettingGroupID = Images },
                 new Setting { Name = "OriginalWidth", Value = "1600", SettingDataTypeID = Text, SettingGroupID = Images },
                 new Setting { Name = "ContactFromUseCredentials", Value = "False", SettingDataTypeID = Bool, SettingGroupID = Main },
-                new Setting { Name = "FacebookUrl", Value = "#", SettingDataTypeID = Url },
-                new Setting { Name = "TwitterUrl", Value = "#", SettingDataTypeID = Url }
+                new Setting { Name = "FacebookUrl", Value = "#", SettingDataTypeID = Url, SettingGroupID = Main },
+                new Setting { Name = "TwitterUrl", Value = "#", SettingDataTypeID = Url, SettingGroupID = Main }
             );
             Context.SaveChanges();
         }
