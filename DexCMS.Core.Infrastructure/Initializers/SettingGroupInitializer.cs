@@ -15,7 +15,8 @@ namespace DexCMS.Core.Infrastructure.Initializers
         {
             Context.SettingGroups.AddOrUpdate(x => x.SettingGroupName,
                 new SettingGroup { SettingGroupName = "Main" },
-                new SettingGroup { SettingGroupName = "Images" }
+                new SettingGroup { SettingGroupName = "Images" },
+                new SettingGroup { SettingGroupName = "Social" }
             );
             Context.SaveChanges();
         }

@@ -37,8 +37,17 @@ namespace DexCMS.Core.Infrastructure.Initializers
                 new Setting { Name = "OriginalHeight", Value = "1300", SettingDataTypeID = DataTypes.Text, SettingGroupID = Groups.Images },
                 new Setting { Name = "OriginalWidth", Value = "1600", SettingDataTypeID = DataTypes.Text, SettingGroupID = Groups.Images },
                 new Setting { Name = "ContactFromUseCredentials", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Main },
-                new Setting { Name = "FacebookUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Main },
-                new Setting { Name = "TwitterUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Main }
+                new Setting { Name = "CodepenUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "EtsyUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "FacebookUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "GithubUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "GooglePlusUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "InstagramUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "LinkedInUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "PinterestUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "StackOverflowUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "TwitterUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "YouTubeUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social }
             );
             Context.SaveChanges();
         }
@@ -75,12 +84,13 @@ namespace DexCMS.Core.Infrastructure.Initializers
     {
         public int Main { get; set; }
         public int Images { get; set; }
-
+        public int Social { get; set; }
 
         public Groups(IDexCMSCoreContext Context)
         {
             Main = Context.SettingGroups.Where(x => x.SettingGroupName == "Main").Select(x => x.SettingGroupID).Single();
             Images = Context.SettingGroups.Where(x => x.SettingGroupName == "Images").Select(x => x.SettingGroupID).Single();
+            Social = Context.SettingGroups.Where(x => x.SettingGroupName == "Social").Select(x => x.SettingGroupID).Single();
         }
     }
 
