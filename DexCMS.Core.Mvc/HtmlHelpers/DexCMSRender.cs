@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Configuration;
+using System.Web.Mvc;
 using System.Web.Optimization;
 
 namespace DexCMS.Core.Mvc.HtmlHelpers
@@ -22,6 +23,11 @@ namespace DexCMS.Core.Mvc.HtmlHelpers
         public static IHtmlString ScriptsWithVersion(params string[] paths)
         {
             return Scripts.Render(AddVersionToPaths(paths));
+        }
+
+        public static string ContentWithVersion(string contentPath)
+        {
+            return VirtualPathUtility.ToAbsolute(BuildWithVersion(contentPath));
         }
 
         private static string[] AddVersionToPaths(params string[] paths)
