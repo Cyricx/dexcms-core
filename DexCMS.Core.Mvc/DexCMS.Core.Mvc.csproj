@@ -162,7 +162,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="DefaultScripts\Core\HighlightNav.min.js.map" />
     <None Include="DefaultViews\RootViews\Shared\Core\_LoginTop.cshtml" />
     <None Include="DefaultViews\RootViews\Shared\Core\_NavigationLinks.cshtml" />
     <None Include="DefaultViews\RootViews\Shared\Core\_SocialLinks.cshtml" />
@@ -179,8 +178,8 @@
     <Folder Include="DefaultViews\RootViews\Error\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DefaultScripts\Core\SideMenu.js" />
     <Content Include="DefaultScripts\Core\HighlightNav.js" />
-    <Content Include="DefaultScripts\Core\HighlightNav.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
