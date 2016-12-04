@@ -1,0 +1,51 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_transition.scss" />
+@import "../_publicVariables";
+
+$anchorColor: $cTwo !default;
+$anchorHoverColor: $cThree !default;
+$htmlBackgroundColor: $cFour !default;
+$headerColor: $cThree !default;
+
+
+html, body {
+    height: 100%;
+}
+
+html {
+    background-color: $htmlBackgroundColor;
+}
+
+a {
+    color: $anchorColor;
+    @include transition-property(all);
+    @include transition-duration(.2s);
+
+    &:hover {
+        color: $anchorHoverColor;
+    }
+
+    :focus {
+        outline: 0;
+    }
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h1 {
+    font-family: $ffOne;
+}
+
+h2, h3, h4, h5 {
+    font-family: $ffTwo;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $headerColor;
+    font-weight: bold;
+}

@@ -1,0 +1,48 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_transition.scss" />
+@import "../_publicVariables";
+
+$sidemenuBackgroundColor: $cOne !default;
+$sidemenuFontColor: $cTwo !default;
+$sidemenuBorderColor: $cTwo !default;
+
+#sidemenu {
+    position: absolute;
+    z-index: 9999;
+    background-color: $sidemenuBackgroundColor;
+    border-style: solid;
+    overflow: hidden;
+    color: $sidemenuFontColor;
+    border-color: $sidemenuBorderColor;
+    display: none;
+    overflow: hidden;
+    width: 0;
+
+    @media screen and (max-width: $pbSecond) {
+        display: block;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    > ul > li {
+        padding: .5em .5em .5em 1.5em;
+        font-size: 1.4em;
+
+        border-bottom: {
+            style: solid;
+            width: 1px;
+        }
+
+        li {
+            padding: .5em;
+            font-size: .8em;
+        }
+    }
+
+    &.menu-show {
+        border-width: 0 2px 0 0;
+        padding: 1em;
+    }
+}

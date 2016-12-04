@@ -1,0 +1,59 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_box-sizing.scss" />
+@import "../_publicVariables";
+
+$topbarBackgroundColor: $cTwo !default;
+$topbarShadowColor: #000 !default;
+$topbarAnchorColor: $cOne !default;
+$topbarAnchorHoverColor: $cThree !default;
+
+#topbar {
+    position: relative;
+    background-color: $topbarBackgroundColor;
+    width: 100%;
+    text-align: right;
+    @include box-sizing(border-box);
+    padding: .25em 2em .25em .25em;
+
+    a {
+        color: $topbarAnchorColor;
+
+        &:hover {
+            color: $topbarAnchorHoverColor;
+        }
+    }
+
+    #nav-toggle {
+        float: left;
+        display: none;
+
+        @media screen and (max-width: $pbSecond) {
+            display: block;
+            font-size: 1.3em;
+            margin: 0 2%;
+
+            > a {
+                display: inline-block;
+                text-shadow: 0 0 2px $topbarShadowColor;
+            }
+        }
+    }
+
+    .social {
+        float: left;
+        font-size: 1em;
+
+        li {
+            display: inline-block;
+            padding: .2em .25em;
+        }
+    }
+
+    > form {
+        display: inline-block;
+    }
+
+    > a, > form > a {
+        font-size: .8em;
+        padding: 0 .2em;
+    }
+}
