@@ -1,0 +1,89 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_transition.scss" />
+@import "../_publicVariables";
+
+$headerFont: $ffTwo !default;
+$headerMenuBackgroundColor: $cOne !default;
+$headerMenuAnchorHoverColor: $cThree !default;
+
+.no-touch #top > ul > li:hover, .touch #top > ul > li.open {
+    > a {
+        color: $headerMenuAnchorHoverColor;
+    }
+
+    ul {
+        display: block;
+        z-index: 100;
+    }
+}
+
+#header {
+    margin: 1em;
+
+    > a {
+        text-decoration: none;
+        float: left;
+
+        h1 + span {
+            display: inline-block;
+            margin-left: 1em;
+            font-size: 1.5em;
+            font-family: $headerFont;
+        }
+    }
+
+    > nav {
+        float: right;
+        margin: .75em;
+        background-color: $headerMenuBackgroundColor;
+        border-radius: .5em;
+
+        @media screen and (max-width: $pbSecond) {
+            display: none;
+        }
+
+        > ul > li {
+            display: inline-block;
+            padding: .25em .5em;
+            position: relative;
+
+            &:last-child ul {
+                right: 1em;
+            }
+
+            ul {
+                margin: 0 auto;
+                position: absolute;
+                font-size: .8em;
+                top: 2.1em;
+                background-color: $headerMenuBackgroundColor;
+                border-radius: 0 0 .5em .5em;
+                display: none;
+                padding-top: 1em;
+
+                @media screen and (max-width: $pbFirst) {
+                    top: 1.75em;
+                }
+
+                li {
+                    white-space: nowrap;
+
+                    a {
+                        padding: .5em;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        a {
+            font-size: 1.3em;
+            text-decoration: none;
+
+            @media screen and (max-width: $pbFirst) {
+                font-size: 1em;
+            }
+        }
+    }
+
+    @extend %clearfix;
+}

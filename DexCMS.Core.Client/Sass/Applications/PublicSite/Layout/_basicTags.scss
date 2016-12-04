@@ -29,6 +29,10 @@ a {
     }
 }
 
+li.active > a {
+    color: $anchorHoverColor;
+}
+
 h1 {
     font-size: 2.5em;
 }
