@@ -6,6 +6,8 @@
     }, options);
 
     var $sidemenu = $(this);
+    var $trigger = $(settings.trigger);
+
     $sidemenu.find('.submenu > ul').hide();
     $sidemenu.find('.submenu > a').click(function (e) {
         e.preventDefault();
@@ -17,7 +19,7 @@
             $parent.addClass('open').children('ul').slideDown();
         }
     });
-    $(settings.trigger).click(function () {
+    $trigger.click(function () {
         if ($sidemenu.width() > 0) {
             $sidemenu.animate({ width: '0' },
                 500, function () { $(this).removeClass('menu-show'); });
@@ -26,6 +28,13 @@
             var docHeight = $(document).height();
             $sidemenu.addClass('menu-show').animate({ width: '75%' },
                 500, function () { }).css('min-height', docHeight + 'px');
+        }
+    });
+
+    $(window).resize(function () {
+        if ($sidemenu.width() > 0 && $(window).width() > 500) {
+            $sidemenu.removeClass('menu_show').css('width', '0');
+            $trigger.css('margin-left', '2%');
         }
     });
     return this;

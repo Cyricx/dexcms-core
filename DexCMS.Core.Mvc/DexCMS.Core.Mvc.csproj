@@ -178,8 +178,10 @@
     <Folder Include="DefaultViews\RootViews\Error\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DefaultScripts\Core\SideMenu.js" />
-    <Content Include="DefaultScripts\Core\HighlightNav.js" />
+    <Content Include="DefaultScripts\Core\HighlightNav\HighlightNav.min.js" />
+    <Content Include="DefaultScripts\Core\SideMenu\SideMenu.min.js" />
+    <Content Include="DefaultScripts\Core\SideMenu\SideMenu.js" />
+    <Content Include="DefaultScripts\Core\HighlightNav\HighlightNav.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
