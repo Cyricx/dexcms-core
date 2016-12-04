@@ -113,6 +113,7 @@
     <Content Include="Sass\Applications\ControlPanel\_layout.scss" />
     <Content Include="Sass\Applications\ControlPanel\_nav.scss" />
     <Content Include="Sass\Applications\ControlPanel\_sidebar.scss" />
+    <Content Include="Sass\Applications\PublicSite\Layout\_header.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_topbar.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_sidemenu.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_basicTags.scss" />

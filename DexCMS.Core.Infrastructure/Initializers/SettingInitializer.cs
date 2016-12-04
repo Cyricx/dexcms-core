@@ -21,8 +21,8 @@ namespace DexCMS.Core.Infrastructure.Initializers
         {
 
             Context.Settings.AddIfNotExists(x => x.Name,
-                new Setting { Name = "SiteTitle", Value = "Your Website", SettingDataTypeID = DataTypes.Text, SettingGroupID = Groups.Main },
-                new Setting { Name = "TagLine", Value = "tag", SettingDataTypeID = DataTypes.Multiline, SettingGroupID = Groups.Main },
+                new Setting { Name = "SiteTitle", Value = "Awesome Site", SettingDataTypeID = DataTypes.Text, SettingGroupID = Groups.Main },
+                new Setting { Name = "TagLine", Value = "The absolute bestest ever!", SettingDataTypeID = DataTypes.Multiline, SettingGroupID = Groups.Main },
                 new Setting { Name = "SmtpServer", Value = "yoursite.com", SettingDataTypeID = DataTypes.Text, SettingGroupID = Groups.Main },
                 new Setting { Name = "ContactFromEmail", Value = "no-reply@yoursite.cmo", SettingDataTypeID = DataTypes.Email, SettingGroupID = Groups.Main },
                 new Setting { Name = "ContactFromPassword", Value = "abc123", SettingDataTypeID = DataTypes.Password, SettingGroupID = Groups.Main },

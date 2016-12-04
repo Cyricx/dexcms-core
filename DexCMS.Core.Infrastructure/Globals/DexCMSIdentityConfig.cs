@@ -117,8 +117,8 @@ namespace DexCMS.Core.Infrastructure.Globals
         {
             var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "admin@example.com";
-            const string password = "Admin@123456";
+            const string name = "Installer";
+            const string password = "dexcms";
             const string roleName = "Admin";
 
             //Create Role Admin if it does not exist
