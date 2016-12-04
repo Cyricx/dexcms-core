@@ -33,7 +33,7 @@
 
     $(window).resize(function () {
         if ($sidemenu.width() > 0 && $(window).width() > 500) {
-            $sidemenu.removeClass('menu_show').css('width', '0');
+            $sidemenu.removeClass('menu-show').css('width', '0');
             $trigger.css('margin-left', '2%');
         }
     });
