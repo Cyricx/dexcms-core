@@ -2,67 +2,67 @@
 
 <div class="social">
     <ul>
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("CodepenUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("CodepenEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("CodepenUrl")" target="_blank"> <span class="fa fa-codepen"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("EtsyUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("EtsyEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("EtsyUrl")" target="_blank"> <span class="fa fa-etsy"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("FacebookUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("FacebookEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("FacebookUrl")" target="_blank"> <span class="fa fa-facebook"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("GithubUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("GithubEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("GithubUrl")" target="_blank"> <span class="fa fa-github"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("GooglePlusUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("GooglePlusEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("GooglePlusUrl")" target="_blank"> <span class="fa fa-google-plus"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("InstagramUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("InstagramEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("InstagramUrl")" target="_blank"> <span class="fa fa-instagram"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("LinkedInUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("LinkedInEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("LinkedInUrl")" target="_blank"> <span class="fa fa-linkedin"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("PinterestUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("PinterestEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("PinterestUrl")" target="_blank"> <span class="fa fa-pinterest"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("StackOverflowUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("StackOverflowEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("StackOverflowUrl")" target="_blank"> <span class="fa fa-stack-overflow"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("TwitterUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("TwitterEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("TwitterUrl")" target="_blank"> <span class="fa fa-twitter"></span></a>
             </li>
         }
-        @if (!String.IsNullOrEmpty(SiteSettings.Resolve.GetSetting("YouTubeUrl")))
+        @if (Convert.ToBoolean(SiteSettings.Resolve.GetSetting("YouTubeEnabled")))
         {
             <li>
                 <a href="@SiteSettings.Resolve.GetSetting("YouTubeUrl")" target="_blank"> <span class="fa fa-youtube-play"></span></a>

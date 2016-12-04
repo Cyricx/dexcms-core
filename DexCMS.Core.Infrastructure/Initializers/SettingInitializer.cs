@@ -3,6 +3,7 @@ using DexCMS.Core.Infrastructure.Models;
 using System.Linq;
 using DexCMS.Core.Infrastructure.Extensions;
 using DexCMS.Core.Infrastructure.Globals;
+using System;
 
 namespace DexCMS.Core.Infrastructure.Initializers
 {
@@ -37,16 +38,27 @@ namespace DexCMS.Core.Infrastructure.Initializers
                 new Setting { Name = "OriginalHeight", Value = "1300", SettingDataTypeID = DataTypes.Text, SettingGroupID = Groups.Images },
                 new Setting { Name = "OriginalWidth", Value = "1600", SettingDataTypeID = DataTypes.Text, SettingGroupID = Groups.Images },
                 new Setting { Name = "ContactFromUseCredentials", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Main },
-                new Setting { Name = "CodepenUrl", Value = "", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
-                new Setting { Name = "EtsyUrl", Value = "", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "CodepenEnabled", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
+                new Setting { Name = "CodepenUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "EtsyEnabled", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
+                new Setting { Name = "EtsyUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "FacebookEnabled", Value = "True", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
                 new Setting { Name = "FacebookUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
-                new Setting { Name = "GithubUrl", Value = "", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
-                new Setting { Name = "GooglePlusUrl", Value = "", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "GithubEnabled", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
+                new Setting { Name = "GithubUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "GooglePlusEnabled", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
+                new Setting { Name = "GooglePlusUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "InstagramEnabled", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
                 new Setting { Name = "InstagramUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "LinkedInEnabled", Value = "True", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
                 new Setting { Name = "LinkedInUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
-                new Setting { Name = "PinterestUrl", Value = "", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
-                new Setting { Name = "StackOverflowUrl", Value = "", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "PinterestEnabled", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
+                new Setting { Name = "PinterestUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "StackOverflowEnabled", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
+                new Setting { Name = "StackOverflowUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "TwitterEnabled", Value = "True", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
                 new Setting { Name = "TwitterUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social },
+                new Setting { Name = "YouTubeEnabled", Value = "False", SettingDataTypeID = DataTypes.Bool, SettingGroupID = Groups.Social },
                 new Setting { Name = "YouTubeUrl", Value = "#", SettingDataTypeID = DataTypes.Url, SettingGroupID = Groups.Social }
             );
             Context.SaveChanges();
