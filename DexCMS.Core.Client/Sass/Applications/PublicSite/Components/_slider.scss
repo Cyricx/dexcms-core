@@ -1,3 +1,10 @@
-﻿#slider {
-    margin: 0 auto;
+﻿///<reference path="../_publicVariables.scss">
+.flexslider {
+    width: 80%;
+    margin: 6em auto 4em;
+    max-width: 500px;
+
+    @media screen and (max-width: $pbFirst) {
+        clear: both;
+    }
 }
