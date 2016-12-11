@@ -1,5 +1,6 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
 using DexCMS.Core.Infrastructure.Globals;
+using DexCMS.Core.Infrastructure.Initializers.Helpers;
 using DexCMS.Core.Infrastructure.Models;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -8,13 +9,15 @@ namespace DexCMS.Core.Infrastructure.Initializers
 {
     class StateInitializer : DexCMSInitializer<IDexCMSCoreContext>
     {
+        public CountriesReference Countries { get; set; }
         public StateInitializer(IDexCMSCoreContext context) : base(context)
         {
+            Countries = new CountriesReference(context);
         }
 
         public override void Run()
         {
-            int usa = Context.Countries.Where(x => x.Name == "United States").Select(x => x.CountryID).Single();
+            int usa = Countries.USA;
 
             Context.States.AddOrUpdate(x => x.Name,
                 new State { CountryID = usa, Abbreviation = "IA", Name = "Iowa"},

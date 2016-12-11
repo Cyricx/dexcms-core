@@ -109,6 +109,9 @@
     <Compile Include="Globals\CoreRegister.cs" />
     <Compile Include="Globals\DexCMSIdentityConfig.cs" />
     <Compile Include="Globals\DexCMSInitializer.cs" />
+    <Compile Include="Initializers\Helpers\CountriesReference.cs" />
+    <Compile Include="Initializers\Helpers\SettingDataTypesReference.cs" />
+    <Compile Include="Initializers\Helpers\SettingGroupsReference.cs" />
     <Compile Include="Initializers\ImageInitializer.cs" />
     <Compile Include="Initializers\CountryInitializer.cs" />
     <Compile Include="Initializers\SettingDataTypeInitializer.cs" />
