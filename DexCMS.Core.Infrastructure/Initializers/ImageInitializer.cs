@@ -14,8 +14,8 @@ namespace DexCMS.Core.Infrastructure.Initializers
 
         public override void Run()
         {
-            string baseOne = "content/cdn/1/";
-            string baseTwo = "content/cdn/2/";
+            string baseOne = "content/images/cdn/1/";
+            string baseTwo = "content/images/cdn/2/";
 
             Context.Images.AddIfNotExists(x => x.Alt,
                 new Image
