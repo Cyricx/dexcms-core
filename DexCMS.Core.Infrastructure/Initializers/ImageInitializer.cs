@@ -14,9 +14,30 @@ namespace DexCMS.Core.Infrastructure.Initializers
 
         public override void Run()
         {
+            string baseOne = "content/cdn/1/";
+            string baseTwo = "content/cdn/2/";
+
             Context.Images.AddIfNotExists(x => x.Alt,
-                new Image { Alt = "Gaea Retreat", Caption = "Gaea Retreat Center", Credit = "Chris Byram", Original = "GaeaRetreat_original.png", Gallery = "GaeaRetreat_gallery.jpg", Slider = "GaeaRetreat_slider.jpg", Thumbnail = "GaeaRetreat_thumbnail.jpg" },
-                new Image { Alt = "Lawrence Busker", Caption = "Lawrence Busker Festival", Credit = "Chris Byram", Original = "LawrenceBusker_original.png", Gallery = "LawrenceBusker_gallery.jpg", Slider = "LawrenceBusker_slider.jpg", Thumbnail = "LawrenceBusker_thumbnail.jpg" }
+                new Image
+                {
+                    Alt = "Gaea Retreat",
+                    Caption = "Gaea Retreat Center",
+                    Credit = "Chris Byram",
+                    Original = baseOne + "GaeaRetreat_original.png",
+                    Gallery = baseOne + "GaeaRetreat_gallery.jpg",
+                    Slider = baseOne + "GaeaRetreat_slider.jpg",
+                    Thumbnail = baseOne + "GaeaRetreat_thumbnail.jpg"
+                },
+                new Image
+                {
+                    Alt = "Lawrence Busker",
+                    Caption = "Lawrence Busker Festival",
+                    Credit = "Chris Byram",
+                    Original = baseTwo + "LawrenceBusker_original.png",
+                    Gallery = baseTwo + "LawrenceBusker_gallery.jpg",
+                    Slider = baseTwo + "LawrenceBusker_slider.jpg",
+                    Thumbnail = baseTwo + "LawrenceBusker_thumbnail.jpg"
+                }
             );
             Context.SaveChanges();
         }
