@@ -16,6 +16,7 @@ namespace DexCMS.Core.Infrastructure.Initializers
             (new SettingInitializer(Context)).Run();
             (new CountryInitializer(Context)).Run();
             (new StateInitializer(Context)).Run();
+            (new ImageInitializer(Context)).Run();
         }
     }
 }
