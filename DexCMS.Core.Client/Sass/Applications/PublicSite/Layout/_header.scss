@@ -3,7 +3,7 @@
 
 .no-touch #top > ul > li:hover, .touch #top > ul > li.open {
     > a {
-        color: $header-menu-anchor-color;
+        color: $header-menu-anchor-hover-color;
     }
 
     ul {
