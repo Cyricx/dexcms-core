@@ -66,6 +66,15 @@
                     a {
                         padding: .5em;
                         display: inline-block;
+                        color: $header-menu-anchor-color;
+
+                        &:hover {
+                            color: $header-menu-anchor-hover-color;
+                        }
+                    }
+
+                    &.active > a {
+                        color: $header-menu-anchor-hover-color;
                     }
                 }
             }
