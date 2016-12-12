@@ -1,0 +1,22 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_box-sizing.scss" />
+///<reference path="../_publicVariables.scss">
+
+.three-column-layout {
+    @extend %clearfix;
+
+    .column {
+        width: 32%;
+        @include box-sizing(border-box);
+        float: left;
+    }
+
+    .column.content, .column.after-content {
+        @extend %content-box;
+        margin: .5em;
+    }
+
+    .content-images > ul > li {
+        background-color: $cAltBackground;
+    }
+}
+

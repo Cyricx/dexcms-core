@@ -1,0 +1,9 @@
+﻿///<reference path="../_publicVariables.scss">
+.content-title {
+    background-color: $cTitleBackground;
+    color: $cTitleFont;
+    margin: 0 0 .5em -.5em;
+    padding: .25em .5em;
+    display: inline-block;
+    border-radius: 0 .25em .25em 0;
+}

@@ -1,0 +1,8 @@
+﻿///<reference path="../_publicVariables.scss">
+%content-box {
+    padding: 1em;
+    border-radius: 1em;
+    border: 5px solid $cMainBorder;
+    color: $cMainFont;
+    background-color: $cMainBackground;
+}

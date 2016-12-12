@@ -1,0 +1,22 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_box-sizing.scss" />
+///<reference path="../_publicVariables.scss">
+
+.one-column-layout {
+    width: 80%;
+    margin: 1em auto;
+
+    @extend %clearfix;
+    @extend %content-box;
+
+    .content-blocks > div {
+        width: 48%;
+        @include box-sizing(border-box);
+        float: left;
+    }
+
+    .flexslider.content-images {
+        width: 80%;
+        margin: 1em auto 3em;
+        max-width: 500px;
+    }
+}

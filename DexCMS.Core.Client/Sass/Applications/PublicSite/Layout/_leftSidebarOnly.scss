@@ -1,0 +1,16 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_box-sizing.scss" />
+///<reference path="../_publicVariables.scss">
+
+.left-sidebar-only-layout {
+    .column {
+        width: 32%;
+        float: left;
+        clear: left;
+        @extend %content-box;
+        margin-left: 1em;
+    }
+
+    .content-images > ul > li {
+        background-color: $cAltBackground;
+    }
+}

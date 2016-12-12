@@ -17,3 +17,32 @@ $cFormErrorColor: #000 !default;
 $cFormDescriptionColor: $cFormColor !default;
 
 $cPanelBackground:  $cTwo !default;
+
+$anchorColor: $cTwo !default;
+$anchorHoverColor: $cThree !default;
+$htmlBackgroundColor: $cFour !default;
+$headerColor: $cThree !default;
+
+$headerFont: $ffTwo !default;
+$headerMenuBackgroundColor: $cOne !default;
+$headerMenuAnchorHoverColor: $cThree !default;
+
+$sidemenuBackgroundColor: $cOne !default;
+$sidemenuFontColor: $cTwo !default;
+$sidemenuBorderColor: $cTwo !default;
+
+$topbarBackgroundColor: $cTwo !default;
+$topbarShadowColor: #000 !default;
+$topbarAnchorColor: $cOne !default;
+$topbarAnchorHoverColor: $cThree !default;
+
+$cMainFont: $cThree !default;
+$cMainBackground:$cOne !default;
+$cAltBackground: $cFour !default;
+$cMainBorder: darken($cOne, 60%) !default;
+
+$cTitleFont: $cOne !default;
+$cTitleBackground: darken($cOne, 60%) !default;
+
+$cSliderBackground: $cFour !default;
+$cSliderBorder: $cFour !default;

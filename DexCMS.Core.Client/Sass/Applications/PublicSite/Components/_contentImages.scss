@@ -1,0 +1,48 @@
+﻿///<reference path="../_publicVariables.scss">
+.content-images {
+    @media screen and (max-width: $pbFirst) {
+        clear: both;
+    }
+
+    .caption {
+        font-size: .8em;
+        display: block;
+        padding-top: .5em;
+
+        &:before, &:after {
+            content: '"';
+            display: inline;
+        }
+    }
+
+    .credit {
+        display: block;
+        font-size: .8em;
+        font-style: italic;
+        text-align: right;
+
+        &:before {
+            content: '~ ';
+            display: inline;
+        }
+    }
+
+    &.thumblist {
+        > ul > li {
+            width: 150px;
+            padding: .25em;
+            border: 1px solid $cMainBorder;
+            margin: .5em;
+            border-radius: .5em;
+            float: left;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 100px;
+            }
+        }
+
+        @extend %clearfix;
+    }
+}

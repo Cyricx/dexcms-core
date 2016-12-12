@@ -1,0 +1,23 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_box-sizing.scss" />
+///<reference path="../_publicVariables.scss">
+
+.two-column-layout {
+    > .column {
+        @include box-sizing(border-box);
+        width: 47%;
+        margin: 1%;
+
+        &:nth-child(1) {
+            float: left;
+            @extend %content-box;
+        }
+
+        &:nth-child(2) {
+            float: right;
+        }
+    }
+
+    .content-images > ul > li {
+        background-color: $cMainBackground;
+    }
+}

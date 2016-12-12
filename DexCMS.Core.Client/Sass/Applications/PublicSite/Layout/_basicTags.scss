@@ -1,11 +1,5 @@
 ﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_transition.scss" />
-@import "../_publicVariables";
-
-$anchorColor: $cTwo !default;
-$anchorHoverColor: $cThree !default;
-$htmlBackgroundColor: $cFour !default;
-$headerColor: $cThree !default;
-
+///<reference path="../_publicVariables.scss">
 
 html, body {
     height: 100%;
@@ -52,4 +46,16 @@ h2, h3, h4, h5 {
 h1, h2, h3, h4, h5, h6 {
     color: $headerColor;
     font-weight: bold;
+}
+p {
+    line-height: 1.2em;
+    margin: .5em 1em;
+    text-indent: 1em;
+    font-size: 1.2em;
+
+    &:first-letter {
+        font-size: 1.1em;
+        font-style: italic;
+        letter-spacing: .05em;
+    }
 }
