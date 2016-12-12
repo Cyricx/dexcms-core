@@ -127,7 +127,7 @@
     <Content Include="Sass\Applications\PublicSite\Layout\_sidemenu.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_basicTags.scss" />
     <Content Include="Sass\Applications\PublicSite\Placeholders\_contentBox.scss" />
-    <Content Include="Sass\Applications\PublicSite\PublicSite.scss" />
+    <Content Include="Sass\Applications\PublicSite\Index.scss" />
     <Content Include="Sass\Applications\PublicSite\_placeholders.scss" />
     <Content Include="Sass\Applications\PublicSite\_layout.scss" />
     <Content Include="Sass\Editor\_editor.scss" />

@@ -7,9 +7,9 @@
     @media screen and (max-width: $pbFirst) {
         clear: both;
     }
-}
 
-.flexslider.content-images {
-    background-color: $cSliderBackground;
-    border-color: $cSliderBorder;
+    &.content-images {
+        background-color: $cSliderBackground;
+        border-color: $cSliderBorder;
+    }
 }
