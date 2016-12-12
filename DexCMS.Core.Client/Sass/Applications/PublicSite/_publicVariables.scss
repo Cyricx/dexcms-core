@@ -1,9 +1,47 @@
 ﻿@import "../../_variables.scss";
+//PAGE BREAKS
+$page-break-largest: 1250px !default;
+$page-break-large: 870px !default;
+$page-break-medium: 600px !default;
+$page-break-small: 450px !default;
 
-$pbFirst: 1250px !default;
-$pbSecond: 870px !default;
-$pbThird: 600px !default;
-$pbFourth: 450px !default;
+//BASE
+$base-anchor-color: $cTwo !default;
+$base-anchor-hover-color: $cThree !default;
+$base-html-background-color: $cFour !default;
+$base-header-color: $cThree !default;
+
+//HEADER
+$header-font-family: $ffTwo !default;
+$header-menu-background-color: $cOne !default;
+$header-menu-anchor-color: $cThree !default;
+
+//MAIN
+$main-font-color: $cThree !default;
+$main-background-color:$cOne !default;
+$main-alt-background-color: $cFour !default;
+$main-border-color: darken($cOne, 60%) !default;
+
+//SIDEMENU
+$sidemenu-background-color: $cOne !default;
+$sidemenu-font-color: $cTwo !default;
+$sidemenu-border-color: $cTwo !default;
+
+//SLIDER
+$slider-background-color: $cFour !default;
+$slider-border-color: $cFour !default;
+
+//TITLES
+$title-font-color: $cOne !default;
+$title-background-color: darken($cOne, 60%) !default;
+
+//TOPBAR
+$topbar-background-color: $cTwo !default;
+$topbar-shadow-color: #000 !default;
+$topbar-anchor-color: $cOne !default;
+$topbar-anchor-hover-color: $cThree !default;
+
+
 
 $cFormBackground: $cTwo !default;
 $cFormColor: $cOne !default;
@@ -18,31 +56,9 @@ $cFormDescriptionColor: $cFormColor !default;
 
 $cPanelBackground:  $cTwo !default;
 
-$anchorColor: $cTwo !default;
-$anchorHoverColor: $cThree !default;
-$htmlBackgroundColor: $cFour !default;
-$headerColor: $cThree !default;
 
-$headerFont: $ffTwo !default;
-$headerMenuBackgroundColor: $cOne !default;
-$headerMenuAnchorHoverColor: $cThree !default;
 
-$sidemenuBackgroundColor: $cOne !default;
-$sidemenuFontColor: $cTwo !default;
-$sidemenuBorderColor: $cTwo !default;
 
-$topbarBackgroundColor: $cTwo !default;
-$topbarShadowColor: #000 !default;
-$topbarAnchorColor: $cOne !default;
-$topbarAnchorHoverColor: $cThree !default;
 
-$cMainFont: $cThree !default;
-$cMainBackground:$cOne !default;
-$cAltBackground: $cFour !default;
-$cMainBorder: darken($cOne, 60%) !default;
 
-$cTitleFont: $cOne !default;
-$cTitleBackground: darken($cOne, 60%) !default;
 
-$cSliderBackground: $cFour !default;
-$cSliderBorder: $cFour !default;

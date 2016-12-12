@@ -5,17 +5,17 @@
 
 #topbar {
     position: relative;
-    background-color: $topbarBackgroundColor;
+    background-color: $topbar-background-color;
     width: 100%;
     text-align: right;
     @include box-sizing(border-box);
     padding: .25em 2em .25em .25em;
 
     a {
-        color: $topbarAnchorColor;
+        color: $topbar-anchor-color;
 
         &:hover {
-            color: $topbarAnchorHoverColor;
+            color: $topbar-anchor-hover-color;
         }
     }
 
@@ -23,14 +23,14 @@
         float: left;
         display: none;
 
-        @media screen and (max-width: $pbSecond) {
+        @media screen and (max-width: $page-break-medium) {
             display: block;
             font-size: 1.3em;
             margin: 0 2%;
 
             > a {
                 display: inline-block;
-                text-shadow: 0 0 2px $topbarShadowColor;
+                text-shadow: 0 0 2px $topbar-shadow-color;
             }
         }
     }

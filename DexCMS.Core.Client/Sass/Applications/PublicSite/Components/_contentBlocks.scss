@@ -1,15 +1,15 @@
 ﻿///<reference path="../_publicVariables.scss">
 .content-blocks {
     > div {
-        border: 1px solid $cMainBorder;
+        border: 1px solid $main-border-color;
         margin: .5em;
         border-radius: .5em;
         overflow: hidden;
-        background-color: $cMainBackground;
+        background-color: $main-background-color;
 
         h3 {
-            background-color: $cTitleBackground;
-            color: $cTitleFont;
+            background-color: $title-background-color;
+            color: $title-font-color;
             display: block;
             padding: .25em;
             font-size: 1.25em;

@@ -18,37 +18,37 @@
 }
 
 .hide-sm {
-    @media screen and (min-width: $pbThird) {
+    @media screen and (min-width: $page-break-large) {
         display: none;
     }
 }
 
 .show-sm {
-    @media screen and (min-width: $pbThird) {
+    @media screen and (min-width: $page-break-large) {
         display: block;
     }
 }
 
 .hide-md {
-    @media screen and (min-width: $pbSecond) {
+    @media screen and (min-width: $page-break-medium) {
         display: none;
     }
 }
 
 .show-md {
-    @media screen and (min-width: $pbSecond) {
+    @media screen and (min-width: $page-break-medium) {
         display: block;
     }
 }
 
 .hide-lg {
-    @media screen and (min-width: $pbFirst) {
+    @media screen and (min-width: $page-break-small) {
         display: none;
     }
 }
 
 .show-lg {
-    @media screen and (min-width: $pbFirst) {
+    @media screen and (min-width: $page-break-small) {
         display: block;
     }
 }
@@ -66,17 +66,17 @@
 .center-text {
     text-align: center;
 }
-@media screen and (min-width: $pbThird) {
+@media screen and (min-width: $page-break-large) {
 .sm-clear-text-align {
     text-align: initial;
 }
 }
-@media screen and (min-width: $pbSecond) {
+@media screen and (min-width: $page-break-medium) {
 .md-clear-text-align  {
     text-align: initial;
 }
 }
-@media screen and (min-width: $pbFirst) {
+@media screen and (min-width: $page-break-small) {
     .lg-clear-text-align  {
         text-align: initial;
     }

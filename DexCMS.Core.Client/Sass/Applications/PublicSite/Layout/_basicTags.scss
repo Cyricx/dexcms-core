@@ -6,16 +6,16 @@ html, body {
 }
 
 html {
-    background-color: $htmlBackgroundColor;
+    background-color: $base-html-background-color;
 }
 
 a {
-    color: $anchorColor;
+    color: $base-anchor-color;
     @include transition-property(all);
     @include transition-duration(.2s);
 
     &:hover {
-        color: $anchorHoverColor;
+        color: $base-anchor-hover-color;
     }
 
     :focus {
@@ -24,7 +24,7 @@ a {
 }
 
 li.active > a {
-    color: $anchorHoverColor;
+    color: $base-anchor-hover-color;
 }
 
 h1 {
@@ -44,7 +44,7 @@ h2, h3, h4, h5 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: $headerColor;
+    color: $base-header-color;
     font-weight: bold;
 }
 p {

@@ -4,12 +4,12 @@
     margin: 6em auto 4em;
     max-width: 500px;
 
-    @media screen and (max-width: $pbFirst) {
+    @media screen and (max-width: $page-break-small) {
         clear: both;
     }
 
     &.content-images {
-        background-color: $cSliderBackground;
-        border-color: $cSliderBorder;
+        background-color: $slider-background-color;
+        border-color: $slider-border-color;
     }
 }

@@ -1,11 +1,9 @@
 ﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_transition.scss" />
 ///<reference path="../_publicVariables.scss">
 
-
-
 .no-touch #top > ul > li:hover, .touch #top > ul > li.open {
     > a {
-        color: $headerMenuAnchorHoverColor;
+        color: $header-menu-anchor-color;
     }
 
     ul {
@@ -25,17 +23,17 @@
             display: inline-block;
             margin-left: 1em;
             font-size: 1.5em;
-            font-family: $headerFont;
+            font-family: $header-font-family;
         }
     }
 
     > nav {
         float: right;
         margin: .75em;
-        background-color: $headerMenuBackgroundColor;
+        background-color: $header-menu-background-color;
         border-radius: .5em;
 
-        @media screen and (max-width: $pbSecond) {
+        @media screen and (max-width: $page-break-medium) {
             display: none;
         }
 
@@ -53,12 +51,12 @@
                 position: absolute;
                 font-size: .8em;
                 top: 2.1em;
-                background-color: $headerMenuBackgroundColor;
+                background-color: $header-menu-background-color;
                 border-radius: 0 0 .5em .5em;
                 display: none;
                 padding-top: 1em;
 
-                @media screen and (max-width: $pbFirst) {
+                @media screen and (max-width: $page-break-small) {
                     top: 1.75em;
                 }
 
@@ -77,7 +75,7 @@
             font-size: 1.3em;
             text-decoration: none;
 
-            @media screen and (max-width: $pbFirst) {
+            @media screen and (max-width: $page-break-small) {
                 font-size: 1em;
             }
         }

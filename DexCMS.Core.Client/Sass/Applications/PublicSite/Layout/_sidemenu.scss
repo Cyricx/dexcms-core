@@ -6,16 +6,16 @@
 #sidemenu {
     position: absolute;
     z-index: 9999;
-    background-color: $sidemenuBackgroundColor;
+    background-color: $sidemenu-background-color;
     border-style: solid;
     overflow: hidden;
-    color: $sidemenuFontColor;
-    border-color: $sidemenuBorderColor;
+    color: $sidemenu-font-color;
+    border-color: $sidemenu-border-color;
     display: none;
     overflow: hidden;
     width: 0;
 
-    @media screen and (max-width: $pbSecond) {
+    @media screen and (max-width: $page-break-medium) {
         display: block;
     }
 

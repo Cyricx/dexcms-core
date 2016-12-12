@@ -1,6 +1,6 @@
 ﻿///<reference path="../_publicVariables.scss">
 .content-images {
-    @media screen and (max-width: $pbFirst) {
+    @media screen and (max-width: $page-break-small) {
         clear: both;
     }
 
@@ -31,7 +31,7 @@
         > ul > li {
             width: 150px;
             padding: .25em;
-            border: 1px solid $cMainBorder;
+            border: 1px solid $main-border-color;
             margin: .5em;
             border-radius: .5em;
             float: left;
