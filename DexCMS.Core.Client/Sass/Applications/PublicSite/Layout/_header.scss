@@ -80,7 +80,12 @@
             }
         }
 
+        li.active > a {
+            color: $header-menu-anchor-hover-color;
+        }
+
         a {
+            color: $header-menu-anchor-color;
             font-size: 1.3em;
             text-decoration: none;
 

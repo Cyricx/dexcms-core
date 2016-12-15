@@ -42,7 +42,11 @@ $topbar-shadow-color: #000 !default;
 $topbar-anchor-color: $cOne !default;
 $topbar-anchor-hover-color: $cThree !default;
 
-
+//FOOTER
+$footer-font-color: $cOne !default;
+$footer-background-color: $cTwo !default;
+$footer-border-color: darken($cOne, 60%) !default;
+$footer-anchor-color: $cOne !default;
 
 $cFormBackground: $cTwo !default;
 $cFormColor: $cOne !default;

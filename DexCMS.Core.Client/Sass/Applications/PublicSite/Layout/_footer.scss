@@ -1,0 +1,20 @@
+﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_box-sizing.scss" />
+///<reference path="../_publicVariables.scss">
+
+footer {
+    clear: both;
+    color: $footer-font-color;
+    background-color: $footer-background-color;
+    text-align: center;
+    border: {
+         color: $footer-border-color;
+         style: solid;
+         bottom-width: 2px;
+         top-width: 2px;
+         }
+    margin: 3em 0;
+    padding: .5em;
+    a {
+        color: $footer-anchor-color;
+    }
+}
