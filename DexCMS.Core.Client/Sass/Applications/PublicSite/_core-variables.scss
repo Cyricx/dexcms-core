@@ -7,6 +7,7 @@ $page-break-small: 450px !default;
 
 //BASE
 $base-anchor-color: $cTwo !default;
+$base-anchor-border-color: $cTwo !default;
 $base-anchor-hover-color: $cThree !default;
 $base-html-background-color: $cFour !default;
 $base-header-color: $cThree !default;
@@ -57,5 +58,4 @@ $button-box-shadow-color: darken($cOne, 60%) !default;
 //FORMS
 $forms-error-font-color: $cError !default;
 $forms-border-color: $cThree !default;
-$forms-anchor-color: $cTwo !default;
-$forms-anchor-border-color: $cTwo !default;
+
