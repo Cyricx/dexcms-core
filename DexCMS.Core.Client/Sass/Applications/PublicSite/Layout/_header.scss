@@ -1,5 +1,5 @@
 ﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_transition.scss" />
-///<reference path="../_publicVariables.scss">
+///<reference path="../_core-variables.scss">
 
 .no-touch #top > ul > li:hover, .touch #top > ul > li.open {
     > a {

@@ -1,17 +1,17 @@
 ﻿///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_box-sizing.scss" />
-///<reference path="../_publicVariables.scss">
+///<reference path="../_core-variables.scss">
 
-.left-sidebar-layout {
+.right-sidebar-layout {
 
     .before-content.column {
         width: 32%;
-        float: left;
+        float: right;
     }
 
     .column:nth-child(2) {
         width: 64%;
-        float: right;
-        margin: .5em 1em .5em 0;
+        float: left;
+        margin: .5em 0 .5em 1em;
         @extend %content-box;
     }
 }

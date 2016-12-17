@@ -48,18 +48,16 @@ $footer-background-color: $cTwo !default;
 $footer-border-color: darken($cOne, 60%) !default;
 $footer-anchor-color: $cOne !default;
 
-$cFormBackground: $cTwo !default;
-$cFormColor: $cOne !default;
-$FormGroupBorderWidth: 1px !default;
-$FormGroupStyle: solid !default;
-$cFormGroupColor: $cOne !default;
-$cFormHighlightColor: $cThree !default;
-$cFormErrorBackground: #fff !default;
-$cFormErrorBorderColor: #f00 !default;
-$cFormErrorColor: #000 !default;
-$cFormDescriptionColor: $cFormColor !default;
+//BUTTON
+$button-background-color: darken($cOne, 60%) !default;
+$button-font-color:  $cOne !default;
+$button-hover-font-color: $cFour !default;
+$button-box-shadow-color: darken($cOne, 60%) !default;
 
-$cPanelBackground:  $cTwo !default;
+//FORMS
+$forms-error-font-color: $cError !default;
+$forms-border-color: $cThree !default;
+
 
 
 

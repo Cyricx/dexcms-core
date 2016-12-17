@@ -1,0 +1,22 @@
+﻿///<reference path="../_core-variables.scss">
+///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_box-shadow.scss" />
+///<reference path="../../../../../node_modules/compass-mixins/lib/compass/css3/_transition.scss" />
+
+%button-appearance {
+    padding: .2em;
+    display: inline-block;
+    margin: .3em;
+    border-radius: .5em;
+    cursor: pointer;
+    background-color: $button-background-color;
+    color: $button-font-color;
+    text-shadow: 0 0 5px #000;
+    border: 1px solid #000;
+    font-family: Arial, Helvetica, sans-serif;
+    @include transition(all .2s);
+
+    &:hover {
+        color: $base-html-background-color;
+        @include box-shadow($button-box-shadow-color 0 0 10px);
+    }
+}

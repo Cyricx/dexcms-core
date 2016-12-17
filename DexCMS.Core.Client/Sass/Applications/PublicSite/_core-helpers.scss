@@ -1,9 +1,8 @@
-﻿///<reference path="_publicVariables.scss">
+﻿///<reference path="_core-variables.scss">
+
 .item-divider:before {
     content: '|';
 }
-
-
 
 .clear {
     clear: both;

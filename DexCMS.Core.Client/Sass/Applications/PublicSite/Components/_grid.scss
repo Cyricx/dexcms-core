@@ -1,5 +1,5 @@
-﻿///<reference path="../_publicVariables.scss">
-.grid {
+﻿///<reference path="../_core-variables.scss">
+/*.grid {
     .grid-item {
         display: inline-block;
         box-sizing: border-box;
@@ -28,4 +28,4 @@
 }
 @media screen and (min-width: $pbFirst) {
     @include createColumns('lg');
-}
+}*/
