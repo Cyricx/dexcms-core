@@ -152,6 +152,12 @@
             width: 2em;
         }
     }
+    p > a {
+        color: $forms-anchor-color;
+        text-decoration: none;
+        border-bottom: 1px solid;
+        padding-bottom: 1px $forms-anchor-border-color;
+    }
 }
 
 .background-select {
