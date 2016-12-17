@@ -8,8 +8,17 @@
     display: inline-block;
 }
 
-.validation-summary-errors.ajax-error {
-    display: block;
+.validation-summary-errors {
+    ul {
+        list-style-type: disc;
+        margin-left: 5em;
+        margin-bottom: .5em;
+        font-size: 1.2em;
+    }
+
+    &.ajax-error {
+        display: block;
+    }
 }
 
 .form-box {
@@ -137,6 +146,9 @@
             font-weight: bold;
             line-height: normal;
             @extend %button-appearance;
+        }
+        a {
+            text-decoration: none;
         }
     }
 
