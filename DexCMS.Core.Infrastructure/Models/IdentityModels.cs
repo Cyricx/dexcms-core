@@ -30,7 +30,7 @@ namespace DexCMS.Core.Infrastructure.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("ConnectionString", throwIfV1Schema: false)
+            : base("IdentityConnectionString", throwIfV1Schema: false)
         {
         }
 
