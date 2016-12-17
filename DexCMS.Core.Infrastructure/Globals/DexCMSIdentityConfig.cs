@@ -117,7 +117,7 @@ namespace DexCMS.Core.Infrastructure.Globals
         {
             var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "Installer";
+            const string name = "Installer@chrisbyram.com";
             const string password = "dexcms";
             const string roleName = "Admin";
 
