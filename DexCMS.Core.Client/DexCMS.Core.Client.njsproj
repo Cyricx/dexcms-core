@@ -120,6 +120,7 @@
     <Content Include="Sass\Applications\PublicSite\Layout\_leftSidebar.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_rightSidebarOnly.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_rightSidebar.scss" />
+    <Content Include="Sass\Applications\PublicSite\Layout\_footer.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_twoColumn.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_threeColumn.scss" />
     <Content Include="Sass\Applications\PublicSite\Layout\_oneColumn.scss" />
