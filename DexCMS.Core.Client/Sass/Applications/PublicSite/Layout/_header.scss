@@ -92,6 +92,10 @@
             @media screen and (max-width: $page-break-small) {
                 font-size: 1em;
             }
+
+            &:hover {
+                color: $header-menu-anchor-hover-color;
+            }
         }
     }
 
