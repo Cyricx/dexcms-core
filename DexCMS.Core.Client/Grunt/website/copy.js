@@ -54,7 +54,7 @@ var _buildMvc = function (options) {
         modulePath = options.nodelibs + '/dexcms-' + module.toLowerCase() + '/dexcms.' + module.toLowerCase() + '.mvc';
         
         copyFiles.push(_constructCopy(modulePath + '/views/rootviews/', ['**'], 'views/dexcms/'));
-        copyFiles.push(_constructCopy(modulePath + '/areas/controlpanelviews/', ['**'], 'areas/controlpanel/views/dexcms/'));
+        copyFiles.push(_constructCopy(modulePath + '/views/controlpanelviews/', ['**'], 'areas/controlpanel/views/dexcms/'));
         copyFiles.push(_constructCopy(modulePath + '/scripts/', ['**'], 'scripts/DexCMS/'));
         copyFiles.push(_constructCopy(modulePath + '/content/', ['**'], 'content/'));
     });
