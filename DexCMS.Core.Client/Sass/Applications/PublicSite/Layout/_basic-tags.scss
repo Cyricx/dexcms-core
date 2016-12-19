@@ -9,6 +9,10 @@ html {
     background-color: $base-html-background-color;
 }
 
+main {
+    position: relative;
+}
+
 a {
     color: $base-anchor-color;
     @include transition-property(all);
