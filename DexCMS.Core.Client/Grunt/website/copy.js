@@ -13,7 +13,7 @@ var _buildClient = function (options) {
     var directory;
 
     options.modules.forEach(function (mod) {
-        directory = options.nodelibs + '/dexcms-' + module + '/dexcms.' + module + '.client/scripts/';
+        directory = options.nodelibs + '/dexcms-' + mod + '/dexcms.' + mod + '.client/scripts/';
         copyModules.push(_constructCopy(directory, ['**'], options.applicationsPath));
     });
 
