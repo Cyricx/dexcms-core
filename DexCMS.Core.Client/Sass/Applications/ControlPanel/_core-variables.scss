@@ -1,0 +1,63 @@
+﻿///<reference path="../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss">
+
+@import "../../_variables.scss";
+//PAGE BREAKS
+$page-break-largest: 1250px !default;
+$page-break-large: 870px !default;
+$page-break-medium: 600px !default;
+$page-break-small: 450px !default;
+
+//BASE
+$base-anchor-color: $cTwo !default;
+$base-anchor-border-color: $cTwo !default;
+$base-anchor-hover-color: $cThree !default;
+$base-html-background-color: $cFour !default;
+$base-header-color: $cThree !default;
+
+//HEADER
+$header-font-family: $ffTwo !default;
+$header-menu-background-color: $cTwo !default;
+$header-menu-anchor-color: $cOne !default;
+$header-menu-anchor-hover-color: $cFour !default;
+
+//MAIN
+$main-font-color: $cThree !default;
+$main-background-color:$cOne !default;
+$main-alt-background-color: $cFour !default;
+$main-border-color: darken($cOne, 60%) !default;
+
+//SIDEMENU
+$sidemenu-background-color: $cOne !default;
+$sidemenu-font-color: $cTwo !default;
+$sidemenu-border-color: $cTwo !default;
+
+//SLIDER
+$slider-background-color: $cFour !default;
+$slider-border-color: $cFour !default;
+
+//TITLES
+$title-font-color: $cOne !default;
+$title-background-color: darken($cOne, 60%) !default;
+
+//TOPBAR
+$topbar-background-color: $cTwo !default;
+$topbar-shadow-color: #000 !default;
+$topbar-anchor-color: $cOne !default;
+$topbar-anchor-hover-color: $cThree !default;
+
+//FOOTER
+$footer-font-color: $cOne !default;
+$footer-background-color: $cTwo !default;
+$footer-border-color: darken($cOne, 60%) !default;
+$footer-anchor-color: $cOne !default;
+
+//BUTTON
+$button-background-color: darken($cOne, 60%) !default;
+$button-font-color:  $cOne !default;
+$button-hover-font-color: $cFour !default;
+$button-box-shadow-color: darken($cOne, 60%) !default;
+
+//FORMS
+$forms-error-font-color: $cError !default;
+$forms-border-color: $cThree !default;
+

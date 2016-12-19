@@ -1,0 +1,52 @@
+﻿///<reference path="../_core-variables.scss">
+
+.nav > li > div {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+
+    &:hover {
+        background-color: $gray-light;
+    }
+}
+
+.nav-pills > li {
+    &.active {
+        > div {
+            color: #fff;
+            background-color: #8c51a0;
+        }
+    }
+
+    > div.dropdown {
+        border-radius: 4px;
+        cursor: pointer;
+
+        .dropdown-menu li a {
+            padding: 3px 10px;
+
+            &:hover, &:focus {
+                background: none;
+                color: $brand-primary;
+            }
+
+            &.active {
+                color: white;
+                background-color: $brand-primary;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+.nav.nav-pills {
+    background: $navbar-default-bg;
+    border: 1px solid $brand-info;
+    padding: 1em;
+    border-radius: .5em;
+    box-shadow: 0 0 5px $gray;
+
+    > li {
+        margin: 0 1em;
+    }
+}

@@ -1,0 +1,32 @@
+﻿///<reference path="../_core-variables.scss">
+
+.glyphicon-calendar {
+    @extend .fa-calendar;
+}
+
+.glyphicon {
+    @extend .fa;
+}
+
+.glyphicon-chevron-right {
+    @extend .fa-chevron-right;
+}
+
+.glyphicon-chevron-left {
+    @extend .fa-chevron-left;
+}
+
+.glyphicon-chevron-up {
+    @extend .fa-chevron-up;
+}
+
+.glyphicon-chevron-down {
+    @extend .fa-chevron-down;
+}
+
+.fa-spinner {
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+    font-size: 3em;
+}

@@ -1,0 +1,18 @@
+﻿///<reference path="../_core-variables.scss">
+
+footer {
+    height: 60px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: .8em;
+    background-color: $gray-base;
+    padding: 15px;
+
+    &.well {
+        margin-bottom: 0;
+
+        @media (min-width: 768px) {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+﻿///<reference path="../_core-variables.scss">
+
+.panel-primary .panel-heading a {
+    color: $gray-lighter;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: $gray;
+    }
+}

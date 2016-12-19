@@ -1,0 +1,28 @@
+﻿///<reference path="../_core-variables.scss">
+
+.dndDraggingSource {
+    opacity: .5;
+}
+
+li[dnd-draggable] .handle {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+    float: left;
+    padding: .25em;
+    margin-right: .5em;
+
+    i.fa {
+        margin: 0;
+        padding: 0;
+        cursor: move;
+        cursor: -webkit-grab;
+        cursor: -moz-grab;
+        cursor: grab;
+    }
+}
+
+ul[dnd-list], ul[dnd-list] > li {
+    position: relative;
+}

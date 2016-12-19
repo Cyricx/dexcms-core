@@ -1,0 +1,11 @@
+﻿///<reference path="../_core-variables.scss">
+
+.attention-box {
+    border-color: $brand-danger;
+
+    .attention-icon {
+        position: absolute;
+        left: 20px;
+        top: 5px;
+    }
+}

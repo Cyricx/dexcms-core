@@ -1,0 +1,11 @@
+﻿///<reference path="../_core-variables.scss">
+
+#page-content-wrapper {
+    position: absolute;
+    padding-bottom: 100px;
+    bottom: 0;
+    top: 50px;
+    right: 0;
+    left: 0;
+    color: lighten(#000, 20%);
+}

@@ -1,0 +1,18 @@
+﻿///<reference path="../_core-variables.scss">
+
+.selected-images {
+    min-height: 75px;
+}
+
+.selected-images, .available-images {
+    li {
+        width: 150px;
+        text-align: center;
+        font-family: $ffTwo;
+        vertical-align: top;
+
+        img {
+            border-radius: .5em;
+        }
+    }
+}

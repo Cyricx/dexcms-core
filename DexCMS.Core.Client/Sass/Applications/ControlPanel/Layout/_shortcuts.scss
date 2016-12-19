@@ -1,0 +1,15 @@
+﻿///<reference path="../_core-variables.scss">
+
+.shortcuts {
+    font-size: 2em;
+    margin-top: 10px;
+
+    > a {
+        background-color: $navbar-inverse-link-color;
+        border-radius: 50px;
+        margin: 0 20px;
+        width: 40px;
+        display: inline-block;
+        text-align: center;
+    }
+}

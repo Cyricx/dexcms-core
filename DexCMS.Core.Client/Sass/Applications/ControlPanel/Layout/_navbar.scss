@@ -1,0 +1,67 @@
+﻿///<reference path="../_core-variables.scss">
+
+.navbar-brand {
+    @if $headerImage {
+        background-image: $headerImage;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    padding-left: 60px;
+    margin: 5px 0;
+    font-family: $ffOne;
+    font-size: 1.25em;
+
+    @media (min-width: $screen-xs) {
+        font-size: 2em;
+    }
+}
+
+.navbar-inverse .navbar-toggle {
+    margin-left: 20px;
+}
+
+.navbar-toggle {
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+
+#user-info {
+    padding-top: 5px;
+    cursor: pointer;
+    position: relative;
+    color: $navbar-inverse-link-color;
+    font-family: $ffTwo;
+
+    &:hover {
+        color: $navbar-inverse-link-hover-color;
+    }
+
+    i.fa-angle-down {
+        font-size: 2em;
+        margin-top: 10px;
+    }
+
+    span {
+        display: block;
+        white-space: nowrap;
+        padding-right: 30px;
+    }
+
+    em {
+        font-size: .8em;
+    }
+}
+
+.navbar-subfixed-top {
+    position: fixed;
+    margin-bottom: 10px;
+    z-index: 100;
+    width: 60%;
+    padding: 0 2em;
+
+    + div {
+        margin-top: 215px;
+    }
+}

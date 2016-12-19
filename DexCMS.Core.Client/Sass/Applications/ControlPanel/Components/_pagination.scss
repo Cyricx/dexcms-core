@@ -1,0 +1,8 @@
+﻿///<reference path="../_core-variables.scss">
+
+.pagination > .disabled {
+    > span, > span:hover, > span:focus, > a, > a:hover, > a:focus {
+        color: $brand-primary;
+        opacity: .5;
+    }
+}

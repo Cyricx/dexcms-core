@@ -1,0 +1,54 @@
+﻿///<reference path="_core-variables.scss">
+[ng-cloak] {
+    display: none !important;
+}
+
+.mobile-only {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+
+.buffer-bottom {
+    margin-bottom: 10px;
+}
+.breathing-room {
+    margin: 1em;
+}
+
+
+
+
+.btn-clean {
+    color: $brand-primary;
+    background: none;
+    font-size: 1.5em;
+    padding: 0;
+    &:focus {
+        outline:0!important;
+        box-shadow: none;
+        color: $brand-success;
+    }
+}
+
+.tilt-left {
+    transform: rotate(-45deg);
+}
+.tilt-right {
+    transform: rotate(45deg);
+}
+
+ .discount-boxes .well {
+     min-height: 110px;
+ }
+
+ .inset-box {
+    background: $gray-light;
+    min-height: 5em;
+    border: 1px solid $brand-primary;
+    border-radius: .5em;
+    padding-top: .5em;
+        margin-top: .25em;
+    margin-bottom: .25em;
+}

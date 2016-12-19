@@ -1,0 +1,28 @@
+﻿///<reference path="../_core-variables.scss">
+
+#header .container {
+    @media (min-width: $screen-sm-min) {
+        margin-left: 80px;
+        width: 88%;
+    }
+}
+
+#header-right {
+    display: none;
+
+    @media (min-width: $screen-sm) {
+        display: block;
+    }
+}
+
+.header-seperator {
+    background-color: #f6f6f6;
+    background-image: -webkit-linear-gradient(#f6f6f6 60%, #ededed);
+    background-image: linear-gradient(#f6f6f6 60%, #ededed);
+    float: right;
+    height: 50px;
+    margin: 5px 20px 0;
+    width: 2px;
+    vertical-align: middle;
+    content: " ";
+}

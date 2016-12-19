@@ -1,0 +1,24 @@
+﻿///<reference path="../_core-variables.scss">
+
+form textarea {
+    min-height: 200px;
+}
+
+.form-control.ng-invalid {
+    border: 1px solid rgba(255, 0, 0, .5);
+}
+
+.datetimepicker-wrapper, .input-group {
+    > .dropdown-menu {
+        width: auto;
+    }
+}
+
+.ng-invalid-required > .mce-tinymce {
+    border: 1px solid red;
+}
+
+
+.has-error > .input-group-btn {
+    vertical-align: top;
+}

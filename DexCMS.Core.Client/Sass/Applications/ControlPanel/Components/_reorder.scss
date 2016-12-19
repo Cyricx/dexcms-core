@@ -1,0 +1,32 @@
+﻿///<reference path="../_core-variables.scss">
+
+.reorder-box {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+
+    strong {
+        font-size: 1.5em;
+    }
+
+    img {
+        border-radius: .5em;
+    }
+
+    > li {
+
+        > div {
+            border: 1px dotted #ccc;
+        }
+    }
+}
+
+.reorder-action {
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: .25em;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
