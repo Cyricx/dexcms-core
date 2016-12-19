@@ -53,10 +53,10 @@ var _buildMvc = function (options) {
     options.modules.forEach(function (module) {
         modulePath = options.nodelibs + '/dexcms-' + module.toLowerCase() + '/dexcms.' + module.toLowerCase() + '.mvc';
         
-        copyFiles.push(_constructCopy(modulePath + '/defaultviews/rootviews/', ['**'], 'views/dexcms/'));
-        copyFiles.push(_constructCopy(modulePath + '/defaultviews/areaviews/', ['**'], 'views/dexcms-areas/'));
-        copyFiles.push(_constructCopy(modulePath + '/defaultscripts/', ['**'], 'scripts/DexCMS/'));
-        copyFiles.push(_constructCopy(modulePath + '/defaultcontent/', ['**'], 'content/'));
+        copyFiles.push(_constructCopy(modulePath + '/views/rootviews/', ['**'], 'views/dexcms/'));
+        copyFiles.push(_constructCopy(modulePath + '/areas/areaviews/', ['**'], 'areas/'));
+        copyFiles.push(_constructCopy(modulePath + '/scripts/', ['**'], 'scripts/DexCMS/'));
+        copyFiles.push(_constructCopy(modulePath + '/content/', ['**'], 'content/'));
     });
 
     return copyFiles;
