@@ -11,22 +11,22 @@ namespace DexCMS.Core.Mvc.Globals
             {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
                 "~/Areas/{2}/Views/Shared/{0}.cshtml",
-                "~/Areas/{2}/DexCMS/Views/{1}/{0}.cshtml",
-                "~/Areas/{2}/DexCMS/Views/Shared/{0}.cshtml"
+                "~/Areas/{2}/Views/DexCMS/{1}/{0}.cshtml",
+                "~/Areas/{2}/Views/DexCMS/Shared/{0}.cshtml"
             };
             AreaMasterLocationFormats = new[]
             {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
                 "~/Areas/{2}/Views/Shared/{0}.cshtml",
-                "~/Areas/{2}/DexCMS/Views/{1}/{0}.cshtml",
-                "~/Areas/{2}/DexCMS/Views/Shared/{0}.cshtml"
+                "~/Areas/{2}/Views/DexCMS/{1}/{0}.cshtml",
+                "~/Areas/{2}/Views/DexCMS/Shared/{0}.cshtml"
             };
             AreaPartialViewLocationFormats = new[]
             {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
                 "~/Areas/{2}/Views/Shared/{0}.cshtml",
-                "~/Areas/{2}/DexCMS/Views/{1}/{0}.cshtml",
-                "~/Areas/{2}/DexCMS/Views/Shared/{0}.cshtml"
+                "~/Areas/{2}/Views/DexCMS/{1}/{0}.cshtml",
+                "~/Areas/{2}/Views/DexCMS/Shared/{0}.cshtml"
             };
 
             ViewLocationFormats = new[]
