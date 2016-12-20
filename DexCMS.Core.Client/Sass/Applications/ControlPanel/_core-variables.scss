@@ -1,28 +1,44 @@
 ﻿///<reference path="../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss">
 
 @import "../../_variables.scss";
-$bootstrap-sass-asset-helper: false !default;
+
 
 //Bootstrap overrides
+$bootstrap-sass-asset-helper: false !default;
+
+//GRAY
 $gray-base: darken($cOne, 60%);
 $gray-light: lighten($gray-base, 46.7%);
 
-$input-color: $cThree;
+//BODY
+$body-bg: $cFour;
 
+//BRANDS
 $brand-primary: darken($cOne, 60%);
 $brand-info: $cTwo;
+
+//INPUT
+$input-color: $cThree;
+
+//LINKS
 $link-color: $cThree;
 $link-hover-color: darken($link-color, 35%);
 
+//NAVBAR
 $navbar-inverse-bg: $cTwo;
 $navbar-inverse-link-color: lighten($gray-light, 20%);
 $navbar-inverse-link-hover-color: $cThree;
 $navbar-inverse-toggle-hover-bg: darken($cOne, 60%);
 $navbar-inverse-toggle-icon-bar-bg: $navbar-inverse-link-color;
 $navbar-inverse-toggle-border-color: lighten($cOne, 25%);
+$navbar-default-bg: $cOne;
 
+//PANEL
 $panel-default-heading-bg: darken($cOne, 60%);
 $panel-default-text: $cOne;
-$navbar-default-bg: $cOne;
 $panel-bg: $cFour;
-$body-bg: $cFour;
+
+//TABLES
+$table-bg: $cOne;
+$table-border-color: $cThree;
+$table-bg-accent: lighten($cOne, 10%);
