@@ -1,14 +1,10 @@
 ﻿///<reference path="../_core-variables.scss">
 
 .panel-title > a.accordion-toggle {
-    color: $brand-info;
     font-family: $ffTwo;
-
-    &:active {
-        text-decoration: none;
-    }
+    text-decoration: none;
 
     &:hover {
-        color: $navbar-inverse-link-hover-color;
+        color: $brand-info;
     }
 }
