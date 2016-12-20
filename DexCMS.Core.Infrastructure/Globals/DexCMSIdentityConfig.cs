@@ -8,7 +8,9 @@ using System;
 using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web;
+using System.Linq;
 using DexCMS.Core.Infrastructure.Models;
+using System.Collections.Generic;
 
 namespace DexCMS.Core.Infrastructure.Globals
 {
@@ -119,19 +121,29 @@ namespace DexCMS.Core.Infrastructure.Globals
             var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
             const string name = "Installer@chrisbyram.com";
             const string password = "Dexcms@123";
-            const string roleName = "Admin";
-            //TODO: SETUP Installer role
+            string[] roleNames = { "Admin", "Installer" };
 
-            //Create Role Admin if it does not exist
-            var role = roleManager.FindByName(roleName);
-            if (role == null)
+            List<IdentityRole> roles = CreateRoles(roleManager, roleNames);
+
+            ApplicationUser user = CreateUserIfNotExists(userManager, name, password);
+
+            AddRolesToUser(userManager, roles, user);
+        }
+
+        private static void AddRolesToUser(ApplicationUserManager userManager, List<IdentityRole> roles, ApplicationUser user)
+        {
+            var rolesForUser = userManager.GetRoles(user.Id);
+            foreach (var role in roles)
             {
-                role = new IdentityRole(roleName);
-                var roleresult = roleManager.Create(role);
+                if (!rolesForUser.Contains(role.Name))
+                {
+                    var result = userManager.AddToRole(user.Id, role.Name);
+                }
             }
+        }
 
-
-
+        private static ApplicationUser CreateUserIfNotExists(ApplicationUserManager userManager, string name, string password)
+        {
             var user = userManager.FindByName(name);
             if (user == null)
             {
@@ -140,12 +152,24 @@ namespace DexCMS.Core.Infrastructure.Globals
                 result = userManager.SetLockoutEnabled(user.Id, false);
             }
 
-            // Add user admin to Role Admin if not already added
-            var rolesForUser = userManager.GetRoles(user.Id);
-            if (!rolesForUser.Contains(role.Name))
+            return user;
+        }
+
+        private static List<IdentityRole> CreateRoles(ApplicationRoleManager roleManager, string[] roleNames)
+        {
+            List<IdentityRole> roles = new List<IdentityRole>();
+            foreach (var roleName in roleNames)
             {
-                var result = userManager.AddToRole(user.Id, role.Name);
+                var role = roleManager.FindByName(roleName);
+                if (role == null)
+                {
+                    role = new IdentityRole(roleName);
+                    var roleresult = roleManager.Create(role);
+                }
+                roles.Add(role);
             }
+
+            return roles;
         }
     }
 
