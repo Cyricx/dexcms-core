@@ -109,6 +109,7 @@
     <Compile Include="Scripts\Applications\ControlPanel\Dashboard\index.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="Sass\Applications\ControlPanel\Components\_table.scss" />
     <Content Include="Sass\Applications\ControlPanel\Components\_icons.scss" />
     <Content Include="Sass\Applications\ControlPanel\Components\_panel.scss" />
     <Content Include="Sass\Applications\ControlPanel\Components\_dropdown-menu.scss" />
