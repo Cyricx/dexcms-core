@@ -120,6 +120,7 @@ namespace DexCMS.Core.Infrastructure.Globals
             const string name = "Installer@chrisbyram.com";
             const string password = "Dexcms@123";
             const string roleName = "Admin";
+            //TODO: SETUP Installer role
 
             //Create Role Admin if it does not exist
             var role = roleManager.FindByName(roleName);
@@ -128,6 +129,8 @@ namespace DexCMS.Core.Infrastructure.Globals
                 role = new IdentityRole(roleName);
                 var roleresult = roleManager.Create(role);
             }
+
+
 
             var user = userManager.FindByName(name);
             if (user == null)
