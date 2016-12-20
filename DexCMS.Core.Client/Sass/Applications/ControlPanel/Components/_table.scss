@@ -1,0 +1,13 @@
+﻿///<reference path="../_core-variables.scss">
+
+.st-sort-ascent:before {
+    content: '\25B2';
+}
+
+.st-sort-descent:before {
+    content: '\25BC';
+}
+
+.table-controls {
+    margin: .5em 0;
+}
