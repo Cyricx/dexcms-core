@@ -151,6 +151,7 @@
     <Compile Include="ApplicationOwinContext.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="CoreMvcRoutes.cs" />
+    <Compile Include="DexCMSController.cs" />
     <Compile Include="Enums\CoreRouteOptions.cs" />
     <Compile Include="Globals\FiltersConfig.cs" />
     <Compile Include="Globals\DexCMSBeginRequest.cs" />
@@ -167,6 +168,7 @@
     <None Include="Views\RootViews\Shared\Core\_SocialLinks.cshtml" />
     <None Include="Views\RootViews\Shared\Core\_AnalyticsTracking.cshtml" />
     <None Include="packages.config" />
+    <None Include="Views\RootViews\Shared\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DexCMS.Core.Infrastructure\DexCMS.Core.Infrastructure.csproj">
