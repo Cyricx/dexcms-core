@@ -151,7 +151,7 @@
     <Compile Include="ApplicationOwinContext.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="CoreMvcRoutes.cs" />
-    <Compile Include="DexCMSController.cs" />
+    <Compile Include="Globals\DexCMSController.cs" />
     <Compile Include="Enums\CoreRouteOptions.cs" />
     <Compile Include="Globals\FiltersConfig.cs" />
     <Compile Include="Globals\DexCMSBeginRequest.cs" />
