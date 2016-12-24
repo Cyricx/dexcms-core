@@ -163,12 +163,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Views\RootViews\Error\Index.cshtml" />
+    <None Include="Views\RootViews\Error\NotFound.cshtml" />
     <None Include="Views\RootViews\Shared\Core\_LoginTop.cshtml" />
     <None Include="Views\RootViews\Shared\Core\_NavigationLinks.cshtml" />
     <None Include="Views\RootViews\Shared\Core\_SocialLinks.cshtml" />
     <None Include="Views\RootViews\Shared\Core\_AnalyticsTracking.cshtml" />
     <None Include="packages.config" />
-    <None Include="Views\RootViews\Shared\Error.cshtml" />
+    <None Include="Views\RootViews\Error\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DexCMS.Core.Infrastructure\DexCMS.Core.Infrastructure.csproj">
@@ -176,9 +178,7 @@
       <Name>DexCMS.Core.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\RootViews\Error\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\Images\cdn\1\GaeaRetreat_gallery.jpg" />
     <Content Include="Content\Images\cdn\1\GaeaRetreat_original.PNG" />

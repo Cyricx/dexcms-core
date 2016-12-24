@@ -9,7 +9,7 @@ namespace DexCMS.Core.Mvc.Controllers
     {
         protected override void OnException(ExceptionContext filterContext)
         {
-            WriteLog(Server.MapPath("~/Error.txt"), filterContext.Exception.ToString());
+         //   WriteLog(Server.MapPath("~/Error.txt"), filterContext.Exception.ToString());
 
         }
 
@@ -31,11 +31,11 @@ namespace DexCMS.Core.Mvc.Controllers
 
         public ActionResult NotFound()
         {
-            System.IO.File.AppendAllText(
-                Server.MapPath("~/Areas/Admin/Error.txt"),
-                string.Format("Invalid Page Request - {0} - {1:F}\n",
-                Request.Url.ToString(),
-                DateTime.Now));
+            //System.IO.File.AppendAllText(
+            //    Server.MapPath("~/Areas/Admin/Error.txt"),
+            //    string.Format("Invalid Page Request - {0} - {1:F}\n",
+            //    Request.Url.ToString(),
+            //    DateTime.Now));
             
 
             return View();

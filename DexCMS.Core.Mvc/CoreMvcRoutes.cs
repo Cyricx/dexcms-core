@@ -26,13 +26,24 @@ namespace DexCMS.Core.Mvc
             }
 
         }
+        public static void CreateDefaltRoutes(RouteCollection routes, DexCMSConfiguration config)
+        {
+            routes.MapRoute(
+                "Error",
+                "error",
+                new { controller = "Error", action = "Index" });
+            routes.MapRoute(
+                "NotFound",
+                "404",
+                new { controller = "Error", action = "NotFound" });
+        }
 
         public static void CreateFinalRoutes(RouteCollection routes, DexCMSConfiguration config)
         {
             routes.MapRoute(
-                "404-PageNotFound",
+                "NotFound",
                 "{*url}",
-                new { controller = "Error", action = "InvalidPage" });
+                new { controller = "Error", action = "NotFound" });
         }
     }
 
