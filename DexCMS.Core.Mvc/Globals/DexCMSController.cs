@@ -8,18 +8,15 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace DexCMS.Core.Mvc
+namespace DexCMS.Core.Mvc.Globals
 {
     public class DexCMSController : Controller
     {
         protected override void OnException(ExceptionContext filterContext)
         {
-            Exception ex = filterContext.Exception;
             filterContext.ExceptionHandled = true;
-            string route = "Error";
-            Logger.WriteLog(LogType.Error, ex.StackTrace);
-            filterContext.Result = RedirectToRoute(route);
-
+            Logger.WriteLog(LogType.Error, filterContext.Exception.StackTrace);
+            filterContext.Result = RedirectToRoute("error");
         }
     }
 }

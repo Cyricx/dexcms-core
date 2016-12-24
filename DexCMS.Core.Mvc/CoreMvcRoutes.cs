@@ -33,8 +33,8 @@ namespace DexCMS.Core.Mvc
                 "error",
                 new { controller = "Error", action = "Index" });
             routes.MapRoute(
-                "NotFound",
-                "404",
+                "ErrorNotFound",
+                "notfound",
                 new { controller = "Error", action = "NotFound" });
         }
 
