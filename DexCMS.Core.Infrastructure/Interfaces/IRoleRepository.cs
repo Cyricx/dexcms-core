@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using DexCMS.Core.Infrastructure.Models;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,10 @@ namespace DexCMS.Core.Infrastructure.Interfaces
 {
     public interface IRoleRepository
     {
-        IQueryable<IdentityRole> Items { get; }
-        Task<IdentityRole> RetrieveAsync(string id);
-        Task<IdentityResult> UpdateAsync(IdentityRole item, string id);
-        Task<IdentityResult> AddAsync(IdentityRole item);
-        Task<IdentityResult> DeleteAsync(IdentityRole item);
+        IQueryable<ApplicationRole> Items { get; }
+        Task<ApplicationRole> RetrieveAsync(string id);
+        Task<IdentityResult> UpdateAsync(ApplicationRole item, string id);
+        Task<IdentityResult> AddAsync(ApplicationRole item);
+        Task<IdentityResult> DeleteAsync(ApplicationRole item);
     }
 }

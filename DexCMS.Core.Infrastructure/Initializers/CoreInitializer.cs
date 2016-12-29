@@ -1,16 +1,19 @@
 ﻿using DexCMS.Core.Infrastructure.Contexts;
-using DexCMS.Core.Infrastructure.Globals;
+using DexCMS.Core.Infrastructure.Models;
 
 namespace DexCMS.Core.Infrastructure.Initializers
 {
-    public class CoreInitializer: DexCMSInitializer<IDexCMSCoreContext>
+    public class CoreInitializer
     {
-        public CoreInitializer(IDexCMSCoreContext context) : base(context)
+        public DexCMSContext Context { get; set; }
+        public CoreInitializer(DexCMSContext context) 
         {
+            Context = context;
         }
 
-        public override void Run()
+        public void Run()
         {
+            (new IdentityInitializer(Context)).Run();
             (new SettingDataTypeInitializer(Context)).Run();
             (new SettingGroupInitializer(Context)).Run();
             (new SettingInitializer(Context)).Run();

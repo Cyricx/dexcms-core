@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using DexCMS.Core.WebApi.ApiModels;
 using System.Web.Http.Description;
 using System.Net;
+using DexCMS.Core.Infrastructure.Models;
 
 namespace DexCMS.Core.WebApi.Controllers
 {
@@ -54,7 +55,7 @@ namespace DexCMS.Core.WebApi.Controllers
         }
 
 
-        public async Task<IHttpActionResult> PutRole(string id, IdentityRole role)
+        public async Task<IHttpActionResult> PutRole(string id, ApplicationRole role)
         {
             if (!ModelState.IsValid)
             {
@@ -77,7 +78,7 @@ namespace DexCMS.Core.WebApi.Controllers
         }
 
         [ResponseType(typeof(IdentityRole))]
-        public async Task<IHttpActionResult> PostRole(IdentityRole role)
+        public async Task<IHttpActionResult> PostRole(ApplicationRole role)
         {
             if (!ModelState.IsValid)
             {
@@ -96,7 +97,7 @@ namespace DexCMS.Core.WebApi.Controllers
         [ResponseType(typeof(IdentityRole))]
         public async Task<IHttpActionResult> DeleteRole(string id)
         {
-            IdentityRole role = await repository.RetrieveAsync(id);
+            ApplicationRole role = await repository.RetrieveAsync(id);
             if (role == null)
             {
                 return NotFound();

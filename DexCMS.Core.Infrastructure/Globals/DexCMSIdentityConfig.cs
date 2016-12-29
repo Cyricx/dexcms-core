@@ -11,6 +11,7 @@ using System.Web;
 using System.Linq;
 using DexCMS.Core.Infrastructure.Models;
 using System.Collections.Generic;
+using DexCMS.Core.Infrastructure.Contexts;
 
 namespace DexCMS.Core.Infrastructure.Globals
 {
@@ -26,7 +27,7 @@ namespace DexCMS.Core.Infrastructure.Globals
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,
             IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<DexCMSContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
@@ -70,16 +71,16 @@ namespace DexCMS.Core.Infrastructure.Globals
     }
 
     // Configure the RoleManager used in the application. RoleManager is defined in the ASP.NET Identity core assembly
-    public class ApplicationRoleManager : RoleManager<IdentityRole>
+    public class ApplicationRoleManager : RoleManager<ApplicationRole>
     {
-        public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
+        public ApplicationRoleManager(IRoleStore<ApplicationRole, string> roleStore)
             : base(roleStore)
         {
         }
 
         public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> options, IOwinContext context)
         {
-            return new ApplicationRoleManager(new RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
+            return new ApplicationRoleManager(new RoleStore<ApplicationRole>(context.Get<DexCMSContext>()));
         }
     }
 
@@ -100,76 +101,6 @@ namespace DexCMS.Core.Infrastructure.Globals
 
             // Plug in your sms service here to send a text message.
             return Task.FromResult(0);
-        }
-    }
-
-    // This is useful if you do not want to tear down the database each time you run the application.
-    // public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext>
-    // This example shows you how to create a new database if the Model changes
-    public class ApplicationDbInitializer : CreateDatabaseIfNotExists<ApplicationDbContext>
-    {
-        protected override void Seed(ApplicationDbContext context)
-        {
-            InitializeIdentityForEF(context);
-            base.Seed(context);
-        }
-
-        //Create User=Admin@Admin.com with password=Admin@123456 in the Admin role        
-        public static void InitializeIdentityForEF(ApplicationDbContext db)
-        {
-            var userManager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var roleManager = HttpContext.Current.GetOwinContext().Get<ApplicationRoleManager>();
-            const string name = "Installer@chrisbyram.com";
-            const string password = "Dexcms@123";
-            string[] roleNames = { "Admin", "Installer" };
-
-            List<IdentityRole> roles = CreateRoles(roleManager, roleNames);
-
-            ApplicationUser user = CreateUserIfNotExists(userManager, name, password);
-
-            AddRolesToUser(userManager, roles, user);
-        }
-
-        private static void AddRolesToUser(ApplicationUserManager userManager, List<IdentityRole> roles, ApplicationUser user)
-        {
-            var rolesForUser = userManager.GetRoles(user.Id);
-            foreach (var role in roles)
-            {
-                if (!rolesForUser.Contains(role.Name))
-                {
-                    var result = userManager.AddToRole(user.Id, role.Name);
-                }
-            }
-        }
-
-        private static ApplicationUser CreateUserIfNotExists(ApplicationUserManager userManager, string name, string password)
-        {
-            var user = userManager.FindByName(name);
-            if (user == null)
-            {
-                user = new ApplicationUser { UserName = name, Email = name, EmailConfirmed = true };
-                var result = userManager.Create(user, password);
-                result = userManager.SetLockoutEnabled(user.Id, false);
-            }
-
-            return user;
-        }
-
-        private static List<IdentityRole> CreateRoles(ApplicationRoleManager roleManager, string[] roleNames)
-        {
-            List<IdentityRole> roles = new List<IdentityRole>();
-            foreach (var roleName in roleNames)
-            {
-                var role = roleManager.FindByName(roleName);
-                if (role == null)
-                {
-                    role = new IdentityRole(roleName);
-                    var roleresult = roleManager.Create(role);
-                }
-                roles.Add(role);
-            }
-
-            return roles;
         }
     }
 

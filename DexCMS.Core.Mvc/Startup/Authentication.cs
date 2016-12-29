@@ -1,4 +1,5 @@
-﻿using DexCMS.Core.Infrastructure.Globals;
+﻿using DexCMS.Core.Infrastructure.Contexts;
+using DexCMS.Core.Infrastructure.Globals;
 using DexCMS.Core.Infrastructure.Models;
 using DexCMS.Core.Mvc.Models;
 using Microsoft.AspNet.Identity;
@@ -15,7 +16,7 @@ namespace DexCMS.Core.Mvc.Startup
         public static void ConfigureAuth(IAppBuilder app, AuthenticationConfig config)
         {
             // Configure the db context, user manager and role manager to use a single instance per request
-            app.CreatePerOwinContext(ApplicationDbContext.Create);
+            app.CreatePerOwinContext(DexCMSContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);

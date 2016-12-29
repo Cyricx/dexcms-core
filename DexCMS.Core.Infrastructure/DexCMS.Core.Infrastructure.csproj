@@ -109,6 +109,7 @@
     <Compile Include="Globals\CoreRegister.cs" />
     <Compile Include="Globals\DexCMSIdentityConfig.cs" />
     <Compile Include="Globals\DexCMSInitializer.cs" />
+    <Compile Include="Initializers\IdentityInitializer.cs" />
     <Compile Include="Initializers\Helpers\CountriesReference.cs" />
     <Compile Include="Initializers\Helpers\SettingDataTypesReference.cs" />
     <Compile Include="Initializers\Helpers\SettingGroupsReference.cs" />
@@ -127,9 +128,10 @@
     <Compile Include="Interfaces\ISettingRepository.cs" />
     <Compile Include="Interfaces\IStateRepository.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Models\ApplicationRole.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\DexCMSConfiguration.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Setting.cs" />

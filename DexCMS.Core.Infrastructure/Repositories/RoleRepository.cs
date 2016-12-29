@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
 using DexCMS.Core.Infrastructure.Interfaces;
 using Microsoft.AspNet.Identity;
+using DexCMS.Core.Infrastructure.Models;
 
 namespace DexCMS.Core.Infrastructure.Repositories
 {
@@ -24,12 +25,12 @@ namespace DexCMS.Core.Infrastructure.Repositories
             }
         }
 
-        public IQueryable<IdentityRole> Items
+        public IQueryable<ApplicationRole> Items
         {
             get { return RoleManager.Roles; }
         }
 
-        public Task<IdentityRole> RetrieveAsync(string id)
+        public Task<ApplicationRole> RetrieveAsync(string id)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -39,17 +40,17 @@ namespace DexCMS.Core.Infrastructure.Repositories
             }
         }
 
-        public Task<IdentityResult> UpdateAsync(IdentityRole item, string id)
+        public Task<IdentityResult> UpdateAsync(ApplicationRole item, string id)
         {
             return RoleManager.UpdateAsync(item);
         }
 
-        public Task<IdentityResult> AddAsync(IdentityRole item)
+        public Task<IdentityResult> AddAsync(ApplicationRole item)
         {
             return RoleManager.CreateAsync(item);
         }
 
-        public Task<IdentityResult> DeleteAsync(IdentityRole item)
+        public Task<IdentityResult> DeleteAsync(ApplicationRole item)
         {
             return RoleManager.DeleteAsync(item);
         }
