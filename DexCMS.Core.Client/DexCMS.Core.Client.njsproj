@@ -20,7 +20,7 @@
     <OutputPath>.</OutputPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
     <StartWebBrowser>false</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -33,11 +33,12 @@
     <Compile Include="Configurations\controlpanel.core.routes.js" />
     <Compile Include="Configurations\controlpanel.core.navigation.js" />
     <Compile Include="Grunt\index.js" />
+    <Compile Include="Grunt\shared\clean.js" />
+    <Compile Include="Grunt\shared\copy.js" />
+    <Compile Include="Grunt\shared\jsonGenerator.js" />
+    <Compile Include="Grunt\shared\xmlpoke.js" />
     <Compile Include="Grunt\website\symlink.js" />
     <Compile Include="Grunt\website\uglify.js" />
-    <Compile Include="Grunt\website\clean.js" />
-    <Compile Include="Grunt\website\copy.js" />
-    <Compile Include="Grunt\website\jsonGenerator.js" />
     <Compile Include="Grunt\website\loadTasks.js" />
     <Compile Include="Grunt\website\registerTasks.js" />
     <Compile Include="Grunt\website\replace.js" />
@@ -192,6 +193,7 @@
   <ItemGroup>
     <Folder Include="Configurations\" />
     <Folder Include="Grunt\" />
+    <Folder Include="Grunt\shared\" />
     <Folder Include="Grunt\website\" />
     <Folder Include="Sass\" />
     <Folder Include="Sass\Applications\ControlPanel\" />

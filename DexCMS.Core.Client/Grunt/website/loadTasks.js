@@ -7,6 +7,7 @@
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-contrib-symlink');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-xmlpoke');
 };
 
 module.exports = loadTasks;
