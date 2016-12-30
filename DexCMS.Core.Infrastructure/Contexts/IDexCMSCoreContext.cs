@@ -1,4 +1,5 @@
 ﻿using DexCMS.Core.Infrastructure.Models;
+using Microsoft.AspNet.Identity;
 using System.Data.Entity;
 
 namespace DexCMS.Core.Infrastructure.Contexts
@@ -12,5 +13,7 @@ namespace DexCMS.Core.Infrastructure.Contexts
         DbSet<State> States { get; set; }
         DbSet<Country> Countries { get; set; }
         DbSet<Image> Images { get; set; }
+        RoleManager<ApplicationRole> RoleManager { get; }
+        UserManager<ApplicationUser> UserManager { get; }
     }
 }
