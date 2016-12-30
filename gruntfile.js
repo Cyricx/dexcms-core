@@ -1,35 +1,20 @@
 ﻿/// <binding BeforeBuild='clean' AfterBuild='copy' />
 module.exports = function (grunt) {
+    var options = {
+        root: 'DexCMS.Core',
+        disableDebugXml: true,
+        projects: ['Infrastructure', 'Mvc', 'WebApi']
+    },
+    dexCMSUtilities = require('./DexCMS.Core.Client/utilities');
+
+    var applicationGrunt = dexCMSUtilities.gruntBuilder.application(grunt, options);
+    var gruntOptions = applicationGrunt.builder();
+
     //Configuration setup
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        copy: {
-            main: {
-                expand: true,
-                cwd: 'DexCMS.Core.Infrastructure/bin/Release/',
-                src: ['DexCMS.Core.Infrastructure.dll'],
-                dest: 'dist/'
-            },
-            mvc: {
-                expand: true,
-                cwd: 'DexCMS.Core.Mvc/bin/Release/',
-                src: ['DexCMS.Core.Mvc.dll'],
-                dest: 'dist/'
-            },
-            webapi: {
-                expand: true,
-                cwd: 'DexCMS.Core.WebApi/bin/Release/',
-                src: ['DexCMS.Core.WebApi.dll'],
-                dest: 'dist/'
-            }
-        },
-        clean: {
-            build: ["dist"]
-        }
-    });
+    grunt.initConfig(gruntOptions);
+    //load npm tasks
+    applicationGrunt.loadTasks();
 
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-
-    grunt.registerTask('default', ['clean', 'copy']);
+    //register tasks
+    applicationGrunt.registerTasks();
 };

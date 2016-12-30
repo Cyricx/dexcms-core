@@ -74,7 +74,7 @@ var loadDefaultWebOptions = function (options) {
     options = _addDefaultProperty(options, 'nodelibs', 'node_modules');
     options = _addDefaultObject(options, 'debugXml', {
         startPath: '..\\..\\dexcms.',
-        projectFile: 'DexCMS.ExampleSiteabc.csproj',
+        projectFile: 'DexCMS.ExampleSite.csproj',
         regexDebug: /\.\.\\\.\.\\dexcms\.([\w]*)\\([\w\.]*)\\bin\\release\\([\w\.]*)\.dll/gi
     });
 
@@ -87,7 +87,6 @@ var loadDefaultApplicationOptions = function (options) {
     options = _addDefaultProperty(options, 'distributionFolder', 'dist');
     options = _addDefaultObject(options, 'debugXml', {
         startPath: '..\\..\\dexcms.',
-        projectFile: 'DexCMS.ExampleSiteabc.csproj',
         regexDebug: /\.\.\\\.\.\\dexcms\.([\w]*)\\([\w\.]*)\\bin\\release\\([\w\.]*)\.dll/gi
     });
     return options;
