@@ -34,7 +34,6 @@
                 });
             };
             $scope.setDefaultArrival = function (holder) {
-                console.log(holder);
                 if (holder.hasArrived) {
                     if (!holder.arrivalTime) {
                         holder.arrivalTime = new Date();

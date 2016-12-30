@@ -55,8 +55,6 @@ var _addDefaultProperty = function (object, property, value) {
 var _addDefaultObject = function (object, property, value) {
     object[property] = object[property] || value;
     for (prop in value) {
-        console.log(prop);
-        console.log(value[prop]);
         object[property] = _addDefaultProperty(object[property], prop, value[prop]);
     }
     return object;
