@@ -32,11 +32,16 @@
   <ItemGroup>
     <Compile Include="Configurations\controlpanel.core.routes.js" />
     <Compile Include="Configurations\controlpanel.core.navigation.js" />
+    <Compile Include="Grunt\application\clean.js" />
+    <Compile Include="Grunt\application\copy.js" />
+    <Compile Include="Grunt\application\loadTasks.js" />
+    <Compile Include="Grunt\application\registerTasks.js" />
+    <Compile Include="Grunt\application\xmlpoke.js" />
     <Compile Include="Grunt\index.js" />
-    <Compile Include="Grunt\shared\clean.js" />
-    <Compile Include="Grunt\shared\copy.js" />
-    <Compile Include="Grunt\shared\jsonGenerator.js" />
-    <Compile Include="Grunt\shared\xmlpoke.js" />
+    <Compile Include="Grunt\website\xmlpoke.js" />
+    <Compile Include="Grunt\website\clean.js" />
+    <Compile Include="Grunt\website\copy.js" />
+    <Compile Include="Grunt\website\jsonGenerator.js" />
     <Compile Include="Grunt\website\symlink.js" />
     <Compile Include="Grunt\website\uglify.js" />
     <Compile Include="Grunt\website\loadTasks.js" />
@@ -193,7 +198,7 @@
   <ItemGroup>
     <Folder Include="Configurations\" />
     <Folder Include="Grunt\" />
-    <Folder Include="Grunt\shared\" />
+    <Folder Include="Grunt\application\" />
     <Folder Include="Grunt\website\" />
     <Folder Include="Sass\" />
     <Folder Include="Sass\Applications\ControlPanel\" />
