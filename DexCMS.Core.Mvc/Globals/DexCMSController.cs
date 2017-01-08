@@ -16,7 +16,7 @@ namespace DexCMS.Core.Mvc.Globals
         {
             filterContext.ExceptionHandled = true;
             Logger.WriteLog(LogType.Error, filterContext.Exception.StackTrace);
-            filterContext.Result = RedirectToRoute("error");
+            filterContext.Result = RedirectToRoute("Error");
         }
     }
 }
