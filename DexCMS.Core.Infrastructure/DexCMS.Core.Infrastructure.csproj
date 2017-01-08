@@ -109,6 +109,7 @@
     <Compile Include="Globals\CoreRegister.cs" />
     <Compile Include="Globals\DexCMSIdentityConfig.cs" />
     <Compile Include="Globals\DexCMSInitializer.cs" />
+    <Compile Include="Initializers\Helpers\StatesReference.cs" />
     <Compile Include="Initializers\Helpers\RolesReference.cs" />
     <Compile Include="Initializers\IdentityInitializer.cs" />
     <Compile Include="Initializers\Helpers\CountriesReference.cs" />
