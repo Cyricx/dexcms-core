@@ -1,4 +1,4 @@
-﻿using DexCMS.Core.Infrastructure.Globals;
+﻿using DexCMS.Core.Globals;
 using Microsoft.AspNet.Identity.Owin;
 using System.Web;
 using System.Web.Mvc;

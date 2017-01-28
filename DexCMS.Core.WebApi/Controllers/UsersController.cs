@@ -1,4 +1,4 @@
-﻿using DexCMS.Core.Infrastructure.Interfaces;
+﻿using DexCMS.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using DexCMS.Core.WebApi.ApiModels;
 using System.Web.Http.Description;
 using System.Net;
-using DexCMS.Core.Infrastructure.Models;
+using DexCMS.Core.Models;
 
 namespace DexCMS.Core.WebApi.Controllers
 {

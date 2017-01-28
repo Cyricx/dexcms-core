@@ -7,9 +7,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using DexCMS.Core.Infrastructure.Models;
+using DexCMS.Core.Models;
 using DexCMS.Core.WebApi.ApiModels;
-using DexCMS.Core.Infrastructure.Interfaces;
+using DexCMS.Core.Interfaces;
 
 namespace DexCMS.Core.WebApi.Controllers
 {

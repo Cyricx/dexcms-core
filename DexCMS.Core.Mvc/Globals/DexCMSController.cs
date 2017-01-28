@@ -1,5 +1,5 @@
-﻿using DexCMS.Core.Infrastructure;
-using DexCMS.Core.Infrastructure.Enums;
+﻿using DexCMS.Core;
+using DexCMS.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

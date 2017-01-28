@@ -1,4 +1,4 @@
-﻿using DexCMS.Core.Infrastructure.Models;
+﻿using DexCMS.Core.Models;
 using DexCMS.Core.Mvc.Enums;
 using System.Collections.Generic;
 using System.Web.Mvc;

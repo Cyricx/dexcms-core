@@ -1,4 +1,4 @@
-﻿using DexCMS.Core.Infrastructure.Models;
+﻿using DexCMS.Core.Models;
 using DexCMS.Core.WebApi.Enums;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;

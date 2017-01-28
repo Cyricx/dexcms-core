@@ -1,5 +1,5 @@
-﻿using DexCMS.Core.Infrastructure.Interfaces;
-using DexCMS.Core.Infrastructure.Models;
+﻿using DexCMS.Core.Interfaces;
+using DexCMS.Core.Models;
 using DexCMS.Core.WebApi.ApiModels;
 using System.Collections.Generic;
 using System.Data;

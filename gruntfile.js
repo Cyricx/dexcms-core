@@ -1,9 +1,7 @@
 ﻿/// <binding BeforeBuild='clean' AfterBuild='copy' />
 module.exports = function (grunt) {
     var options = {
-        root: 'DexCMS.Core',
-        disableDebugXml: true,
-        projects: ['Infrastructure', 'Mvc', 'WebApi']
+        root: 'DexCMS.Core'
     },
     dexCMSUtilities = require('./DexCMS.Core.Client/utilities');
 

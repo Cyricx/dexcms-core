@@ -6,7 +6,7 @@ aggregation of shared code across several small websites. Soon it will be awesom
 ## DexCMS.Core Development Rules
 * This library is for generic code needed by all other libraries.
 * It contains 3 libraries:
-	* DexCMS.Core.Infrastructure
+	* DexCMS.Core
 		* For code not specific to mvc, webapi, etc.
 	* DexCMS.Core.Mvc
 		* For code specific to MVC sites

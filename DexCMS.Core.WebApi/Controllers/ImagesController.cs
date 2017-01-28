@@ -9,10 +9,10 @@ using System.Web.Http.Description;
 using ImageResizer;
 using System.Web.Hosting;
 using System.IO;
-using DexCMS.Core.Infrastructure.Extensions;
-using DexCMS.Core.Infrastructure.Interfaces;
+using DexCMS.Core.Extensions;
+using DexCMS.Core.Interfaces;
 using DexCMS.Core.WebApi.ApiModels;
-using DexCMS.Core.Infrastructure.Models;
+using DexCMS.Core.Models;
 
 namespace DexCMS.Core.WebApi.Controllers
 {

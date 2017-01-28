@@ -1,6 +1,6 @@
-﻿using DexCMS.Core.Infrastructure.Contexts;
-using DexCMS.Core.Infrastructure.Globals;
-using DexCMS.Core.Infrastructure.Models;
+﻿using DexCMS.Core.Contexts;
+using DexCMS.Core.Globals;
+using DexCMS.Core.Models;
 using DexCMS.Core.Mvc.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;

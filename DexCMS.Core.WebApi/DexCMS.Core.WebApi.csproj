@@ -125,14 +125,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DexCMS.Core.Infrastructure\DexCMS.Core.Infrastructure.csproj">
-      <Project>{34160093-af5a-4f82-b860-10fb2319a164}</Project>
-      <Name>DexCMS.Core.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DexCMS.Core\DexCMS.Core.csproj">
+      <Project>{cbd5fbbd-7d3f-46a0-81eb-8343b37ae3a4}</Project>
+      <Name>DexCMS.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

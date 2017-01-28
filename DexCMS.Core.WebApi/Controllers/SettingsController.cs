@@ -9,10 +9,10 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Hosting;
 using System.IO;
-using DexCMS.Core.Infrastructure.Extensions;
-using DexCMS.Core.Infrastructure;
-using DexCMS.Core.Infrastructure.Models;
-using DexCMS.Core.Infrastructure.Interfaces;
+using DexCMS.Core.Extensions;
+using DexCMS.Core;
+using DexCMS.Core.Models;
+using DexCMS.Core.Interfaces;
 using DexCMS.Core.WebApi.ApiModels;
 
 namespace DexCMS.Core.WebApi.Controllers
