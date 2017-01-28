@@ -21,7 +21,7 @@ namespace DexCMS.Core.Infrastructure.Globals
         public virtual void Run(bool addDemoContent = true)
         {
             Initializers.ForEach(x =>
-                ((DexCMSInitializer<T>)Activator.CreateInstance(x)).Run(addDemoContent)
+                ((DexCMSInitializer<T>)Activator.CreateInstance(x, Context)).Run(addDemoContent)
             );
         }
 
