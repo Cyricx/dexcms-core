@@ -19,7 +19,7 @@ namespace DexCMS.Core.Infrastructure.Initializers
             Groups = new SettingGroupsReference(Context);
         }
 
-        public override void Run()
+        public override void Run(bool addDemoContent = true)
         {
 
             Context.Settings.AddIfNotExists(x => x.Name,

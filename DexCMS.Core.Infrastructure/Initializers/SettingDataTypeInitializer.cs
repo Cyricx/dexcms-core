@@ -11,7 +11,7 @@ namespace DexCMS.Core.Infrastructure.Initializers
         {
         }
 
-        public override void Run()
+        public override void Run(bool addDemoContent = true)
         {
             Context.SettingDataTypes.AddOrUpdate(x => x.Name,
                 new SettingDataType { Name = "Text" },

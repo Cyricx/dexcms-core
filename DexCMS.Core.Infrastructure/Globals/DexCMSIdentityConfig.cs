@@ -5,12 +5,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using System;
-using System.Data.Entity;
 using System.Threading.Tasks;
-using System.Web;
-using System.Linq;
 using DexCMS.Core.Infrastructure.Models;
-using System.Collections.Generic;
 using DexCMS.Core.Infrastructure.Contexts;
 
 namespace DexCMS.Core.Infrastructure.Globals

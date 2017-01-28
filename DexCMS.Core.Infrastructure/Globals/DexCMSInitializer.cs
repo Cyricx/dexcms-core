@@ -16,6 +16,7 @@ namespace DexCMS.Core.Infrastructure.Globals
             _context = context;
         }
 
-        public abstract void Run();
+        public abstract void Run(bool addDemoContent = true);
+
     }
 }

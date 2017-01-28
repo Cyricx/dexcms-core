@@ -3,37 +3,34 @@ using DexCMS.Core.Infrastructure.Globals;
 using DexCMS.Core.Infrastructure.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
 using System.Collections.Generic;
-using System.Data.Entity.Migrations;
-using System.Web;
 
 namespace DexCMS.Core.Infrastructure.Initializers
 {
-    class IdentityInitializer
+    class IdentityInitializer:DexCMSInitializer<IDexCMSCoreContext>
     {
-        public DexCMSContext Context { get; set; }
-        public IdentityInitializer(DexCMSContext context)
+        public IdentityInitializer(IDexCMSCoreContext context): base (context)
         {
-            Context = context;
         }
 
-        public void Run()
+        public override void Run(bool addDemoContent = true)
         {
-            InitializeIdentityForEF(Context);
+            InitializeIdentityForEF(Context, addDemoContent);
         }
 
-        public void InitializeIdentityForEF(DexCMSContext db)
+        public void InitializeIdentityForEF(IDexCMSCoreContext db, bool addDemoContent)
         {
-            const string name = "Installer@chrisbyram.com";
-            const string password = "Dexcms@123";
+
             string[] roleNames = { "Admin", "Installer" };
-
             List<IdentityRole> roles = CreateRoles(roleNames);
 
-            ApplicationUser user = CreateUserIfNotExists(name, password);
-
-            AddRolesToUser(roles, user);
+            if (addDemoContent)
+            {
+                const string name = "Installer@chrisbyram.com";
+                const string password = "Dexcms@123";
+                ApplicationUser user = CreateUserIfNotExists(name, password);
+                AddRolesToUser(roles, user);
+            }
         }
 
         private void AddRolesToUser(List<IdentityRole> roles, ApplicationUser user)

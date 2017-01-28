@@ -3,7 +3,6 @@ using DexCMS.Core.Infrastructure.Globals;
 using DexCMS.Core.Infrastructure.Initializers.Helpers;
 using DexCMS.Core.Infrastructure.Models;
 using System.Data.Entity.Migrations;
-using System.Linq;
 
 namespace DexCMS.Core.Infrastructure.Initializers
 {
@@ -15,7 +14,7 @@ namespace DexCMS.Core.Infrastructure.Initializers
             Countries = new CountriesReference(context);
         }
 
-        public override void Run()
+        public override void Run(bool addDemoContent = true)
         {
             int usa = Countries.USA;
 

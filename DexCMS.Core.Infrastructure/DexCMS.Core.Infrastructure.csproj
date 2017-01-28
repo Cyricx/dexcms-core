@@ -105,6 +105,7 @@
     <Compile Include="Extensions\IDbSetExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TimeZoneExtensions.cs" />
+    <Compile Include="Globals\DexCMSLibraryInitializer.cs" />
     <Compile Include="Initializers\CoreInitializer.cs" />
     <Compile Include="Globals\CoreRegister.cs" />
     <Compile Include="Globals\DexCMSIdentityConfig.cs" />

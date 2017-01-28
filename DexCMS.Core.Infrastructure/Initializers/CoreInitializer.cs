@@ -1,25 +1,31 @@
-﻿using DexCMS.Core.Infrastructure.Contexts;
-using DexCMS.Core.Infrastructure.Models;
+﻿using System;
+using System.Collections.Generic;
+using DexCMS.Core.Infrastructure.Contexts;
+using DexCMS.Core.Infrastructure.Globals;
 
 namespace DexCMS.Core.Infrastructure.Initializers
 {
-    public class CoreInitializer
+    public class CoreInitializer: DexCMSLibraryInitializer<IDexCMSCoreContext>
     {
-        public DexCMSContext Context { get; set; }
-        public CoreInitializer(DexCMSContext context) 
+        public CoreInitializer(IDexCMSCoreContext context) : base(context)
         {
-            Context = context;
         }
 
-        public void Run()
+        public override List<Type> Initializers
         {
-            (new IdentityInitializer(Context)).Run();
-            (new SettingDataTypeInitializer(Context)).Run();
-            (new SettingGroupInitializer(Context)).Run();
-            (new SettingInitializer(Context)).Run();
-            (new CountryInitializer(Context)).Run();
-            (new StateInitializer(Context)).Run();
-            (new ImageInitializer(Context)).Run();
+            get
+            {
+                return new List<Type>
+                {
+                    typeof(IdentityInitializer),
+                    typeof(SettingDataTypeInitializer),
+                    typeof(SettingGroupInitializer),
+                    typeof(SettingInitializer),
+                    typeof(CountryInitializer),
+                    typeof(StateInitializer),
+                    typeof(ImageInitializer)
+                };
+            }
         }
     }
 }
