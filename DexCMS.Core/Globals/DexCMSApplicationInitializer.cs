@@ -1,43 +1,35 @@
 ﻿using DexCMS.Core.Contexts;
 using System;
+using System.Reflection;
 
 namespace DexCMS.Core.Globals
 {
-    public class DexCMSApplicationInitializer<T> where T : IDexCMSContext
+    public static class DexCMSApplicationInitializer
     {
-        private T _context;
 
-        public T Context
-        {
-            get { return _context; }
-        }
-
-        public DexCMSApplicationInitializer(T context)
-        {
-            _context = context;
-        }
-
-        public void InitializeApplication(IDexCMSContext context, string[] modules, bool addDemoContent = true)
+        public static void InitializeApplication(IDexCMSContext Context, string[] modules, bool addDemoContent = true)
         {
             foreach (var module in modules)
             {
-                ExecuteModule(module, addDemoContent);
+                ExecuteModule(Context, module, addDemoContent);
             }
         }
 
-        private void ExecuteModule(string module, bool addDemoContent)
+        private static void ExecuteModule(IDexCMSContext Context, string module, bool addDemoContent)
         {
-            string baseModule = string.Format("DexCMS.{0}.Initializers.{0}Initializer", module);
-            string mvcModule = string.Format("DexCMS.{0}.Mvc.Initializers.{0}MvcInitializer", module);
+            string baseModule = string.Format("DexCMS.{0}.Initializers.{0}Initializer, DexCMS.{0}, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", module);
+            string mvcModule = string.Format("DexCMS.{0}.Mvc.Initializers.{0}MvcInitializer, DexCMS.{0}.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", module);
 
-            ExecuteLibrary(baseModule, addDemoContent);
-            ExecuteLibrary(mvcModule, addDemoContent);
+            ExecuteLibrary(Context, baseModule, addDemoContent);
+            ExecuteLibrary(Context, mvcModule, addDemoContent);
         }
 
-        private void ExecuteLibrary(string module, bool addDemoContent)
+        private static void ExecuteLibrary(IDexCMSContext Context, string module, bool addDemoContent)
         {
             Type modClass = Type.GetType(module);
-            ((DexCMSLibraryInitializer<T>)Activator.CreateInstance(modClass, Context)).Run(addDemoContent);
+            var instance = Activator.CreateInstance(modClass, Context);
+            MethodInfo method = modClass.GetMethod("Run");
+            method.Invoke(instance, new object[] { addDemoContent });
         }
     }
 }
