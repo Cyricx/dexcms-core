@@ -27,9 +27,12 @@ namespace DexCMS.Core.Globals
         private static void ExecuteLibrary(IDexCMSContext Context, string module, bool addDemoContent)
         {
             Type modClass = Type.GetType(module);
-            var instance = Activator.CreateInstance(modClass, Context);
-            MethodInfo method = modClass.GetMethod("Run");
-            method.Invoke(instance, new object[] { addDemoContent });
+            if (modClass != null)
+            {
+                var instance = Activator.CreateInstance(modClass, Context);
+                MethodInfo method = modClass.GetMethod("Run");
+                method.Invoke(instance, new object[] { addDemoContent });
+            }
         }
     }
 }

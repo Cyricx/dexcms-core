@@ -113,6 +113,7 @@
     <Compile Include="Initializers\CoreInitializer.cs" />
     <Compile Include="Initializers\CountryInitializer.cs" />
     <Compile Include="Initializers\Helpers\CountriesReference.cs" />
+    <Compile Include="Initializers\Helpers\IdentityHelper.cs" />
     <Compile Include="Initializers\Helpers\RolesReference.cs" />
     <Compile Include="Initializers\Helpers\SettingDataTypesReference.cs" />
     <Compile Include="Initializers\Helpers\SettingGroupsReference.cs" />

@@ -12,7 +12,7 @@ namespace DexCMS.Core.Initializers.Helpers
         public int USA { get; set; }
         public CountriesReference(IDexCMSCoreContext context)
         {
-            USA = context.Countries.Where(x => x.Name == "United States").Select(x => x.CountryID).Single();
+            USA = context.Countries.Where(x => x.Name == "United States").Select(x => x.CountryID).SingleOrDefault();
         }
     }
 }

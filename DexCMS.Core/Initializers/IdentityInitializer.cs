@@ -1,16 +1,17 @@
 ﻿using DexCMS.Core.Contexts;
 using DexCMS.Core.Globals;
-using DexCMS.Core.Models;
-using Microsoft.AspNet.Identity;
+using DexCMS.Core.Initializers.Helpers;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Collections.Generic;
 
 namespace DexCMS.Core.Initializers
 {
     class IdentityInitializer:DexCMSInitializer<IDexCMSCoreContext>
     {
+        public IdentityHelper Helper { get; set; }
+
         public IdentityInitializer(IDexCMSCoreContext context): base (context)
         {
+            Helper = new IdentityHelper(context);
         }
 
         public override void Run(bool addDemoContent = true)
@@ -20,60 +21,14 @@ namespace DexCMS.Core.Initializers
 
         public void InitializeIdentityForEF(IDexCMSCoreContext db, bool addDemoContent)
         {
-
-            string[] roleNames = { "Admin", "Installer" };
-            List<IdentityRole> roles = CreateRoles(roleNames);
+            IdentityRole admin = Helper.CreateRole("Admin");
+            IdentityRole installer = Helper.CreateRole("Installer");
 
             if (addDemoContent)
             {
-                const string name = "Installer@chrisbyram.com";
-                const string password = "Dexcms@123";
-                ApplicationUser user = CreateUserIfNotExists(name, password);
-                AddRolesToUser(roles, user);
+                Helper.CreateUserIfNotExists("Installer@chrisbyram.com", "Dexcms@123", new IdentityRole[] { admin, installer });
+                Helper.CreateUserIfNotExists("tester@chrisbyram.com", "Dexcms@123");
             }
         }
-
-        private void AddRolesToUser(List<IdentityRole> roles, ApplicationUser user)
-        {
-            var rolesForUser = Context.UserManager.GetRoles(user.Id);
-            foreach (var role in roles)
-            {
-                if (!rolesForUser.Contains(role.Name))
-                {
-                    var result = Context.UserManager.AddToRole(user.Id, role.Name);
-                }
-            }
-        }
-
-        private ApplicationUser CreateUserIfNotExists(string name, string password)
-        {
-            var user = Context.UserManager.FindByName(name);
-            if (user == null)
-            {
-                user = new ApplicationUser { UserName = name, Email = name, EmailConfirmed = true };
-                var result = Context.UserManager.Create(user, password);
-                result = Context.UserManager.SetLockoutEnabled(user.Id, false);
-            }
-
-            return user;
-        }
-
-        private List<IdentityRole> CreateRoles(string[] roleNames)
-        {
-            List<IdentityRole> roles = new List<IdentityRole>();
-            foreach (var roleName in roleNames)
-            {
-                var role = Context.RoleManager.FindByName(roleName);
-                if (role == null)
-                {
-                    role = new ApplicationRole(roleName);
-                    var roleresult = Context.RoleManager.Create(role);
-                }
-                roles.Add(role);
-            }
-
-            return roles;
-        }
-
     }
 }

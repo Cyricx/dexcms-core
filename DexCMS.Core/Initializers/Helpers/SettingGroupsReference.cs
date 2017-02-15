@@ -15,9 +15,9 @@ namespace DexCMS.Core.Initializers.Helpers
 
         public SettingGroupsReference(IDexCMSCoreContext Context)
         {
-            Main = Context.SettingGroups.Where(x => x.SettingGroupName == "Main").Select(x => x.SettingGroupID).Single();
-            Images = Context.SettingGroups.Where(x => x.SettingGroupName == "Images").Select(x => x.SettingGroupID).Single();
-            Social = Context.SettingGroups.Where(x => x.SettingGroupName == "Social").Select(x => x.SettingGroupID).Single();
+            Main = Context.SettingGroups.Where(x => x.SettingGroupName == "Main").Select(x => x.SettingGroupID).SingleOrDefault();
+            Images = Context.SettingGroups.Where(x => x.SettingGroupName == "Images").Select(x => x.SettingGroupID).SingleOrDefault();
+            Social = Context.SettingGroups.Where(x => x.SettingGroupName == "Social").Select(x => x.SettingGroupID).SingleOrDefault();
         }
     }
 }
