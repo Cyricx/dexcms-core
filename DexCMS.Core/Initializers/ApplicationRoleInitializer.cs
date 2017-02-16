@@ -7,7 +7,7 @@ namespace DexCMS.Core.Initializers
 {
     class ApplicationRoleInitializer : DexCMSInitializer<IDexCMSCoreContext>
     {
-        IdentityHelper Helper;
+        private IdentityHelper Helper;
 
         public ApplicationRoleInitializer(IDexCMSCoreContext context): base (context)
         {
