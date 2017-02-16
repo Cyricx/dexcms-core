@@ -8,7 +8,8 @@ namespace DexCMS.Core.Initializers
 {
     class StateInitializer : DexCMSInitializer<IDexCMSCoreContext>
     {
-        public CountriesReference Countries { get; set; }
+        CountriesReference Countries;
+
         public StateInitializer(IDexCMSCoreContext context) : base(context)
         {
             Countries = new CountriesReference(context);

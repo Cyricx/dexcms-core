@@ -1,17 +1,19 @@
 ﻿using DexCMS.Core.Contexts;
+using DexCMS.Core.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace DexCMS.Core.Initializers.Helpers
 {
     public class RolesReference
     {
-        public string Admin { get; set; }
-        public string Installer { get; set; }
+        public ApplicationRole Admin { get; set; }
+        public ApplicationRole Installer { get; set; }
 
         public RolesReference(IDexCMSCoreContext Context)
         {
-            Admin = Context.RoleManager.FindByName("Admin").Id;
-            Installer = Context.RoleManager.FindByName("Installer").Id;
+            Admin = Context.RoleManager.FindByName("Admin");
+            Installer = Context.RoleManager.FindByName("Installer");
         }
     }
 }

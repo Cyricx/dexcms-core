@@ -114,11 +114,13 @@
     <Compile Include="Initializers\CountryInitializer.cs" />
     <Compile Include="Initializers\Helpers\CountriesReference.cs" />
     <Compile Include="Initializers\Helpers\IdentityHelper.cs" />
+    <Compile Include="Initializers\Helpers\UsersReference.cs" />
     <Compile Include="Initializers\Helpers\RolesReference.cs" />
     <Compile Include="Initializers\Helpers\SettingDataTypesReference.cs" />
     <Compile Include="Initializers\Helpers\SettingGroupsReference.cs" />
     <Compile Include="Initializers\Helpers\StatesReference.cs" />
-    <Compile Include="Initializers\IdentityInitializer.cs" />
+    <Compile Include="Initializers\ApplicationRoleInitializer.cs" />
+    <Compile Include="Initializers\ApplicationUserInitializer.cs" />
     <Compile Include="Initializers\ImageInitializer.cs" />
     <Compile Include="Initializers\SettingDataTypeInitializer.cs" />
     <Compile Include="Initializers\SettingGroupInitializer.cs" />

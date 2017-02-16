@@ -17,7 +17,8 @@ namespace DexCMS.Core.Initializers
             {
                 return new List<Type>
                 {
-                    typeof(IdentityInitializer),
+                    typeof(ApplicationRoleInitializer),
+                    typeof(ApplicationUserInitializer),
                     typeof(SettingDataTypeInitializer),
                     typeof(SettingGroupInitializer),
                     typeof(SettingInitializer),
