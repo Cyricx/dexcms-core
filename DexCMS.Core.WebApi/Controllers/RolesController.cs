@@ -1,8 +1,5 @@
 ﻿using DexCMS.Core.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -16,56 +13,46 @@ namespace DexCMS.Core.WebApi.Controllers
     [Authorize(Roles = "Admin")]
     public class RolesController: ApiController
     {
-        private IRoleRepository repository;
+        private IApplicationRoleRepository repository;
 
-        public RolesController(IRoleRepository repo)
+        public RolesController(IApplicationRoleRepository repo)
         {
             repository = repo;
         }
 
-        public List<RoleApiModel> GetRoles()
+        public List<ApplicationRoleApiModel> GetRoles()
         {
-            var items = repository.Items.Select(x => new RoleApiModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                UserCount = x.Users.Count
-            }).ToList();
-            return items;
+            return ApplicationRoleApiModel.MapForClient(repository.Items);
         }
 
-        [ResponseType(typeof(RoleApiModel))]
+        [ResponseType(typeof(ApplicationRoleApiModel))]
         public async Task<IHttpActionResult> GetRole(string id)
         {
-            IdentityRole role = await repository.RetrieveAsync(id);
+            ApplicationRole role = await repository.RetrieveAsync(id);
 
             if (role == null)
             {
                 return NotFound();
             }
 
-            RoleApiModel model = new RoleApiModel()
-            {
-                Id = role.Id,
-                Name = role.Name,
-                UserCount = role.Users.Count
-            };
-
-            return Ok(model);
+            return Ok(ApplicationRoleApiModel.MapForClient(role));
         }
 
 
-        public async Task<IHttpActionResult> PutRole(string id, ApplicationRole role)
+        public async Task<IHttpActionResult> PutRole(string id, ApplicationRoleApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != role.Id)
+            if (id != apiModel.Id)
             {
                 return BadRequest();
             }
+
+            ApplicationRole role = await repository.RetrieveAsync(id);
+            ApplicationRoleApiModel.MapForServer(apiModel, role);
 
             var result = await repository.UpdateAsync(role, role.Id);
             if (result.Succeeded)
@@ -78,12 +65,14 @@ namespace DexCMS.Core.WebApi.Controllers
         }
 
         [ResponseType(typeof(IdentityRole))]
-        public async Task<IHttpActionResult> PostRole(ApplicationRole role)
+        public async Task<IHttpActionResult> PostRole(ApplicationRoleApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            ApplicationRole role = new ApplicationRole();
+            ApplicationRoleApiModel.MapForServer(apiModel, role);
 
             var result = await repository.AddAsync(role);
             if (result.Succeeded)

@@ -31,12 +31,7 @@ namespace DexCMS.Core.Models
         [StringLength(250)]
         public string Original { get; set; }
 
-        [NotMapped]
-        public bool ToDelete { get; set; }
-        [NotMapped]
-        public string ReplacementFileName { get; set; }
-        [NotMapped]
-        public string TemporaryFileName { get; set; }
+
 
     }
 }

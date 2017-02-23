@@ -1,4 +1,7 @@
-﻿using ImageResizer;
+﻿using DexCMS.Core.Attributes;
+using DexCMS.Core.Globals;
+using DexCMS.Core.Models;
+using ImageResizer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DexCMS.Core.WebApi.ApiModels
 {
-    public class ImageApiModel
+    public class ImageApiModel: DexCMSViewModel<ImageApiModel, Image>
     {
         public int ImageID { get; set; }
 
@@ -25,7 +28,12 @@ namespace DexCMS.Core.WebApi.ApiModels
 
         public string Original { get; set; }
 
+        [OverrideMappingType(MappingType.NoMappings)]
+        public bool ToDelete { get; set; }
+        [OverrideMappingType(MappingType.NoMappings)]
         public string ReplacementFileName { get; set; }
+        [OverrideMappingType(MappingType.NoMappings)]
+        public string TemporaryFileName { get; set; }
 
     }
 

@@ -16,8 +16,8 @@ namespace DexCMS.Core.Globals
             kernel.Bind<ICountryRepository>().To<CountryRepository>();
             kernel.Bind<IImageRepository>().To<ImageRepository>();
             kernel.Bind<IStateRepository>().To<StateRepository>();
-            kernel.Bind<IRoleRepository>().To<RoleRepository>();
-            kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<IApplicationRoleRepository>().To<ApplicationRoleRepository>();
+            kernel.Bind<IApplicationUserRepository>().To<ApplicationUserRepository>();
             kernel.Bind<IDexCMSCoreContext>().To<T>();
         }
     }

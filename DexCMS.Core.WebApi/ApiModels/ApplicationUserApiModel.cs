@@ -1,12 +1,9 @@
-﻿using System;
+﻿using DexCMS.Core.Attributes;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DexCMS.Core.WebApi.ApiModels
 {
-    public class UserApiModel
+    public class ApplicationUserApiModel
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -16,6 +13,8 @@ namespace DexCMS.Core.WebApi.ApiModels
         public string PhoneNumber { get; set; }
         public string Id { get; set; }
         public string UserName { get; set; }
-        public List<RoleApiModel> Roles { get; set; }
+
+        [NestedClassMapping(typeof(ApplicationRoleApiModel), true)]
+        public List<ApplicationRoleApiModel> Roles { get; set; }
     }
 }

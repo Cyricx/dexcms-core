@@ -30,17 +30,19 @@ namespace DexCMS.Core.WebApi.Controllers
         // GET api/Settings
         public List<SettingApiModel> GetSettings()
         {
-			var items = repository.Items.Select(x => new SettingApiModel {
-				SettingID = x.SettingID,
-				Name = x.Name,
-				Value = x.Value,
-				SettingDataTypeID = x.SettingDataTypeID,
-				SettingGroupID = x.SettingGroupID,
-                SettingDataTypeName = x.SettingDataType.Name,
-                SettingGroupName = x.SettingGroup.SettingGroupName
-			}).ToList();
+            return SettingApiModel.MapForClient(repository.Items);
 
-			return items;
+			//var items = repository.Items.Select(x => new SettingApiModel {
+			//	SettingID = x.SettingID,
+			//	Name = x.Name,
+			//	Value = x.Value,
+			//	SettingDataTypeID = x.SettingDataTypeID,
+			//	SettingGroupID = x.SettingGroupID,
+   //             SettingDataTypeName = x.SettingDataType.Name,
+   //             SettingGroupName = x.SettingGroup.SettingGroupName
+			//}).ToList();
+
+			//return items;
         }
 
         // GET api/Settings/5
@@ -52,33 +54,36 @@ namespace DexCMS.Core.WebApi.Controllers
             {
                 return NotFound();
             }
-
-			SettingApiModel model = new SettingApiModel()
-			{
-				SettingID = setting.SettingID,
-				Name = setting.Name,
-				Value = setting.Value,
-				SettingDataTypeID = setting.SettingDataTypeID,
-                SettingDataTypeName = setting.SettingDataType.Name,
-				SettingGroupID = setting.SettingGroupID
+            return Ok(SettingApiModel.MapForClient(setting));
+			//SettingApiModel model = new SettingApiModel()
+			//{
+			//	SettingID = setting.SettingID,
+			//	Name = setting.Name,
+			//	Value = setting.Value,
+			//	SettingDataTypeID = setting.SettingDataTypeID,
+   //             SettingDataTypeName = setting.SettingDataType.Name,
+			//	SettingGroupID = setting.SettingGroupID
 			
-			};
+			//};
 
-            return Ok(model);
+   //         return Ok(model);
         }
 
         // PUT api/Settings/5
-        public async Task<IHttpActionResult> PutSetting(int id, Setting setting)
+        public async Task<IHttpActionResult> PutSetting(int id, SettingApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != setting.SettingID)
+            if (id != apiModel.SettingID)
             {
                 return BadRequest();
             }
+
+            Setting setting = await repository.RetrieveAsync(id);
+            SettingApiModel.MapForServer(apiModel, setting);
 
             if (setting.SettingDataTypeID == 10 && !string.IsNullOrEmpty(setting.ReplacementFileName))
             {
@@ -101,12 +106,15 @@ namespace DexCMS.Core.WebApi.Controllers
 
         // POST api/Settings
         [ResponseType(typeof(Setting))]
-        public async Task<IHttpActionResult> PostSetting(Setting setting)
+        public async Task<IHttpActionResult> PostSetting(SettingApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+
+            var setting = new Setting();
+            SettingApiModel.MapForServer(apiModel, setting);
 
             await repository.AddAsync(setting);
 

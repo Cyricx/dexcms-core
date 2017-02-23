@@ -31,18 +31,7 @@ namespace DexCMS.Core.WebApi.Controllers
         // GET api/Images
         public List<ImageApiModel> GetImages()
         {
-			var items = repository.Items.Select(x => new ImageApiModel {
-				ImageID = x.ImageID,
-				Alt = x.Alt,
-				Credit = x.Credit,
-				Caption = x.Caption,
-				Thumbnail = x.Thumbnail,
-				Slider = x.Slider,
-				Gallery = x.Gallery,
-				Original = x.Original
-			}).ToList();
-
-			return items;
+            return ImageApiModel.MapForClient(repository.Items);
         }
 
         // GET api/Images/PageContents/1
@@ -53,18 +42,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
             if (bytype == "forpagecontents")
             {
-                items = repository.Items
-                   .Select(x => new ImageApiModel
-                   {
-                       ImageID = x.ImageID,
-                       Alt = x.Alt,
-                       Credit = x.Credit,
-                       Caption = x.Caption,
-                       Thumbnail = x.Thumbnail,
-                       Slider = x.Slider,
-                       Gallery = x.Gallery,
-                       Original = x.Original
-                   }).ToList();
+                items = ImageApiModel.MapForClient(repository.Items);
             }
             else
             {
@@ -84,39 +62,29 @@ namespace DexCMS.Core.WebApi.Controllers
                 return NotFound();
             }
 
-			ImageApiModel model = new ImageApiModel()
-			{
-				ImageID = image.ImageID,
-				Alt = image.Alt,
-				Credit = image.Credit,
-				Caption = image.Caption,
-				Thumbnail = image.Thumbnail,
-				Slider = image.Slider,
-				Gallery = image.Gallery,
-				Original = image.Original
-			
-			};
-
-            return Ok(model);
+            return Ok(ImageApiModel.MapForClient(image));
         }
 
 
         // PUT api/Images/5
-        public async Task<IHttpActionResult> PutImage(int id, Image image)
+        public async Task<IHttpActionResult> PutImage(int id, ImageApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != image.ImageID)
+            if (id != apiModel.ImageID)
             {
                 return BadRequest();
             }
-            
-            if (!String.IsNullOrEmpty(image.ReplacementFileName))
+
+            Image image = await repository.RetrieveAsync(id);
+            ImageApiModel.MapForServer(apiModel, image);
+
+            if (!String.IsNullOrEmpty(apiModel.ReplacementFileName))
             {
-                SaveFile(image);
+                SaveFile(image, apiModel);
             }
 			await repository.UpdateAsync(image, image.ImageID);
 
@@ -125,15 +93,18 @@ namespace DexCMS.Core.WebApi.Controllers
 
         // POST api/Images
         [ResponseType(typeof(Image))]
-        public async Task<IHttpActionResult> PostImage(Image image)
+        public async Task<IHttpActionResult> PostImage(ImageApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            Image image = new Image();
+            ImageApiModel.MapForServer(apiModel, image);
+
             await repository.AddAsync(image);
 
-            SaveFile(image);
+            SaveFile(image, apiModel);
             await repository.UpdateAsync(image, image.ImageID);
 
             return CreatedAtRoute("DefaultApi", new { id = image.ImageID }, image);
@@ -154,7 +125,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return Ok(image);
         }
 
-        private void SaveFile(Image item, int? overrideID = null)
+        private void SaveFile(Image item, ImageApiModel apiModel, int? overrideID = null)
         {
             int id = overrideID.HasValue ? overrideID.Value : item.ImageID;
             string uploadFolderName = "content/images/cdn/" + id + "/";
@@ -168,7 +139,7 @@ namespace DexCMS.Core.WebApi.Controllers
             }
 
             string pictureName = item.Alt.Clean();
-            string extension = item.ReplacementFileName.Substring(item.ReplacementFileName.LastIndexOf('.'));
+            string extension = apiModel.ReplacementFileName.Substring(apiModel.ReplacementFileName.LastIndexOf('.'));
 
             if (item.Original != null)
             {
@@ -181,7 +152,7 @@ namespace DexCMS.Core.WebApi.Controllers
             item.Alt = newName;
 
             //Retrieve file
-            var file = System.Web.HttpContext.Current.Server.MapPath("~/Tmp/FileUploads/" + item.TemporaryFileName);
+            var file = System.Web.HttpContext.Current.Server.MapPath("~/Tmp/FileUploads/" + apiModel.TemporaryFileName);
 
             //resize the image for each of our resize settings
             foreach (ResizeType resize in resizeSettings)

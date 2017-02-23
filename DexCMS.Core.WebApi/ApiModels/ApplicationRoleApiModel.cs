@@ -4,15 +4,14 @@ using DexCMS.Core.Models;
 
 namespace DexCMS.Core.WebApi.ApiModels
 {
-    public class CountryApiModel: DexCMSViewModel<CountryApiModel, Country>
+    public class ApplicationRoleApiModel: DexCMSViewModel<ApplicationRoleApiModel, ApplicationRole>
     {
-        public int CountryID { get; set; }
-
+        public string Id { get; set; }
         public string Name { get; set; }
 
         [OverrideMappingType(MappingType.ClientOnly)]
-        [NestedPropertyMapping("States", "Count")]
-        public int StateCount { get; set; }
+        [NestedPropertyMapping("Users", "Count")]
+        public int UserCount { get; set; }
 
     }
 }

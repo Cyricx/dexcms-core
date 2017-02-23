@@ -1,6 +1,9 @@
 ﻿using DexCMS.Core.Interfaces;
 using DexCMS.Core.Models;
 using DexCMS.Core.Contexts;
+using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace DexCMS.Core.Repositories
 {
@@ -16,6 +19,11 @@ namespace DexCMS.Core.Repositories
         public CountryRepository(IDexCMSContext ctx)
         {
             _ctx = ctx;
+        }
+
+        public IEnumerable<Country> CountryItems
+        {
+            get { return Items.ToList(); }
         }
     }
 }

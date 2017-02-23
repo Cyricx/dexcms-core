@@ -16,20 +16,20 @@ namespace DexCMS.Core.WebApi.Controllers
     [Authorize(Roles = "Admin")]
     public class UsersController: ApiController
     {
-        private IUserRepository repository;
-        private IRoleRepository roleRepository;
+        private IApplicationUserRepository repository;
+        private IApplicationRoleRepository roleRepository;
 
-        public UsersController(IUserRepository repo, IRoleRepository roleRepo)
+        public UsersController(IApplicationUserRepository repo, IApplicationRoleRepository roleRepo)
         {
             repository = repo;
             roleRepository = roleRepo;
         }
 
-        public List<UserApiModel> GetUsers()
+        public List<ApplicationUserApiModel> GetUsers()
         {
             var roles = roleRepository.Items.ToList();
 
-            var items = repository.Items.Select(x => new UserApiModel
+            var items = repository.Items.Select(x => new ApplicationUserApiModel
             {
                 FirstName = x.FirstName,
                 LastName = x.LastName,
@@ -39,7 +39,7 @@ namespace DexCMS.Core.WebApi.Controllers
                 PhoneNumber = x.PhoneNumber,
                 Id = x.Id,
                 UserName = x.UserName,
-                Roles = x.Roles.Select(y => new RoleApiModel
+                Roles = x.Roles.Select(y => new ApplicationRoleApiModel
                 {
                     Id = y.RoleId
                 }).ToList()
@@ -60,7 +60,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return items;
         }
 
-        [ResponseType(typeof(UserApiModel))]
+        [ResponseType(typeof(ApplicationUserApiModel))]
         public async Task<IHttpActionResult> GetUser(string id)
         {
             ApplicationUser user = await repository.RetrieveAsync(id);
@@ -72,7 +72,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
             var roles = roleRepository.Items.ToList();
 
-            UserApiModel model = new UserApiModel()
+            ApplicationUserApiModel model = new ApplicationUserApiModel()
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
@@ -82,7 +82,7 @@ namespace DexCMS.Core.WebApi.Controllers
                 PhoneNumber = user.PhoneNumber,
                 Id = user.Id,
                 UserName = user.UserName,
-                Roles = user.Roles.Select(x => new RoleApiModel
+                Roles = user.Roles.Select(x => new ApplicationRoleApiModel
                 {
                     Id = x.RoleId,
                     Name = roles.Where(y => y.Id == x.RoleId).Select(y => y.Name).SingleOrDefault()
@@ -92,7 +92,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return Ok(model);
         }
 
-        public async Task<IHttpActionResult> PutUser(string id, UserApiModel user)
+        public async Task<IHttpActionResult> PutUser(string id, ApplicationUserApiModel user)
         {
             if (!ModelState.IsValid)
             {

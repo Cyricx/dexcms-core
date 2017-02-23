@@ -10,7 +10,7 @@ using DexCMS.Core.Models;
 
 namespace DexCMS.Core.Repositories
 {
-    public class RoleRepository: IRoleRepository
+    public class ApplicationRoleRepository: IApplicationRoleRepository
     {
         private ApplicationRoleManager _roleManager;
         public ApplicationRoleManager RoleManager

@@ -105,8 +105,8 @@
     <Compile Include="ApiModels\CountryApiModel.cs" />
     <Compile Include="ApiModels\FileUploadApiModel.cs" />
     <Compile Include="ApiModels\ImageApiModel.cs" />
-    <Compile Include="ApiModels\UserApiModel.cs" />
-    <Compile Include="ApiModels\RoleApiModel.cs" />
+    <Compile Include="ApiModels\ApplicationUserApiModel.cs" />
+    <Compile Include="ApiModels\ApplicationRoleApiModel.cs" />
     <Compile Include="ApiModels\SettingApiModel.cs" />
     <Compile Include="ApiModels\SettingDataTypeApiModel.cs" />
     <Compile Include="ApiModels\SettingGroupApiModel.cs" />

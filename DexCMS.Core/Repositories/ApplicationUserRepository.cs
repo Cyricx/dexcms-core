@@ -12,7 +12,7 @@ using Microsoft.AspNet.Identity;
 
 namespace DexCMS.Core.Repositories
 {
-    public class UserRepository: IUserRepository
+    public class ApplicationUserRepository: IApplicationUserRepository
     {
         private ApplicationUserManager _userManager;
         public ApplicationUserManager UserManager

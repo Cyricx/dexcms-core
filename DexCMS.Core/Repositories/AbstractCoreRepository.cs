@@ -1,5 +1,6 @@
 ﻿using DexCMS.Core.Contexts;
 using DexCMS.Core.Interfaces;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,14 +15,13 @@ namespace DexCMS.Core.Repositories
 
         public abstract IDexCMSContext GetContext();
 
-        public virtual IQueryable<T> Items
+        public virtual IEnumerable<T> Items
         {
-            get { return Ctx.Set<T>(); }
+            get { return Ctx.Set<T>().ToList(); }
         }
 
         public virtual Task<int> AddAsync(T item)
         {
-
             Ctx.Set<T>().Add(item);
             return Ctx.SaveChangesAsync();
         }

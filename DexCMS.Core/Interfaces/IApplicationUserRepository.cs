@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DexCMS.Core.Interfaces
 {
-    public interface IUserRepository
+    public interface IApplicationUserRepository
     {
         ApplicationUserManager UserManager { get; }
         IQueryable<ApplicationUser> Items { get; }

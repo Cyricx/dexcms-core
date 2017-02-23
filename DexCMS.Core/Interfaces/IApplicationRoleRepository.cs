@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DexCMS.Core.Interfaces
 {
-    public interface IRoleRepository
+    public interface IApplicationRoleRepository
     {
         IQueryable<ApplicationRole> Items { get; }
         Task<ApplicationRole> RetrieveAsync(string id);

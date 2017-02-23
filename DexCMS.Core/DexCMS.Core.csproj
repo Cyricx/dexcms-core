@@ -94,6 +94,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\NestedClassMappingAttribute.cs" />
+    <Compile Include="Attributes\NestedPropertyMappingAttribute.cs" />
+    <Compile Include="Attributes\OverrideMappingTypeAttribute.cs" />
     <Compile Include="Attributes\IsDateBeforeDateAttribute.cs" />
     <Compile Include="Attributes\IsIntGreaterThanIntAttribute.cs" />
     <Compile Include="Attributes\RequiredIfNullAttribute.cs" />
@@ -110,6 +113,8 @@
     <Compile Include="Globals\DexCMSIdentityConfig.cs" />
     <Compile Include="Globals\DexCMSInitializer.cs" />
     <Compile Include="Globals\DexCMSLibraryInitializer.cs" />
+    <Compile Include="Globals\DexCMSViewModel.cs" />
+    <Compile Include="Globals\DexCMSModelMapper.cs" />
     <Compile Include="Initializers\CoreInitializer.cs" />
     <Compile Include="Initializers\CountryInitializer.cs" />
     <Compile Include="Initializers\Helpers\CountriesReference.cs" />
@@ -132,12 +137,12 @@
     <Compile Include="Interfaces\IImageRepository.cs" />
     <Compile Include="Interfaces\ILogRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IRoleRepository.cs" />
+    <Compile Include="Interfaces\IApplicationRoleRepository.cs" />
     <Compile Include="Interfaces\ISettingDataTypeRepository.cs" />
     <Compile Include="Interfaces\ISettingGroupRepository.cs" />
     <Compile Include="Interfaces\ISettingRepository.cs" />
     <Compile Include="Interfaces\IStateRepository.cs" />
-    <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\IApplicationUserRepository.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Models\ApplicationRole.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -156,12 +161,12 @@
     <Compile Include="Repositories\CountryRepository.cs" />
     <Compile Include="Repositories\ImageRepository.cs" />
     <Compile Include="Repositories\LogRepository.cs" />
-    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleRepository.cs" />
     <Compile Include="Repositories\SettingDataTypeRepository.cs" />
     <Compile Include="Repositories\SettingGroupRepository.cs" />
     <Compile Include="Repositories\SettingRepository.cs" />
     <Compile Include="Repositories\StateRepository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\ApplicationUserRepository.cs" />
     <Compile Include="SiteSettings.cs" />
   </ItemGroup>
   <ItemGroup>

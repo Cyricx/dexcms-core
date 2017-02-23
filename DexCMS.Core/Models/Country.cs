@@ -5,7 +5,6 @@ namespace DexCMS.Core.Models
 {
     public class Country
     {
-        //Properties
         [Key]
         public int CountryID { get; set; }
 
@@ -13,8 +12,6 @@ namespace DexCMS.Core.Models
         [StringLength(250)]
         public string Name { get; set; }
 
-        //Relationships
         public virtual ICollection<State> States { get; set; }
-
     }
 }

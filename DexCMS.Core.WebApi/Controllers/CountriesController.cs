@@ -2,8 +2,6 @@
 using DexCMS.Core.Models;
 using DexCMS.Core.WebApi.ApiModels;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -21,19 +19,11 @@ namespace DexCMS.Core.WebApi.Controllers
 			repository = repo;
 		}
 
-        // GET api/Countries
         public List<CountryApiModel> GetCountries()
         {
-			var items = repository.Items.Select(x => new CountryApiModel {
-				CountryID = x.CountryID,
-				Name = x.Name,
-                StateCount = x.States.Count
-			}).ToList();
-
-			return items;
+            return CountryApiModel.MapForClient(repository.Items);
         }
 
-        // GET api/Countries/5
         [ResponseType(typeof(Country))]
         public async Task<IHttpActionResult> GetCountry(int id)
         {
@@ -43,29 +33,24 @@ namespace DexCMS.Core.WebApi.Controllers
                 return NotFound();
             }
 
-			CountryApiModel model = new CountryApiModel()
-			{
-				CountryID = country.CountryID,
-				Name = country.Name,
-                StateCount = country.States.Count
-			
-			};
-
-            return Ok(model);
+            return Ok(CountryApiModel.MapForClient(country));
         }
 
         // PUT api/Countries/5
-        public async Task<IHttpActionResult> PutCountry(int id, Country country)
+        public async Task<IHttpActionResult> PutCountry(int id, CountryApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != country.CountryID)
+            if (id != apiModel.CountryID)
             {
                 return BadRequest();
             }
+
+            Country country = await repository.RetrieveAsync(id);
+            CountryApiModel.MapForServer(apiModel, country);
 
 			await repository.UpdateAsync(country, country.CountryID);
 
@@ -74,14 +59,16 @@ namespace DexCMS.Core.WebApi.Controllers
 
         // POST api/Countries
         [ResponseType(typeof(Country))]
-        public async Task<IHttpActionResult> PostCountry(Country country)
+        public async Task<IHttpActionResult> PostCountry(CountryApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            var country = new Country();
+            CountryApiModel.MapForServer(apiModel, country);
 
-			await repository.AddAsync(country);
+            await repository.AddAsync(country);
 
             return CreatedAtRoute("DefaultApi", new { id = country.CountryID }, country);
         }
