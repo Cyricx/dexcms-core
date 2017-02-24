@@ -19,12 +19,13 @@ namespace DexCMS.Core.WebApi.Controllers
 			repository = repo;
 		}
 
+        [ResponseType(typeof(List<SettingGroupApiModel>))]
         public List<SettingGroupApiModel> GetSettingGroups()
         {
             return SettingGroupApiModel.MapForClient(repository.Items);
         }
 
-        [ResponseType(typeof(SettingGroup))]
+        [ResponseType(typeof(SettingGroupApiModel))]
         public async Task<IHttpActionResult> GetSettingGroup(int id)
         {
 			SettingGroup settingGroup = await repository.RetrieveAsync(id);
@@ -55,7 +56,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        [ResponseType(typeof(SettingGroup))]
+        [ResponseType(typeof(SettingGroupApiModel))]
         public async Task<IHttpActionResult> PostSettingGroup(SettingGroupApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -67,10 +68,10 @@ namespace DexCMS.Core.WebApi.Controllers
 
             await repository.AddAsync(settingGroup);
 
-            return CreatedAtRoute("DefaultApi", new { id = settingGroup.SettingGroupID }, settingGroup);
+            return CreatedAtRoute("DefaultApi", new { id = settingGroup.SettingGroupID }, SettingGroupApiModel.MapForClient(settingGroup));
         }
 
-        [ResponseType(typeof(SettingGroup))]
+        [ResponseType(typeof(SettingGroupApiModel))]
         public async Task<IHttpActionResult> DeleteSettingGroup(int id)
         {
 			SettingGroup settingGroup = await repository.RetrieveAsync(id);
@@ -81,7 +82,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
 			await repository.DeleteAsync(settingGroup);
 
-            return Ok(settingGroup);
+            return Ok(SettingGroupApiModel.MapForClient(settingGroup));
         }
     }
 }

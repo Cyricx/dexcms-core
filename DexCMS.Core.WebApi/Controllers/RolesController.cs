@@ -20,6 +20,7 @@ namespace DexCMS.Core.WebApi.Controllers
             repository = repo;
         }
 
+        [ResponseType(typeof(List<ApplicationRoleApiModel>))]
         public List<ApplicationRoleApiModel> GetRoles()
         {
             return ApplicationRoleApiModel.MapForClient(repository.Items);
@@ -37,7 +38,6 @@ namespace DexCMS.Core.WebApi.Controllers
 
             return Ok(ApplicationRoleApiModel.MapForClient(role));
         }
-
 
         public async Task<IHttpActionResult> PutRole(string id, ApplicationRoleApiModel apiModel)
         {
@@ -64,7 +64,7 @@ namespace DexCMS.Core.WebApi.Controllers
             }
         }
 
-        [ResponseType(typeof(IdentityRole))]
+        [ResponseType(typeof(ApplicationRoleApiModel))]
         public async Task<IHttpActionResult> PostRole(ApplicationRoleApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -77,13 +77,13 @@ namespace DexCMS.Core.WebApi.Controllers
             var result = await repository.AddAsync(role);
             if (result.Succeeded)
             {
-                return Ok(role);
+                return Ok(ApplicationRoleApiModel.MapForClient(role));
             } else {
                 return BadRequest(ModelState);
             }
         }
 
-        [ResponseType(typeof(IdentityRole))]
+        [ResponseType(typeof(ApplicationRoleApiModel))]
         public async Task<IHttpActionResult> DeleteRole(string id)
         {
             ApplicationRole role = await repository.RetrieveAsync(id);
@@ -96,7 +96,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
             if (result.Succeeded)
             {
-                return Ok(role);
+                return Ok(ApplicationRoleApiModel.MapForClient(role));
             }
             else
             {

@@ -25,6 +25,7 @@ namespace DexCMS.Core.WebApi.Controllers
             roleRepository = roleRepo;
         }
 
+        [ResponseType(typeof(List<ApplicationUserApiModel>))]
         public List<ApplicationUserApiModel> GetUsers()
         {
             var roles = roleRepository.Items.ToList();
@@ -70,6 +71,13 @@ namespace DexCMS.Core.WebApi.Controllers
                 return NotFound();
             }
 
+            ApplicationUserApiModel model = MapUserToClient(user);
+
+            return Ok(model);
+        }
+
+        private ApplicationUserApiModel MapUserToClient(ApplicationUser user)
+        {
             var roles = roleRepository.Items.ToList();
 
             ApplicationUserApiModel model = new ApplicationUserApiModel()
@@ -88,8 +96,7 @@ namespace DexCMS.Core.WebApi.Controllers
                     Name = roles.Where(y => y.Id == x.RoleId).Select(y => y.Name).SingleOrDefault()
                 }).ToList()
             };
-
-            return Ok(model);
+            return model;
         }
 
         public async Task<IHttpActionResult> PutUser(string id, ApplicationUserApiModel user)

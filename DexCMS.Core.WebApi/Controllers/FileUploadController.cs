@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -36,16 +35,17 @@ namespace DexCMS.Core.WebApi.Controllers
             return this.Request.CreateResponse(HttpStatusCode.OK, uploadedFile);
         }
 
-
         private string GetDeserializedFileName(MultipartFileData fileData)
         {
             var fileName = GetFileName(fileData);
             return JsonConvert.DeserializeObject(fileName).ToString();
         }
+
         private string GetFileName(MultipartFileData fileData)
         {
             return fileData.Headers.ContentDisposition.FileName;
         }
+
         private void ProcessFile(MultipartFileData fileData, UploadedFile uploadedFile)
         {
             uploadedFile.OriginalName = GetDeserializedFileName(fileData);
@@ -58,6 +58,4 @@ namespace DexCMS.Core.WebApi.Controllers
             File.Move(uploadedFileInfo.FullName, tempFolder + '/' + uploadedFile.TemporaryName);
         }
     }
-
-
 }

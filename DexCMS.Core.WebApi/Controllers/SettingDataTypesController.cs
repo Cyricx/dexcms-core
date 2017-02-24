@@ -19,12 +19,13 @@ namespace DexCMS.Core.WebApi.Controllers
 			repository = repo;
 		}
 
+        [ResponseType(typeof(List<SettingDataTypeApiModel>))]
         public List<SettingDataTypeApiModel> GetSettingDataTypes()
         {
             return SettingDataTypeApiModel.MapForClient(repository.Items);
         }
 
-        [ResponseType(typeof(SettingDataType))]
+        [ResponseType(typeof(SettingDataTypeApiModel))]
         public async Task<IHttpActionResult> GetSettingDataType(int id)
         {
 			SettingDataType settingDataType = await repository.RetrieveAsync(id);
@@ -55,7 +56,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        [ResponseType(typeof(SettingDataType))]
+        [ResponseType(typeof(SettingDataTypeApiModel))]
         public async Task<IHttpActionResult> PostSettingDataType(SettingDataTypeApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -67,10 +68,10 @@ namespace DexCMS.Core.WebApi.Controllers
 
 			await repository.AddAsync(settingDataType);
 
-            return CreatedAtRoute("DefaultApi", new { id = settingDataType.SettingDataTypeID }, settingDataType);
+            return CreatedAtRoute("DefaultApi", new { id = settingDataType.SettingDataTypeID }, SettingDataTypeApiModel.MapForClient(settingDataType));
         }
 
-        [ResponseType(typeof(SettingDataType))]
+        [ResponseType(typeof(SettingDataTypeApiModel))]
         public async Task<IHttpActionResult> DeleteSettingDataType(int id)
         {
 			SettingDataType settingDataType = await repository.RetrieveAsync(id);
@@ -81,7 +82,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
 			await repository.DeleteAsync(settingDataType);
 
-            return Ok(settingDataType);
+            return Ok(SettingDataTypeApiModel.MapForClient(settingDataType));
         }
     }
 }

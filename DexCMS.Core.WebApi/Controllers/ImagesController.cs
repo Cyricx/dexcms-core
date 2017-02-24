@@ -28,13 +28,12 @@ namespace DexCMS.Core.WebApi.Controllers
             this.settings = settings;
 		}
 
-        // GET api/Images
+        [ResponseType(typeof(List<ImageApiModel>))]
         public List<ImageApiModel> GetImages()
         {
             return ImageApiModel.MapForClient(repository.Items);
         }
 
-        // GET api/Images/PageContents/1
         [ResponseType(typeof(List<ImageApiModel>))]
         public IHttpActionResult GetImages(string bytype, int id)
         {
@@ -52,8 +51,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return Ok(items);
         }
 
-        // GET api/Images/5
-        [ResponseType(typeof(Image))]
+        [ResponseType(typeof(ImageApiModel))]
         public async Task<IHttpActionResult> GetImage(int id)
         {
 			Image image = await repository.RetrieveAsync(id);
@@ -65,8 +63,6 @@ namespace DexCMS.Core.WebApi.Controllers
             return Ok(ImageApiModel.MapForClient(image));
         }
 
-
-        // PUT api/Images/5
         public async Task<IHttpActionResult> PutImage(int id, ImageApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -91,8 +87,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST api/Images
-        [ResponseType(typeof(Image))]
+        [ResponseType(typeof(ImageApiModel))]
         public async Task<IHttpActionResult> PostImage(ImageApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -107,11 +102,10 @@ namespace DexCMS.Core.WebApi.Controllers
             SaveFile(image, apiModel);
             await repository.UpdateAsync(image, image.ImageID);
 
-            return CreatedAtRoute("DefaultApi", new { id = image.ImageID }, image);
+            return CreatedAtRoute("DefaultApi", new { id = image.ImageID }, ImageApiModel.MapForClient(image));
         }
 
-        // DELETE api/Images/5
-        [ResponseType(typeof(Image))]
+        [ResponseType(typeof(ImageApiModel))]
         public async Task<IHttpActionResult> DeleteImage(int id)
         {
 			Image image = await repository.RetrieveAsync(id);
@@ -122,7 +116,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
             DeleteImageFiles(image);
             await repository.DeleteAsync(image);
-            return Ok(image);
+            return Ok(ImageApiModel.MapForClient(image));
         }
 
         private void SaveFile(Image item, ImageApiModel apiModel, int? overrideID = null)
@@ -277,6 +271,4 @@ namespace DexCMS.Core.WebApi.Controllers
             return resizeType;
         }
     }
-
-
 }

@@ -24,12 +24,13 @@ namespace DexCMS.Core.WebApi.Controllers
 			repository = repo;
 		}
 
+        [ResponseType(typeof(List<SettingApiModel>))]
         public List<SettingApiModel> GetSettings()
         {
             return SettingApiModel.MapForClient(repository.Items);
         }
 
-        [ResponseType(typeof(Setting))]
+        [ResponseType(typeof(SettingApiModel))]
         public async Task<IHttpActionResult> GetSetting(int id)
         {
 			Setting setting = await repository.RetrieveAsync(id);
@@ -74,7 +75,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        [ResponseType(typeof(Setting))]
+        [ResponseType(typeof(SettingApiModel))]
         public async Task<IHttpActionResult> PostSetting(SettingApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -100,10 +101,10 @@ namespace DexCMS.Core.WebApi.Controllers
 
             (new SiteSettingsBuilder(repository)).Initialize();
 
-            return CreatedAtRoute("DefaultApi", new { id = setting.SettingID }, setting);
+            return CreatedAtRoute("DefaultApi", new { id = setting.SettingID }, SettingApiModel.MapForClient(setting));
         }
 
-        [ResponseType(typeof(Setting))]
+        [ResponseType(typeof(SettingApiModel))]
         public async Task<IHttpActionResult> DeleteSetting(int id)
         {
 			Setting setting = await repository.RetrieveAsync(id);
@@ -121,7 +122,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
             (new SiteSettingsBuilder(repository)).Initialize();
 
-            return Ok(setting);
+            return Ok(SettingApiModel.MapForClient(setting));
         }
 
         private string GetValue(int id)

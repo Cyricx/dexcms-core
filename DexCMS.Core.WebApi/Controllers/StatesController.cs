@@ -19,12 +19,13 @@ namespace DexCMS.Core.WebApi.Controllers
 			repository = repo;
 		}
 
+        [ResponseType(typeof(List<StateApiModel>))]
         public List<StateApiModel> GetStates()
         {
             return StateApiModel.MapForClient(repository.Items);
         }
 
-        [ResponseType(typeof(State))]
+        [ResponseType(typeof(StateApiModel))]
         public async Task<IHttpActionResult> GetState(int id)
         {
 			State state = await repository.RetrieveAsync(id);
@@ -55,7 +56,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        [ResponseType(typeof(State))]
+        [ResponseType(typeof(StateApiModel))]
         public async Task<IHttpActionResult> PostState(StateApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -67,10 +68,10 @@ namespace DexCMS.Core.WebApi.Controllers
 
 			await repository.AddAsync(state);
 
-            return CreatedAtRoute("DefaultApi", new { id = state.StateID }, state);
+            return CreatedAtRoute("DefaultApi", new { id = state.StateID }, StateApiModel.MapForClient(state));
         }
 
-        [ResponseType(typeof(State))]
+        [ResponseType(typeof(StateApiModel))]
         public async Task<IHttpActionResult> DeleteState(int id)
         {
 			State state = await repository.RetrieveAsync(id);
@@ -81,7 +82,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
 			await repository.DeleteAsync(state);
 
-            return Ok(state);
+            return Ok(StateApiModel.MapForClient(state));
         }
     }
 }

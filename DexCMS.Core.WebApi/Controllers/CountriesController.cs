@@ -19,12 +19,13 @@ namespace DexCMS.Core.WebApi.Controllers
 			repository = repo;
 		}
 
+        [ResponseType(typeof(List<CountryApiModel>))]
         public List<CountryApiModel> GetCountries()
         {
             return CountryApiModel.MapForClient(repository.Items);
         }
 
-        [ResponseType(typeof(Country))]
+        [ResponseType(typeof(CountryApiModel))]
         public async Task<IHttpActionResult> GetCountry(int id)
         {
 			Country country = await repository.RetrieveAsync(id);
@@ -36,7 +37,6 @@ namespace DexCMS.Core.WebApi.Controllers
             return Ok(CountryApiModel.MapForClient(country));
         }
 
-        // PUT api/Countries/5
         public async Task<IHttpActionResult> PutCountry(int id, CountryApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -57,8 +57,7 @@ namespace DexCMS.Core.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST api/Countries
-        [ResponseType(typeof(Country))]
+        [ResponseType(typeof(CountryApiModel))]
         public async Task<IHttpActionResult> PostCountry(CountryApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -70,11 +69,10 @@ namespace DexCMS.Core.WebApi.Controllers
 
             await repository.AddAsync(country);
 
-            return CreatedAtRoute("DefaultApi", new { id = country.CountryID }, country);
+            return CreatedAtRoute("DefaultApi", new { id = country.CountryID }, CountryApiModel.MapForClient(country));
         }
 
-        // DELETE api/Countries/5
-        [ResponseType(typeof(Country))]
+        [ResponseType(typeof(CountryApiModel))]
         public async Task<IHttpActionResult> DeleteCountry(int id)
         {
 			Country country = await repository.RetrieveAsync(id);
@@ -85,11 +83,7 @@ namespace DexCMS.Core.WebApi.Controllers
 
 			await repository.DeleteAsync(country);
 
-            return Ok(country);
+            return Ok(CountryApiModel.MapForClient(country));
         }
-
     }
-
-
-
 }
