@@ -10,6 +10,7 @@ namespace DexCMS.Core.WebApi.ApiModels
 
         public string SettingGroupName { get; set; }
 
+        [OverrideMappingType(MappingType.ClientOnly)]
         [NestedPropertyMapping("Settings", "Count")]
         public int SettingCount { get; set; }
 

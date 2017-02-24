@@ -12,6 +12,7 @@ namespace DexCMS.Core.WebApi.ApiModels
 
         public int CountryID { get; set; }
 
+        [OverrideMappingType(MappingType.ClientOnly)]
         [NestedPropertyMapping("Country", "Name")]
         public string CountryName { get; set; }
 
