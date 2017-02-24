@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -23,19 +19,11 @@ namespace DexCMS.Core.WebApi.Controllers
 			repository = repo;
 		}
 
-        // GET api/SettingGroups
         public List<SettingGroupApiModel> GetSettingGroups()
         {
-			var items = repository.Items.Select(x => new SettingGroupApiModel {
-				SettingGroupID = x.SettingGroupID,
-				SettingGroupName = x.SettingGroupName,
-                SettingCount = x.Settings.Count
-			}).ToList();
-
-			return items;
+            return SettingGroupApiModel.MapForClient(repository.Items);
         }
 
-        // GET api/SettingGroups/5
         [ResponseType(typeof(SettingGroup))]
         public async Task<IHttpActionResult> GetSettingGroup(int id)
         {
@@ -45,49 +33,43 @@ namespace DexCMS.Core.WebApi.Controllers
                 return NotFound();
             }
 
-			SettingGroupApiModel model = new SettingGroupApiModel()
-			{
-				SettingGroupID = settingGroup.SettingGroupID,
-				SettingGroupName = settingGroup.SettingGroupName,
-                SettingCount = settingGroup.Settings.Count
-			};
-
-            return Ok(model);
+            return Ok(SettingGroupApiModel.MapForClient(settingGroup));
         }
 
-        // PUT api/SettingGroups/5
-        public async Task<IHttpActionResult> PutSettingGroup(int id, SettingGroup settingGroup)
+        public async Task<IHttpActionResult> PutSettingGroup(int id, SettingGroupApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != settingGroup.SettingGroupID)
+            if (id != apiModel.SettingGroupID)
             {
                 return BadRequest();
             }
+            SettingGroup settingGroup = await repository.RetrieveAsync(id);
+            SettingGroupApiModel.MapForServer(apiModel, settingGroup);
 
 			await repository.UpdateAsync(settingGroup, settingGroup.SettingGroupID);
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST api/SettingGroups
         [ResponseType(typeof(SettingGroup))]
-        public async Task<IHttpActionResult> PostSettingGroup(SettingGroup settingGroup)
+        public async Task<IHttpActionResult> PostSettingGroup(SettingGroupApiModel apiModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            SettingGroup settingGroup = new SettingGroup();
+            SettingGroupApiModel.MapForServer(apiModel, settingGroup);
 
-			await repository.AddAsync(settingGroup);
+            await repository.AddAsync(settingGroup);
 
             return CreatedAtRoute("DefaultApi", new { id = settingGroup.SettingGroupID }, settingGroup);
         }
 
-        // DELETE api/SettingGroups/5
         [ResponseType(typeof(SettingGroup))]
         public async Task<IHttpActionResult> DeleteSettingGroup(int id)
         {
@@ -101,8 +83,5 @@ namespace DexCMS.Core.WebApi.Controllers
 
             return Ok(settingGroup);
         }
-
     }
-
-
 }

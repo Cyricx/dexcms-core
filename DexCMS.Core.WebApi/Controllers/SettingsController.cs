@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Web.Hosting;
 using System.IO;
 using DexCMS.Core.Extensions;
-using DexCMS.Core;
 using DexCMS.Core.Models;
 using DexCMS.Core.Interfaces;
 using DexCMS.Core.WebApi.ApiModels;
@@ -27,25 +24,11 @@ namespace DexCMS.Core.WebApi.Controllers
 			repository = repo;
 		}
 
-        // GET api/Settings
         public List<SettingApiModel> GetSettings()
         {
             return SettingApiModel.MapForClient(repository.Items);
-
-			//var items = repository.Items.Select(x => new SettingApiModel {
-			//	SettingID = x.SettingID,
-			//	Name = x.Name,
-			//	Value = x.Value,
-			//	SettingDataTypeID = x.SettingDataTypeID,
-			//	SettingGroupID = x.SettingGroupID,
-   //             SettingDataTypeName = x.SettingDataType.Name,
-   //             SettingGroupName = x.SettingGroup.SettingGroupName
-			//}).ToList();
-
-			//return items;
         }
 
-        // GET api/Settings/5
         [ResponseType(typeof(Setting))]
         public async Task<IHttpActionResult> GetSetting(int id)
         {
@@ -55,21 +38,8 @@ namespace DexCMS.Core.WebApi.Controllers
                 return NotFound();
             }
             return Ok(SettingApiModel.MapForClient(setting));
-			//SettingApiModel model = new SettingApiModel()
-			//{
-			//	SettingID = setting.SettingID,
-			//	Name = setting.Name,
-			//	Value = setting.Value,
-			//	SettingDataTypeID = setting.SettingDataTypeID,
-   //             SettingDataTypeName = setting.SettingDataType.Name,
-			//	SettingGroupID = setting.SettingGroupID
-			
-			//};
-
-   //         return Ok(model);
         }
 
-        // PUT api/Settings/5
         public async Task<IHttpActionResult> PutSetting(int id, SettingApiModel apiModel)
         {
             if (!ModelState.IsValid)
@@ -104,7 +74,6 @@ namespace DexCMS.Core.WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST api/Settings
         [ResponseType(typeof(Setting))]
         public async Task<IHttpActionResult> PostSetting(SettingApiModel apiModel)
         {
@@ -134,7 +103,6 @@ namespace DexCMS.Core.WebApi.Controllers
             return CreatedAtRoute("DefaultApi", new { id = setting.SettingID }, setting);
         }
 
-        // DELETE api/Settings/5
         [ResponseType(typeof(Setting))]
         public async Task<IHttpActionResult> DeleteSetting(int id)
         {
@@ -185,11 +153,6 @@ namespace DexCMS.Core.WebApi.Controllers
             string pictureName = item.Name.Clean();
             string extension = replacementFile.Substring(replacementFile.LastIndexOf('.'));
 
-            //let's make sure alt is unique
-            string newName = item.Name;
- //           GenerateUniqueName(uploadFolderName, uploadFolder, ref pictureName, extension, ref newName);
-            item.Name = newName;
-
             //Retrieve file
             var file = System.Web.HttpContext.Current.Server.MapPath("~/Tmp/FileUploads/" + tempName);
 
@@ -203,6 +166,5 @@ namespace DexCMS.Core.WebApi.Controllers
             File.Delete(file);
             item.Value = uploadFolderName + fileName;
         }
-        
     }
 }

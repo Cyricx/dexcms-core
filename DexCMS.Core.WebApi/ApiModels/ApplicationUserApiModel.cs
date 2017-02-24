@@ -14,7 +14,6 @@ namespace DexCMS.Core.WebApi.ApiModels
         public string Id { get; set; }
         public string UserName { get; set; }
 
-        [NestedClassMapping(typeof(ApplicationRoleApiModel), true)]
         public List<ApplicationRoleApiModel> Roles { get; set; }
     }
 }

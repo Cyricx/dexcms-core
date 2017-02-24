@@ -23,6 +23,9 @@ aggregation of shared code across several small websites. Soon it will be awesom
 	* Added implementation for grunt uglify to process the dex cms applications files
 	* Added symlink options
 
+## 0.7.0-alpha
+* Model Mapping
+
 ## 0.5.1-alpha
 * Mvc
 ** Fixed casing of Error route

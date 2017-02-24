@@ -1,5 +1,4 @@
 ﻿using DexCMS.Core.Attributes;
-using DexCMS.Core.Globals;
 using System;
 using System.Collections.Generic;
 using System.Linq;

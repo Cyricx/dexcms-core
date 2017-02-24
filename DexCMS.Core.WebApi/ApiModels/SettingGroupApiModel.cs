@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DexCMS.Core.Attributes;
+using DexCMS.Core.Globals;
+using DexCMS.Core.Models;
 
 namespace DexCMS.Core.WebApi.ApiModels
 {
-    public class SettingGroupApiModel
+    public class SettingGroupApiModel:DexCMSViewModel<SettingGroupApiModel, SettingGroup>
     {
         public int SettingGroupID { get; set; }
 
         public string SettingGroupName { get; set; }
 
+        [NestedPropertyMapping("Settings", "Count")]
         public int SettingCount { get; set; }
 
     }
-
 }
