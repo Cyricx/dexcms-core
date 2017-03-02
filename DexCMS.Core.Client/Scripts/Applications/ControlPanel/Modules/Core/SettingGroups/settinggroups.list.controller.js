@@ -31,7 +31,7 @@
                 $scope.table.columns.push(
                 {
                     property: '', title: '', disableSorting: true,
-                    dataTemplate: dexcmsSettings.startingRoute + 'modules/base/settinggroups/_settinggroups.list.buttons.html'
+                    dataTemplate: dexcmsSettings.startingRoute + 'modules/core/settinggroups/_settinggroups.list.buttons.html'
                 });
             }
 

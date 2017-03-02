@@ -17,7 +17,7 @@
                     { property: 'abbreviation', title: 'Abbrev' },
                     {
                         property: '', title: '', disableSorting: true,
-                        dataTemplate: dexcmsSettings.startingRoute + 'modules/base/states/_states.list.buttons.html'
+                        dataTemplate: dexcmsSettings.startingRoute + 'modules/core/states/_states.list.buttons.html'
                     }
                 ],
                 defaultSort: 'stateID',

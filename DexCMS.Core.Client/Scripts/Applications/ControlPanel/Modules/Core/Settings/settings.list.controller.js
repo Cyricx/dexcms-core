@@ -52,13 +52,13 @@ define([
                 $scope.table.columns.push(
                     {
                         property: '', title: '', disableSorting: true,
-                        dataTemplate: dexcmsSettings.startingRoute + 'modules/base/settings/_settings.list.buttons.html'
+                        dataTemplate: dexcmsSettings.startingRoute + 'modules/core/settings/_settings.list.buttons.html'
                     });
             } else {
                 $scope.table.columns.push(
                     {
                         property: '', title: '', disableSorting: true,
-                        dataTemplate: dexcmsSettings.startingRoute + 'modules/base/settings/_settings.list.editonly.buttons.html'
+                        dataTemplate: dexcmsSettings.startingRoute + 'modules/core/settings/_settings.list.editonly.buttons.html'
                     });
             }
 

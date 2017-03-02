@@ -15,7 +15,7 @@
                     { property: 'name', title: 'Name' },
                     {
                         property: '', title: '', disableSorting: true,
-                        dataTemplate: dexcmsSettings.startingRoute + 'modules/base/countries/_countries.list.buttons.html'
+                        dataTemplate: dexcmsSettings.startingRoute + 'modules/core/countries/_countries.list.buttons.html'
                     },
                 ],
                 defaultSort: 'countryID',

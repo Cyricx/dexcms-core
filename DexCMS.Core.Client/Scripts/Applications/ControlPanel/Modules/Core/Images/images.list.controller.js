@@ -18,11 +18,11 @@
                     { property: 'alt', title: 'Alt' },
                     {
                         property: 'thumbnail', title: 'Image',
-                        dataTemplate: dexcmsSettings.startingRoute + 'modules/base/images/_images.list.thumbnail.html'
+                        dataTemplate: dexcmsSettings.startingRoute + 'modules/core/images/_images.list.thumbnail.html'
                     },
                     {
                         property: '', title: 'Copy Path', disableSorting: true,
-                        dataTemplate: dexcmsSettings.startingRoute + 'modules/base/images/_images.list.copypath.html'
+                        dataTemplate: dexcmsSettings.startingRoute + 'modules/core/images/_images.list.copypath.html'
                     },
                     {
                         property: 'showOnGallery', title: 'Gallery?', disableSorting: true,
@@ -38,7 +38,7 @@
                     },
                     {
                         property: '', title: '', disableSorting: true,
-                        dataTemplate: dexcmsSettings.startingRoute + 'modules/base/images/_images.list.buttons.html'
+                        dataTemplate: dexcmsSettings.startingRoute + 'modules/core/images/_images.list.buttons.html'
                     },
                 ],
                 defaultSort: 'imageID',
