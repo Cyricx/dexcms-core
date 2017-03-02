@@ -98,8 +98,11 @@ namespace DexCMS.Core.Globals
                         {
                             PropertyInfo baseProp = modelProperties.Where(x => x.Name == attr.BaseProperty).FirstOrDefault();
                             object baseValue = baseProp.GetValue(model);
-                            object childValue = baseValue.GetType().GetProperty(attr.ChildProperty).GetValue(baseValue);
-                            propertyInfo.SetValue(viewModel, childValue, null);
+                            if (baseValue != null)
+                            {
+                                object childValue = baseValue.GetType().GetProperty(attr.ChildProperty).GetValue(baseValue);
+                                propertyInfo.SetValue(viewModel, childValue, null);
+                            }
                         }
                     }
                 }

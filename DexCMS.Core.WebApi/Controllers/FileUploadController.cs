@@ -25,6 +25,11 @@ namespace DexCMS.Core.WebApi.Controllers
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
 
+            if (!Directory.Exists(tempFolder))
+            {
+                Directory.CreateDirectory(tempFolder);
+            }
+
             var provider = new MultipartFormDataStreamProvider(tempFolder);
 
             var result = await Request.Content.ReadAsMultipartAsync(provider);
