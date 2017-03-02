@@ -17,23 +17,23 @@ namespace DexCMS.Core.WebApi.Controllers
     [Authorize(Roles = "Admin")]
     public class SettingsController : ApiController
     {
-		private ISettingRepository repository;
+        private ISettingRepository repository;
 
-		public SettingsController(ISettingRepository repo) 
-		{
-			repository = repo;
-		}
+        public SettingsController(ISettingRepository repo)
+        {
+            repository = repo;
+        }
 
         [ResponseType(typeof(List<SettingApiModel>))]
         public List<SettingApiModel> GetSettings()
         {
-            return SettingApiModel.MapForClient(repository.Items);
+            return HidePassword(SettingApiModel.MapForClient(repository.Items));
         }
 
         [ResponseType(typeof(SettingApiModel))]
         public async Task<IHttpActionResult> GetSetting(int id)
         {
-			Setting setting = await repository.RetrieveAsync(id);
+            Setting setting = await repository.RetrieveAsync(id);
             if (setting == null)
             {
                 return NotFound();
@@ -101,13 +101,13 @@ namespace DexCMS.Core.WebApi.Controllers
 
             (new SiteSettingsBuilder(repository)).Initialize();
 
-            return CreatedAtRoute("DefaultApi", new { id = setting.SettingID }, SettingApiModel.MapForClient(setting));
+            return CreatedAtRoute("DefaultApi", new { id = setting.SettingID }, HidePassword(SettingApiModel.MapForClient(setting)));
         }
 
         [ResponseType(typeof(SettingApiModel))]
         public async Task<IHttpActionResult> DeleteSetting(int id)
         {
-			Setting setting = await repository.RetrieveAsync(id);
+            Setting setting = await repository.RetrieveAsync(id);
             if (setting == null)
             {
                 return NotFound();
@@ -118,11 +118,29 @@ namespace DexCMS.Core.WebApi.Controllers
                 DeleteFile(setting.Value);
             }
 
-			await repository.DeleteAsync(setting);
+            await repository.DeleteAsync(setting);
 
             (new SiteSettingsBuilder(repository)).Initialize();
 
-            return Ok(SettingApiModel.MapForClient(setting));
+            return Ok(HidePassword(SettingApiModel.MapForClient(setting)));
+        }
+
+        private List<SettingApiModel> HidePassword(List<SettingApiModel> models)
+        {
+            foreach (var item in models)
+            {
+                HidePassword(item);
+            }
+            return models;
+        }
+
+        private SettingApiModel HidePassword(SettingApiModel model)
+        {
+            if (model.SettingDataTypeName == "Password")
+            {
+                model.Value = "********";
+            }
+            return model;
         }
 
         private string GetValue(int id)
