@@ -116,7 +116,7 @@
                          ngf-accept="'.jpg,.png,.gif'">Drop Image here</div>
                     <div ngf-no-file-drop>Image File Drag/Drop is not supported for this browser</div>
                     <div ng-if="currentItem.value && currentItem.value != 'Pending'">
-                        Previous Image: <img ng-src="{{baseUrl + '/' + currentItem.value}}" />
+                        Previous Image: <img ng-if="currentItem.settingDataTypeName === 'Image'" ng-src="{{baseUrl + '/' + currentItem.value}}" />
                     </div>
                 </div>
             </div>
