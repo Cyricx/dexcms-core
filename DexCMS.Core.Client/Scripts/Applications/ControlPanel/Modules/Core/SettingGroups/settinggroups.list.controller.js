@@ -12,7 +12,7 @@
             $scope.table = {
                 columns: [
                     { property: 'settingGroupID', title: 'ID' },
-                    { property: 'settingGroupName', title: 'Name' },
+                    { property: 'settingGroupName', title: 'Name' }
                 ],
                 defaultSort: 'settingGroupID',
                 functions: {

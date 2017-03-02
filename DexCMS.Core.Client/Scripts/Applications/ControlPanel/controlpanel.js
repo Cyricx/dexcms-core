@@ -17,7 +17,7 @@
     'angular-drag-and-drop-lists',
     'ng-file-upload',
     'oclazyload',
-    'dexcms-globals-shared',
+    'dexcms-globals-shared'
 ], function (angular, settings, routeGroups, RoutesBuilder, globalsBuilder) {
     'use strict';
     var _appName = 'dexCMSControlPanelApp';
@@ -35,7 +35,7 @@
         'ngSanitize',
         'angularValidator',
         'ngToast',
-        'dexCMSGlobalsShared',
+        'dexCMSGlobalsShared'
     ]);
 
     //Load setting constants

@@ -39,7 +39,7 @@
                     {
                         property: '', title: '', disableSorting: true,
                         dataTemplate: dexcmsSettings.startingRoute + 'modules/core/images/_images.list.buttons.html'
-                    },
+                    }
                 ],
                 defaultSort: 'imageID',
                 functions: {
@@ -64,7 +64,7 @@
                         ngToast.create({
                             className: 'success',
                             content: '<p>The image\'s url has been copied to your clipboard.</p>'
-                        })
+                        });
                     }
                 },
                 filePrefix: 'Images'
