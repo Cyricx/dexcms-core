@@ -25,15 +25,15 @@
             },
             {
                 "name": "settingDataTypes",
-                "module": "base"
+                "module": "core"
             },
             {
                 "name": "settingGroups",
-                "module": "base"
+                "module": "core"
             },
             {
                 "name": "settings",
-                "module": "base"
+                "module": "core"
             }
         ]
     };
