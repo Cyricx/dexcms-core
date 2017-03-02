@@ -10,6 +10,30 @@
             {
                 name: "users",
                 module: "core"
+            },
+            {
+                "name": "countries",
+                "module": "core"
+            },
+            {
+                "name": "states",
+                "module": "core"
+            },
+            {
+                "name": "images",
+                "module": "core"
+            },
+            {
+                "name": "settingDataTypes",
+                "module": "base"
+            },
+            {
+                "name": "settingGroups",
+                "module": "base"
+            },
+            {
+                "name": "settings",
+                "module": "base"
             }
         ]
     };

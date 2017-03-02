@@ -16,6 +16,36 @@
                         href: overrides.users ||"users"
                     }
                 ]
+            },
+            {
+                "title": "Settings",
+                "icon": "fa-cogs",
+                "subLinks": [
+                    {
+                        "title": "Countries",
+                        href: overrides.countries || "countries"
+                    },
+                    {
+                        "title": "Images",
+                        href: overrides.images || "images"
+                    },
+                    {
+                        "title": "States",
+                        href: overrides.states || "states"
+                    },
+                    {
+                        "title": "Settings",
+                        href: overrides.settings || "settings"
+                    },
+                    {
+                        "title": "Setting DataTypes",
+                        href: overrides.settingdatatypes || "settingdatatypes"
+                    },
+                    {
+                        "title": "Setting Groups",
+                        href: overrides.settinggroups || "settinggroups"
+                    }
+                ]
             }
         ]
     };
