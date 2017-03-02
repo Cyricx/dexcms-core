@@ -8,6 +8,7 @@
         'dexCMSControlPanelSettings',
         function ($scope, SettingDataTypes, $window, dexcmsSettings) {
             $scope.title = "View Setting Data Types";
+            $scope.isInstaller = cpUser.isInstaller;
 
             $scope.table = {
                 columns: [

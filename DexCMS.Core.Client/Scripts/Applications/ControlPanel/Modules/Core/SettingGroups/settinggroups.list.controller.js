@@ -8,6 +8,7 @@
         'dexCMSControlPanelSettings',
         function ($scope, SettingGroups, $window, dexcmsSettings) {
             $scope.title = "View Setting Groups";
+            $scope.isInstaller = cpUser.isInstaller;
 
             $scope.table = {
                 columns: [
