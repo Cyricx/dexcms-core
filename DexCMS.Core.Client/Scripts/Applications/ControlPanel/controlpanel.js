@@ -22,7 +22,7 @@
     'use strict';
     var _appName = 'dexCMSControlPanelApp';
     var _routesBuilder = new RoutesBuilder(routeGroups, _appName);
-    
+
     var cpApp = angular.module(_appName, [
         'ngResource',
         'ui.bootstrap',
@@ -37,33 +37,35 @@
         'ngToast',
         'dexCMSGlobalsShared',
     ]);
-    
+
     //Load setting constants
     cpApp.constant('dexCMSControlPanelSettings', settings);
-    
+
     //Execute Global Builders
     globalsBuilder(cpApp);
-    
+
     cpApp.config([
         '$ocLazyLoadProvider',
         '$stateProvider',
         '$urlRouterProvider',
         '$locationProvider',
         '$httpProvider',
-        function ($ocLazyLoadProvider, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+        '$qProvider',
+        function ($ocLazyLoadProvider, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $qProvider) {
             $locationProvider.html5Mode(true);
-            
+            $qProvider.errorOnUnhandledRejections(false);
+
             $ocLazyLoadProvider.config({
                 loadedModules: [],
                 jsLoader: require
             });
             $urlRouterProvider.otherwise('/');
-            
+
             _routesBuilder.constructRoutes($stateProvider, settings.startingRoute);
 
             return $httpProvider.interceptors.push('DexCMSCacheBuster');
         }
     ]);
-    
+
     return cpApp;
 });
